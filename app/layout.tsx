@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/fraunces/300.css";
+import "@fontsource/fraunces/300-italic.css";
+import "@fontsource/fraunces/400.css";
+import "@fontsource/fraunces/600.css";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "KORDIA Outdoor Furniture Manufacturer | Foshan, China",
@@ -39,7 +33,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${fraunces.variable}`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const collections = [
   {
@@ -63,6 +63,88 @@ const filters = ["All", "Lounge", "Dining", "Leisure", "Shade", "Fire & Kitchen"
 export default function Home() {
   const [filter, setFilter] = useState("All");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [introDone, setIntroDone] = useState(false);
+
+  useEffect(() => {
+    const introTimer = window.setTimeout(() => setIntroDone(true), 2200);
+    const failsafeTimer = window.setTimeout(() => setIntroDone(true), 4500);
+
+    return () => {
+      window.clearTimeout(introTimer);
+      window.clearTimeout(failsafeTimer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const dot = document.getElementById("cursor-dot");
+    const ring = document.getElementById("cursor-ring");
+    if (!dot || !ring || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
+    let frame = 0;
+    let clickTimer = 0;
+
+    const onPointerMove = (event: PointerEvent) => {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+      dot.style.left = `${mouseX}px`;
+      dot.style.top = `${mouseY}px`;
+      dot.classList.add("is-visible");
+      ring.classList.add("is-visible");
+    };
+
+    const onPointerOver = (event: PointerEvent) => {
+      if ((event.target as Element | null)?.closest("a, button, [data-cursor]")) {
+        dot.classList.add("is-hovering");
+        ring.classList.add("is-hovering");
+      }
+    };
+
+    const onPointerOut = (event: PointerEvent) => {
+      const nextTarget = event.relatedTarget as Element | null;
+      if (!nextTarget?.closest?.("a, button, [data-cursor]")) {
+        dot.classList.remove("is-hovering");
+        ring.classList.remove("is-hovering");
+      }
+    };
+
+    const onPointerDown = () => {
+      window.clearTimeout(clickTimer);
+      ring.classList.remove("is-clicking");
+      dot.classList.add("is-clicking");
+      requestAnimationFrame(() => ring.classList.add("is-clicking"));
+      clickTimer = window.setTimeout(() => {
+        dot.classList.remove("is-clicking");
+        ring.classList.remove("is-clicking");
+      }, 520);
+    };
+
+    const animateRing = () => {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.left = `${ringX}px`;
+      ring.style.top = `${ringY}px`;
+      frame = requestAnimationFrame(animateRing);
+    };
+
+    document.addEventListener("pointermove", onPointerMove);
+    document.addEventListener("pointerover", onPointerOver);
+    document.addEventListener("pointerout", onPointerOut);
+    document.addEventListener("pointerdown", onPointerDown);
+    frame = requestAnimationFrame(animateRing);
+
+    return () => {
+      window.clearTimeout(clickTimer);
+      cancelAnimationFrame(frame);
+      document.removeEventListener("pointermove", onPointerMove);
+      document.removeEventListener("pointerover", onPointerOver);
+      document.removeEventListener("pointerout", onPointerOut);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, []);
 
   const visibleProducts = useMemo(
     () => filter === "All" ? products : products.filter((product) => product.category === filter),
@@ -71,6 +153,14 @@ export default function Home() {
 
   return (
     <main>
+      <div id="kordia-intro" className={introDone ? "is-done" : ""} aria-hidden="true">
+        <div className="intro-word">KORDIA</div>
+        <div className="intro-rule" />
+        <div className="intro-subtitle">Outdoor Furniture · Foshan, China</div>
+      </div>
+      <div id="cursor-dot" aria-hidden="true" />
+      <div id="cursor-ring" aria-hidden="true" />
+
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="KORDIA home">KORDIA</a>
         <nav className={menuOpen ? "nav nav-open" : "nav"} aria-label="Main navigation">

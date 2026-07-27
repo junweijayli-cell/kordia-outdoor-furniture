@@ -26,7 +26,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-family: var(--font-sans), Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -43,6 +43,140 @@ button {
 ::selection {
   color: var(--ink);
   background: rgba(180, 100, 60, 0.24);
+}
+
+#kordia-intro {
+  position: fixed;
+  z-index: 100000;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-dark);
+  background: var(--ink-surface);
+  transition: opacity 800ms ease, visibility 800ms ease;
+}
+
+#kordia-intro.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-word {
+  opacity: 0;
+  transform: translateY(7px);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  line-height: 1;
+  text-indent: 0.3em;
+  animation: introWordIn 1050ms 100ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.intro-rule {
+  width: 0;
+  height: 1px;
+  margin-top: 25px;
+  background: linear-gradient(90deg, transparent, var(--clay), transparent);
+  animation: introRuleIn 1450ms 420ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.intro-subtitle {
+  opacity: 0;
+  margin-top: 18px;
+  color: #9a958b;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-indent: 0.38em;
+  text-transform: uppercase;
+  animation: introSubtitleIn 800ms 900ms ease forwards;
+}
+
+#cursor-dot,
+#cursor-ring {
+  position: fixed;
+  z-index: 9999;
+  left: -100px;
+  top: -100px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+#cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--clay);
+  transition: width 180ms ease, height 180ms ease, opacity 180ms ease, transform 180ms ease;
+}
+
+#cursor-ring {
+  z-index: 9998;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(180, 100, 60, 0.66);
+  transition: width 260ms ease, height 260ms ease, opacity 180ms ease, transform 180ms ease, background 260ms ease;
+}
+
+#cursor-dot.is-visible,
+#cursor-ring.is-visible {
+  opacity: 1;
+}
+
+#cursor-dot.is-hovering {
+  width: 4px;
+  height: 4px;
+  opacity: 0.35;
+}
+
+#cursor-ring.is-hovering {
+  width: 58px;
+  height: 58px;
+  background: rgba(180, 100, 60, 0.08);
+}
+
+#cursor-dot.is-clicking {
+  transform: translate(-50%, -50%) scale(0.45);
+}
+
+#cursor-ring.is-clicking {
+  transform: translate(-50%, -50%) scale(0.78);
+  background: rgba(180, 100, 60, 0.18);
+}
+
+#cursor-ring::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--clay);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+#cursor-ring.is-clicking::after {
+  animation: cursorClick 520ms ease-out;
+}
+
+@keyframes introWordIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes introRuleIn {
+  to { width: min(300px, 62vw); }
+}
+
+@keyframes introSubtitleIn {
+  to { opacity: 1; }
+}
+
+@keyframes cursorClick {
+  0% { opacity: 0.9; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1.75); }
 }
 
 .site-header {
@@ -62,7 +196,7 @@ button {
 }
 
 .wordmark {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -232,7 +366,8 @@ button {
 .catalog-copy h2,
 .footer-lead h2 {
   margin: 0;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
+  font-optical-sizing: auto;
   font-weight: 300;
   letter-spacing: -0.035em;
 }
@@ -287,7 +422,7 @@ button {
 
 .hero-stats strong {
   display: block;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-size: 30px;
   font-weight: 300;
   line-height: 1;
@@ -408,7 +543,7 @@ button {
   bottom: 12px;
   z-index: 1;
   color: var(--white);
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-size: 42px;
   font-style: italic;
   line-height: 1;
@@ -427,7 +562,7 @@ button {
 .product-copy h3,
 .factory-points h3 {
   margin: 0;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-size: 22px;
   font-weight: 400;
 }
@@ -599,7 +734,7 @@ button {
 
 .factory-points article > span {
   color: var(--clay);
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: "Fraunces", Georgia, serif;
   font-size: 28px;
   font-style: italic;
 }
@@ -949,6 +1084,13 @@ footer {
   }
 }
 
+@media (hover: none), (pointer: coarse), (max-width: 1023px) {
+  #cursor-dot,
+  #cursor-ring {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -960,5 +1102,11 @@ footer {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+
+  #kordia-intro,
+  #cursor-dot,
+  #cursor-ring {
+    display: none !important;
   }
 }
