@@ -27,6 +27,7 @@
       heroBody: "500+ models of rope-weave, cast-aluminium and teak — sofas, dining, shade and outdoor kitchens — manufactured in Foshan, shipped to 40+ countries.",
       statModels: "Models", statCategories: "Categories", statCountries: "Countries",
       exploreCollections: "Explore Collections", requestCatalog: "Request the 2026 Catalog",
+      whatsappChat: "WhatsApp Chat",
 
       programmeKicker: "The 2026 programme",
       programmeTitle: "A complete outdoor programme, from one factory floor.",
@@ -168,6 +169,7 @@
       heroBody: "500多款绳编、铸铝与柚木户外家具——沙发、餐桌、遮阳与户外厨房，佛山制造，出口全球40多个国家和地区。",
       statModels: "产品型号", statCategories: "产品类别", statCountries: "出口国家",
       exploreCollections: "浏览产品系列", requestCatalog: "索取2026产品目录",
+      whatsappChat: "WhatsApp 咨询",
 
       programmeKicker: "2026 产品规划",
       programmeTitle: "一个工厂，一套完整的户外方案。",

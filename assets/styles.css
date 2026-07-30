@@ -91,6 +91,12 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); m
 .btn-outline:hover { background: var(--ink); color: var(--cream); }
 .btn-ghost-light { background: transparent; border: 1px solid rgba(237, 240, 248, .55); color: var(--light); }
 .btn-ghost-light:hover { background: var(--light); color: var(--ink); }
+/* WhatsApp's darker brand green rather than the neon #25D366, which glares
+   against the navy hero. The outlined catalog button sits between this and the
+   red primary so the two saturated fills never touch. */
+.btn-whatsapp { background: #1FA855; color: #fff; }
+.btn-whatsapp:hover { background: #17843F; color: #fff; }
+.btn-whatsapp .wa-glyph { width: 16px; height: 16px; fill: currentColor; flex: none; }
 .btn-sm { padding: 12px 20px; font-size: 11px; }
 .link-underline {
   background: none; border: 0; border-bottom: 1px solid var(--ink); padding: 0 0 4px;
