@@ -80,6 +80,26 @@
       specCatalogPage: "Catalog page", specSource: "Photography", specSourceValue: "2026 printed catalog",
       specLead: "Lead time", specLeadValue: "Quoted per order [verify]",
       specMoq: "MOQ", specMoqValue: "Confirmed per model [verify]",
+      specModel: "Factory model", specDimensions: "Dimensions",
+      specDimsPending: "On request — not published in the factory quote book",
+
+      navSignature: "Signature", navSettings: "Browse by Setting",
+      sigKicker: "The house line",
+      sigTitle: "KORDIA<em>Signature.</em>",
+      sigLede: "A single designed programme — teak, rope and cast aluminium drawn as one family, so a terrace reads as one idea rather than six catalogue pages.",
+      sigStoryKicker: "Why it exists",
+      sigStoryTitle: "One family, not a catalogue.",
+      sigStoryBody: "The trade catalogue answers \"what do you make?\". Signature answers \"what would you specify?\". Every piece shares a frame language, a rope gauge and a cushion tone, so an importer can furnish a whole space from one page and know it will arrive matching.",
+      sigDisclosure: "Signature imagery is computer-rendered. Production samples are photographed on request — ask us before you specify a finish.",
+      sigToCatalogue: "See the full 2026 catalogue →",
+      setKicker: "Where it goes",
+      setTitle: "Start from the space, not the product.",
+      setIntro: "Most buyers arrive with a place in mind — a hotel poolside, a restaurant terrace, a municipal park — rather than a product category. Each setting below opens the models that suit it.",
+      setCount: "{n} models",
+      projKicker: "Where it ships",
+      projTitle: "Hotels, terraces, public parks.",
+      projBody: "KORDIA furniture leaves Foshan by the container for importers, hospitality groups and municipal contracts across 40+ countries.",
+      projPending: "Installation photography to follow — awaiting project images from the client.",
 
       inquiryTitle: "Request a quotation",
       inquiryIntro: "Four steps, about two minutes. You don't need a model number — a reference photo is enough. Your progress is saved as you go.",
@@ -222,6 +242,26 @@
       specCatalogPage: "目录页码", specSource: "图片来源", specSourceValue: "2026 纸质目录",
       specLead: "交货周期", specLeadValue: "按订单报价 [待确认]",
       specMoq: "起订量", specMoqValue: "按款确认 [待确认]",
+      specModel: "工厂型号", specDimensions: "尺寸",
+      specDimsPending: "面议 — 报价册未列明",
+
+      navSignature: "臻选系列", navSettings: "按场景选购",
+      sigKicker: "自主设计系列",
+      sigTitle: "KORDIA<em>臻选系列</em>",
+      sigLede: "柚木、绳编与铸铝以同一设计语言绘制，整个露台呈现为一个完整构想，而非六页目录的拼凑。",
+      sigStoryKicker: "系列缘起",
+      sigStoryTitle: "一个家族，而非一本目录。",
+      sigStoryBody: "贸易目录回答「我们能做什么」，臻选系列回答「我们会如何指定」。每件产品共享同一框架语言、绳径与坐垫色调，采购商可在一页之内完成整个空间的配置，并确信到货时彼此相配。",
+      sigDisclosure: "臻选系列图片为电脑渲染图。量产样品可应要求实拍 — 指定饰面前请先与我们确认。",
+      sigToCatalogue: "查看 2026 完整目录 →",
+      setKicker: "适用场景",
+      setTitle: "从空间出发，而非从产品出发。",
+      setIntro: "多数买家心中先有一个场所 — 酒店泳池、餐厅露台、市政公园 — 而非产品类别。以下每个场景将打开适配的款式。",
+      setCount: "{n} 款",
+      projKicker: "销往何处",
+      projTitle: "酒店、露台、公共园区。",
+      projBody: "KORDIA 家具自佛山整柜发运，服务 40 多个国家的进口商、酒店集团与市政项目。",
+      projPending: "实景照片待补 — 正在等待客户提供项目图片。",
 
       inquiryTitle: "索取报价",
       inquiryIntro: "四个步骤，约两分钟。无需款号——一张参考图即可。填写进度会自动保存。",
@@ -452,7 +492,10 @@
     const feat = productById(COLLECTION_META["sofa-lounge"].cover) || catalog.products[0];
     const v = atLeast(feat, 400);
     const img = byId("mega-feature-img");
-    img.src = v.src; img.srcset = srcset(feat); img.sizes = "320px";
+    img.src = v.src; img.srcset = srcset(feat);
+    // This is a portrait crop of a landscape catalog image. Advertise the
+    // source width needed after object-fit: cover, not just the CSS box width.
+    img.sizes = "660px";
     img.width = v.w; img.height = v.h;
     byId("mega-feature-label").textContent =
       `${label(collectionBySlug("sofa-lounge"))} — ${collectionBySlug("sofa-lounge").photoCount} ${t("photosShort")}`;
@@ -471,11 +514,16 @@
       const cover = productById(meta.cover) || catalog.products.find((p) => p.collection === c.slug);
       const v = atLeast(cover, 800);
       const wide = meta.span === "span-12";
+      const coverSizes = meta.span === "span-12"
+        ? "calc(min(1440px, 100vw - 64px))"
+        : meta.span === "span-8"
+          ? "(min-width: 981px) 950px, (min-width: 621px) 50vw, 100vw"
+          : "(min-width: 981px) 950px, (min-width: 621px) 100vw, 200vw";
       return `
         <button class="coll-card reveal d${(i % 4) + 1} ${meta.span}" type="button" data-open-collection="${c.slug}">
           <span class="frame ${meta.ar}" style="display:block">
             <img src="${v.src}" srcset="${srcset(cover)}"
-                 sizes="${wide ? "calc(min(1440px, 100vw - 64px))" : "(min-width: 981px) calc((min(1440px, 100vw - 64px) - 48px) / 3), calc(100vw - 48px)"}"
+                 sizes="${coverSizes}"
                  width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(label(c))}">
           </span>
           ${wide ? `
@@ -496,6 +544,7 @@
     const bv = atLeast(band, 800);
     const bandImg = byId("catalog-band-img");
     bandImg.src = bv.src; bandImg.srcset = srcset(band); bandImg.width = bv.w; bandImg.height = bv.h;
+    bandImg.sizes = "(min-width: 981px) 800px, 100vw";
     bandImg.alt = "";
   }
 
@@ -509,7 +558,7 @@
       return `
         <div class="coll-row">
           <img src="${v.src}" srcset="${srcset(cover)}"
-               sizes="(min-width: 981px) calc((min(1440px, 100vw - 64px)) * 5 / 12), calc(100vw - 48px)"
+               sizes="(min-width: 981px) 700px, calc(100vw - 48px)"
                width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(label(c))}">
           <div>
             <h2>${esc(label(c))}</h2>
@@ -617,7 +666,8 @@
     const big = p.variants[p.variants.length - 1];
     const img = byId("pd-image");
     img.src = big.src; img.srcset = srcset(p);
-    img.sizes = "(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 64px) * 7 / 12), calc(100vw - 48px)";
+    img.sizes = "(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 64px) * 7 / 12), " +
+      "(min-width: 621px) calc(100vw - 48px), 125vw";
     img.width = big.w; img.height = big.h; img.alt = p.name[state.lang];
 
     byId("pd-crumb-collection").textContent = p.collectionName[state.lang];
@@ -628,11 +678,24 @@
     byId("pd-ref").textContent = `${t("specCatalogRef")} ${p.id}`;
 
     byId("pd-glance").innerHTML = [
+      [t("specModel"), p.model || "—"],
       [t("specCollection"), p.collectionName[state.lang]],
       [t("specCategory"), p.subcategoryName[state.lang]],
       [t("specCatalogPage"), String(p.catalogPage)],
-      [t("specSource"), t("specSourceValue")],
     ].map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("");
+
+    // Per-piece dimensions from the factory quote book. Products the book
+    // leaves blank say so — we never publish an inferred measurement.
+    const dimEl = byId("pd-dimensions");
+    if (dimEl) {
+      if (p.dimensions && p.dimensions.length) {
+        dimEl.innerHTML = p.dimensions.map((d) =>
+          `<li><span class="dim-label">${esc(d.label || "—")}</span>` +
+          `<span class="dim-value tabular">${esc(d.cm)}</span></li>`).join("");
+      } else {
+        dimEl.innerHTML = `<li class="dim-pending">${esc(t("specDimsPending"))}</li>`;
+      }
+    }
 
     // Sibling photographs from the same catalog page act as alternate views.
     const siblings = catalog.products.filter((x) => x.catalogPage === p.catalogPage);
@@ -663,6 +726,10 @@
 
     byId("pd-specs").innerHTML = [
       [t("specCatalogRef"), p.id],
+      [t("specModel"), p.model || "—"],
+      [t("specDimensions"), p.dimensions && p.dimensions.length
+        ? p.dimensions.map((d) => (d.label ? d.label + " " : "") + d.cm).join("  ·  ")
+        : t("specDimsPending")],
       [t("specCollection"), p.collectionName[state.lang]],
       [t("specCategory"), p.subcategoryName[state.lang]],
       [t("specCatalogPage"), String(p.catalogPage)],
@@ -853,7 +920,7 @@
   }
 
   /* ------------------------------------------------------------------ router */
-  const SCREENS = ["home", "collections", "collection", "product", "inquiry", "factory", "materials", "shipping", "contact"];
+  const SCREENS = ["home", "signature", "settings", "collections", "collection", "product", "inquiry", "factory", "materials", "shipping", "contact"];
 
   function parseHash() {
     const h = location.hash.replace(/^#\/?/, "");
@@ -862,6 +929,9 @@
     if (a === "c") return { screen: "collection", collection: b || "all" };
     if (a === "s") return { screen: "collection", subcategory: b || "all" };
     if (a === "p") return { screen: "product", productId: b };
+    // A setting is a saved view over the same catalogue, not a separate data
+    // set — it resolves to the collections that feed it.
+    if (a === "set") return { screen: "collection", setting: b || "all" };
     return { screen: SCREENS.includes(a) ? a : "home" };
   }
 
@@ -869,6 +939,11 @@
     const r = parseHash();
     state.screen = r.screen;
     if (r.screen === "collection") {
+      if (r.setting !== undefined) {
+        const set = (catalog.settings || []).find((s) => s.slug === r.setting);
+        state.collection = set && set.from.length === 1 ? set.from[0] : "all";
+        state.subcategory = "all";
+      }
       if (r.collection !== undefined) { state.collection = r.collection; state.subcategory = "all"; }
       if (r.subcategory !== undefined) {
         const sub = subBySlug(r.subcategory);
@@ -890,8 +965,49 @@
     if (state.screen === "collection") renderBrowse();
     if (state.screen === "product") renderProduct();
     if (state.screen === "inquiry") { renderWizardSteps(); renderWizardAttachments(); }
+    if (state.screen === "signature") renderSignature();
+    if (state.screen === "settings") renderSettings("settings-list");
     observeReveals();
     if (push !== false) window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+  }
+
+  /* --------------------------------------------------- signature + settings */
+  // The eleven Signature renders are page-keyed, not product-keyed — they came
+  // from a separate PDF and have no SKU behind them yet.
+  function renderSignature() {
+    const el = byId("sig-grid");
+    if (!el || el.dataset.filled) return;
+    const sig = catalog.signature;
+    if (!sig) return;
+    el.innerHTML = sig.renders.map((pg, i) => `
+      <figure class="sig-item${i % 3 === 0 ? " sig-item-wide" : ""}">
+        <img src="assets/images/signature/kordia-${pg}-880.webp"
+             srcset="assets/images/signature/kordia-${pg}-440.webp 440w, assets/images/signature/kordia-${pg}-880.webp 880w, assets/images/signature/kordia-${pg}-1600.webp 1600w"
+             sizes="(min-width: 981px) 46vw, 100vw"
+             loading="lazy" decoding="async" alt="KORDIA Signature ${esc(pg)}">
+      </figure>`).join("");
+    el.dataset.filled = "1";
+  }
+
+  function renderSettings(targetId) {
+    const el = byId(targetId);
+    if (!el || el.dataset.filled) return;
+    const sets = catalog.settings || [];
+    el.innerHTML = sets.map((s) => {
+      const n = catalog.products.filter((p) => p.setting === s.slug).length;
+      // Lead image: first product of the feeding collection, so the tile is
+      // never empty and always shows real stock.
+      const lead = catalog.products.find((p) => p.setting === s.slug);
+      const v = lead ? atLeast(lead, 800) : null;
+      return `<button class="set-card reveal" type="button" data-open-setting="${s.slug}">
+        ${v ? `<img src="${v.src}" width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="">` : ""}
+        <span class="set-card-body">
+          <span class="set-card-name">${esc(s.name[state.lang])}</span>
+          <span class="set-card-count">${esc(fmt("setCount", { n: n }))}</span>
+        </span>
+      </button>`;
+    }).join("");
+    el.dataset.filled = "1";
   }
 
   function go(hash) {
@@ -943,6 +1059,13 @@
     renderCollectionsIndex();
     renderStaticScreens();
     renderDrawer();
+    // Language switch re-renders everything, so clear the fill guards first.
+    ["sig-grid", "settings-list", "home-settings"].forEach((id) => {
+      const n = byId(id); if (n) delete n.dataset.filled;
+    });
+    renderSignature();
+    renderSettings("settings-list");
+    renderSettings("home-settings");
     if (state.screen === "collection") renderBrowse();
     if (state.screen === "product") renderProduct();
     if (state.screen === "inquiry") { renderWizardSteps(); renderWizardAttachments(); }
@@ -956,10 +1079,11 @@
   }
 
   document.addEventListener("click", (ev) => {
-    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-add],[data-sub],[data-coll],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll]");
+    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-open-setting],[data-add],[data-sub],[data-coll],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll]");
     if (!el) return;
 
     if (el.dataset.go) { go(el.dataset.go === "home" ? "#/home" : `#/${el.dataset.go}`); return; }
+    if (el.dataset.openSetting) { go(`#/set/${el.dataset.openSetting}`); return; }
     if (el.dataset.openCollection) { go(`#/c/${el.dataset.openCollection}`); return; }
     if (el.dataset.openSub) { go(`#/s/${el.dataset.openSub}`); return; }
     if (el.dataset.openProduct) { go(`#/p/${el.dataset.openProduct}`); return; }

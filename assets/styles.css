@@ -334,7 +334,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); m
 .load-more-row { display: flex; justify-content: center; margin-top: 72px; }
 
 /* ---------- product detail ---------- */
-.pd-main { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--sand); margin-bottom: 16px; }
+.pd-main { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; background: var(--sand); margin-bottom: 16px; }
 .pd-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .pd-thumbs button { background: none; border: 0; padding: 0; cursor: pointer; }
 .pd-thumbs img { width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--sand); }
@@ -578,3 +578,87 @@ html[lang^="zh"] .lede,
 html[lang^="zh"] .hero-lede,
 html[lang^="zh"] .point p,
 html[lang^="zh"] .coll-row p { line-break: strict; text-wrap: pretty; }
+
+/* ── Product dimensions ───────────────────────────────────────────────────
+   Per-piece measurements from the factory quote book. A set is several
+   pieces (armchair + 3-seat + coffee table), so this is a labelled list,
+   not a single figure. Values are tabular so the numbers align down the
+   column when a buyer scans them. */
+.pd-dims { margin: 26px 0 4px; }
+.dim-list { list-style: none; margin: 10px 0 0; padding: 0;
+            border-top: 1px solid var(--line); }
+.dim-list li { display: flex; justify-content: space-between; gap: 20px;
+               padding: 9px 0; border-bottom: 1px solid var(--line);
+               font-size: 14.5px; }
+.dim-label { color: var(--muted); }
+.dim-value { color: var(--ink); white-space: nowrap; }
+.dim-pending { display: block; color: var(--muted); font-style: italic;
+               padding: 9px 0; border-bottom: 1px solid var(--line); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   V4 · Signature screen + Browse by Setting
+   The second and third "doors" into the same catalogue — see IA-PROPOSAL.md.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Signature hero ─────────────────────────────────────────────────────── */
+.sig-hero { position: relative; min-height: 78vh; display: flex; align-items: flex-end;
+            overflow: hidden; background: var(--navy); }
+.sig-hero-img { position: absolute; inset: 0; width: 100%; height: 100%;
+                object-fit: cover; }
+.sig-hero-shade { position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(18,34,79,.88) 0%, rgba(18,34,79,.35) 46%, rgba(18,34,79,.15) 100%); }
+.sig-hero-inner { position: relative; width: 100%; max-width: var(--shell);
+                  margin: 0 auto; padding: 0 var(--pad) 88px; }
+.sig-hero-inner h1 { font-family: var(--display); font-weight: 300; color: #fff;
+  font-size: clamp(44px, 8vw, 104px); line-height: .94; letter-spacing: -.02em;
+  margin: 20px 0 24px; }
+.sig-hero-inner h1 em { display: block; font-style: italic; color: var(--gold); }
+.sig-hero-inner .hero-lede { color: rgba(255,255,255,.82); max-width: 56ch; }
+.rule-light { background: var(--gold) !important; }
+.eyebrow-light { color: rgba(255,255,255,.75) !important; }
+
+/* ── Signature grid ─────────────────────────────────────────────────────── */
+.sig-grid { display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 24px; margin-top: 64px; }
+.sig-item { margin: 0; overflow: hidden; background: var(--sand-2); }
+.sig-item-wide { grid-column: 1 / -1; }
+.sig-item img { width: 100%; height: 100%; display: block; object-fit: cover;
+                transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
+.sig-item:hover img { transform: scale(1.03); }
+.sig-note { margin: 40px 0 0; font-size: 14px; color: var(--muted);
+            max-width: 70ch; font-style: italic; }
+.sig-actions { display: flex; gap: 28px; align-items: center;
+               flex-wrap: wrap; margin-top: 40px; }
+
+/* ── Setting tiles ──────────────────────────────────────────────────────── */
+.set-grid { display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 24px; margin-top: 56px; }
+.set-card { position: relative; display: block; padding: 0; border: 0;
+            background: var(--sand-2); cursor: pointer; text-align: left;
+            overflow: hidden; aspect-ratio: 4 / 3; }
+.set-card img { position: absolute; inset: 0; width: 100%; height: 100%;
+                object-fit: cover;
+                transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
+.set-card:hover img { transform: scale(1.04); }
+.set-card::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(18,34,79,.82) 0%, rgba(18,34,79,.15) 58%, transparent 100%); }
+.set-card-body { position: absolute; left: 22px; right: 22px; bottom: 20px;
+                 z-index: 2; display: block; }
+.set-card-name { display: block; font-family: var(--display); font-size: 22px;
+                 color: #fff; margin-bottom: 4px; }
+.set-card-count { display: block; font-size: 11px; letter-spacing: .14em;
+                  text-transform: uppercase; color: var(--gold); font-weight: 500; }
+
+/* ── Projects placeholder ───────────────────────────────────────────────── */
+.proj-placeholder { margin-top: 40px; padding: 72px 32px; text-align: center;
+  border: 1px dashed var(--line); background: var(--sand-2);
+  font-size: 14px; color: var(--muted); font-style: italic; }
+
+@media (max-width: 980px) {
+  .set-grid { grid-template-columns: repeat(2, 1fr); }
+  .sig-hero { min-height: 62vh; }
+}
+@media (max-width: 620px) {
+  .set-grid, .sig-grid { grid-template-columns: 1fr; }
+  .sig-item-wide { grid-column: auto; }
+}
