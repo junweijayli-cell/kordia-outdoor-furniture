@@ -14,7 +14,7 @@
       href="assets/images/hero/hero-1-1600.webp"
       imagesrcset="assets/images/hero/hero-1-960.webp 960w, assets/images/hero/hero-1-1600.webp 1600w, assets/images/hero/hero-1-2200.webp 2200w"
       imagesizes="100vw">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20260806-hires">
 </head>
 <body>
 
@@ -35,12 +35,13 @@
     </button>
 
     <nav class="main-nav" aria-label="Primary">
+      <button data-go="signature" type="button" data-i18n="navSignature">Signature</button>
       <button class="nav-collections" id="mega-toggle" type="button" aria-expanded="false" aria-controls="mega">
         <span data-i18n="navCollections">Collections</span> <span class="caret" aria-hidden="true">▾</span>
       </button>
+      <button data-go="settings" type="button" data-i18n="navSettings">Browse by Setting</button>
       <button data-go="factory" type="button" data-i18n="navFactory">Factory</button>
       <button data-go="materials" type="button" data-i18n="navMaterials">Materials</button>
-      <button data-go="shipping" type="button" data-i18n="navShipping">Shipping</button>
       <button data-go="contact" type="button" data-i18n="navContact">Contact</button>
     </nav>
 
@@ -71,7 +72,9 @@
   </div>
 
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <button data-go="signature" type="button" data-i18n="navSignature">Signature</button>
     <button data-go="collections" type="button" data-i18n="navCollections">Collections</button>
+    <button data-go="settings" type="button" data-i18n="navSettings">Browse by Setting</button>
     <button data-go="factory" type="button" data-i18n="navFactory">Factory</button>
     <button data-go="materials" type="button" data-i18n="navMaterials">Materials</button>
     <button data-go="shipping" type="button" data-i18n="navShipping">Shipping</button>
@@ -86,20 +89,22 @@
 <section class="screen" id="screen-home" hidden>
   <div class="hero">
     <div class="hero-slides" aria-hidden="true">
+      <!-- KORDIA Signature renders, 2350px native — the highest-resolution
+           assets in the project. See IA-PROPOSAL.md §"The narrative spine". -->
       <img class="hero-slide is-active" alt="" fetchpriority="high" decoding="async" sizes="100vw"
-           src="assets/images/hero/hero-1-1600.webp"
-           srcset="assets/images/hero/hero-1-960.webp 960w, assets/images/hero/hero-1-1600.webp 1600w, assets/images/hero/hero-1-2200.webp 2200w">
+           src="assets/images/hero/hero-sig-1-1600.webp"
+           srcset="assets/images/hero/hero-sig-1-960.webp 960w, assets/images/hero/hero-sig-1-1600.webp 1600w, assets/images/hero/hero-sig-1-2350.webp 2350w">
       <!-- Slides 2-4 are inside the viewport, so loading="lazy" would not defer
            them. app.js hydrates these from data-* once the page is idle. -->
       <img class="hero-slide" alt="" decoding="async" data-sizes="100vw"
-           data-src="assets/images/hero/hero-2-1600.webp"
-           data-srcset="assets/images/hero/hero-2-960.webp 960w, assets/images/hero/hero-2-1600.webp 1600w, assets/images/hero/hero-2-2200.webp 2200w">
+           data-src="assets/images/hero/hero-sig-3-1600.webp"
+           data-srcset="assets/images/hero/hero-sig-3-960.webp 960w, assets/images/hero/hero-sig-3-1600.webp 1600w, assets/images/hero/hero-sig-3-2350.webp 2350w">
       <img class="hero-slide" alt="" decoding="async" data-sizes="100vw"
-           data-src="assets/images/hero/hero-3-1600.webp"
-           data-srcset="assets/images/hero/hero-3-960.webp 960w, assets/images/hero/hero-3-1600.webp 1600w, assets/images/hero/hero-3-2200.webp 2200w">
+           data-src="assets/images/hero/hero-sig-5-1600.webp"
+           data-srcset="assets/images/hero/hero-sig-5-960.webp 960w, assets/images/hero/hero-sig-5-1600.webp 1600w, assets/images/hero/hero-sig-5-2350.webp 2350w">
       <img class="hero-slide" alt="" decoding="async" data-sizes="100vw"
-           data-src="assets/images/hero/hero-4-1600.webp"
-           data-srcset="assets/images/hero/hero-4-960.webp 960w, assets/images/hero/hero-4-1600.webp 1600w, assets/images/hero/hero-4-2200.webp 2200w">
+           data-src="assets/images/hero/hero-sig-6-1600.webp"
+           data-srcset="assets/images/hero/hero-sig-6-960.webp 960w, assets/images/hero/hero-sig-6-1600.webp 1600w, assets/images/hero/hero-sig-6-2350.webp 2350w">
     </div>
     <div class="hero-shade-a"></div>
     <div class="hero-shade-b"></div>
@@ -221,6 +226,36 @@
     </div>
   </section>
 
+  <!-- Browse by setting — the second door into the same catalogue.
+       See IA-PROPOSAL.md: buyers arrive with a place in mind, not a category. -->
+  <section class="section section-cream">
+    <div class="shell">
+      <div class="section-head reveal">
+        <div class="rule-sm"></div>
+        <span class="eyebrow" data-i18n="setKicker">Where it goes</span>
+        <h2 class="h-sec" data-i18n="setTitle">Start from the space, not the product.</h2>
+        <p class="lede" data-i18n="setIntro">Most buyers arrive with a place in mind — a hotel poolside, a restaurant terrace, a municipal park — rather than a product category. Each setting below opens the models that suit it.</p>
+      </div>
+      <div class="set-grid" id="home-settings"></div>
+    </div>
+  </section>
+
+  <!-- Where it ships. Placeholder until the client supplies installation
+       photography — see IA-PROPOSAL.md §"The narrative spine", item 3. -->
+  <section class="section section-white" id="home-projects">
+    <div class="shell">
+      <div class="section-head reveal" style="max-width:58ch">
+        <div class="rule-sm"></div>
+        <span class="eyebrow" data-i18n="projKicker">Where it ships</span>
+        <h2 class="h-sec" data-i18n="projTitle">Hotels, terraces, public parks.</h2>
+        <p class="lede" data-i18n="projBody">KORDIA furniture leaves Foshan by the container for importers, hospitality groups and municipal contracts across 40+ countries.</p>
+      </div>
+      <div class="proj-placeholder reveal">
+        <span data-i18n="projPending">Installation photography to follow — awaiting project images from the client.</span>
+      </div>
+    </div>
+  </section>
+
   <section class="section-navy">
     <div class="band-split">
       <img id="catalog-band-img" alt="" loading="lazy" decoding="async" sizes="(min-width: 981px) 50vw, 100vw">
@@ -257,6 +292,58 @@
         <p class="lede" data-i18n="collectionsIntro">Six collections, twenty-two categories, one production floor. Every model can be re-specified in your frame finish, rope colour and fabric.</p>
       </div>
       <div id="collections-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SIGNATURE ==================================== -->
+<section class="screen" id="screen-signature" hidden>
+  <div class="sig-hero">
+    <img class="sig-hero-img" alt="" fetchpriority="high" decoding="async" sizes="100vw"
+         src="assets/images/signature/kordia-p006-1600.webp"
+         srcset="assets/images/signature/kordia-p006-880.webp 880w, assets/images/signature/kordia-p006-1600.webp 1600w, assets/images/signature/kordia-p006-2350.webp 2350w">
+    <div class="sig-hero-shade"></div>
+    <div class="sig-hero-inner">
+      <div class="rule-sm rule-light"></div>
+      <span class="eyebrow eyebrow-light" data-i18n="sigKicker">The house line</span>
+      <h1 data-i18n-html="sigTitle">KORDIA<em>Signature.</em></h1>
+      <p class="hero-lede" data-i18n="sigLede">A single designed programme — teak, rope and cast aluminium drawn as one family, so a terrace reads as one idea rather than six catalogue pages.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--cream);padding:110px 0 140px">
+    <div class="shell">
+      <div class="section-head reveal" style="max-width:64ch">
+        <div class="rule-sm"></div>
+        <span class="eyebrow" data-i18n="sigStoryKicker">Why it exists</span>
+        <h2 class="h-sec" data-i18n="sigStoryTitle">One family, not a catalogue.</h2>
+        <p class="lede" data-i18n="sigStoryBody">The trade catalogue answers "what do you make?". Signature answers "what would you specify?". Every piece shares a frame language, a rope gauge and a cushion tone, so an importer can furnish a whole space from one page and know it will arrive matching.</p>
+      </div>
+
+      <div class="sig-grid" id="sig-grid"></div>
+
+      <p class="sig-note" data-i18n="sigDisclosure">Signature imagery is computer-rendered. Production samples are photographed on request — ask us before you specify a finish.</p>
+
+      <div class="sig-actions">
+        <button class="btn btn-primary" data-go="inquiry" type="button" data-i18n="startInquiry">Start your inquiry</button>
+        <button class="link-underline" data-go="collections" type="button" data-i18n="sigToCatalogue">See the full 2026 catalogue →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= BROWSE BY SETTING ============================ -->
+<section class="screen" id="screen-settings" hidden>
+  <div style="background:var(--cream);padding:64px 0 140px">
+    <div class="shell">
+      <nav class="crumb"><button data-go="home" type="button" data-i18n="crumbHome">Home</button> / <span class="here" data-i18n="navSettings">Browse by Setting</span></nav>
+      <div class="section-head">
+        <div class="rule-sm"></div>
+        <span class="eyebrow" data-i18n="setKicker">Where it goes</span>
+        <h1 class="h-page" style="margin:22px 0" data-i18n="setTitle">Start from the space, not the product.</h1>
+        <p class="lede" data-i18n="setIntro">Most buyers arrive with a place in mind — a hotel poolside, a restaurant terrace, a municipal park — rather than a product category. Each setting below opens the models that suit it.</p>
+      </div>
+      <div class="set-grid" id="settings-list"></div>
     </div>
   </div>
 </section>
@@ -362,6 +449,11 @@
           <div class="pd-model tabular" id="pd-ref"></div>
 
           <dl class="glance" id="pd-glance"></dl>
+
+          <div class="pd-dims">
+            <div class="facet-label" data-i18n="specDimensions">Dimensions</div>
+            <ul class="dim-list" id="pd-dimensions"></ul>
+          </div>
 
           <div class="swatch-group">
             <div class="facet-label" data-i18n="frameFinish">Frame finish</div>
@@ -716,7 +808,7 @@
 <div id="cursor" aria-hidden="true"></div>
 <div id="cursor-ring" aria-hidden="true"></div>
 
-<script src="assets/catalog-data.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/catalog-data.js?v=20260806-hires"></script>
+<script src="assets/app.js?v=20260806-hires"></script>
 </body>
 </html>
