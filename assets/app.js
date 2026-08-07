@@ -343,10 +343,10 @@
   const COLLECTION_META = {
     "sofa-lounge":      { cover: "KD-C003-02", ar: "ar-16-9", span: "span-8" },
     "dining":           { cover: "KD-C071-01", ar: "ar-3-4",  span: "span-4" },
-    "sun-leisure":      { cover: "KD-C105-02", ar: "ar-3-4",  span: "span-4" },
+    "sun-leisure":      { cover: "KD-C105-02", ar: "ar-16-9", span: "span-8" },
     "shade-structures": { cover: "KD-C118-01", ar: "ar-3-4",  span: "span-4" },
     "fire-kitchen":     { cover: "KD-C133-02", ar: "ar-3-4",  span: "span-4" },
-    "garden-public":    { cover: "KD-C132-03", ar: "ar-21-9", span: "span-12" },
+    "garden-public":    { cover: "KD-C132-03", ar: "ar-16-9", span: "span-8" },
   };
   const TAGLINES = {
     "sofa-lounge": { en: "Rope-weave and aluminium sofa sets, modular sectionals and lounge chairs.", zh: "绳编与铝合金沙发组合、模块化沙发及休闲单椅。" },
