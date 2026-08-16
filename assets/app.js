@@ -63,11 +63,11 @@
       point1Title: "No trading margin.",
       point1Body: "You are buying from the production line in Chancheng, Foshan — the same line that supplies European and Middle Eastern importers. One point of contact from quotation through loading.",
       point2Title: "Built for weather, not showrooms.",
-      point2Body: "Powder-coated 6063 aluminium frames, UV-stable olefin rope, solid teak and quick-dry foam. Specify the frame finish, the rope colour and the fabric — we hold the stock. <span class=\"verify\">[confirm alloy + rope spec]</span>",
+      point2Body: "Powder-coated 6063 aluminium frames, UV-stable olefin rope, solid teak and quick-dry foam. Specify the frame finish, the rope colour and the fabric — we hold the stock.",
       point3Title: "Your brand on the label.",
       point3Body: "Custom colourways, exclusive dimensions, neutral or branded packaging, and logo application on planters and structures. Tooling for exclusive models on request.",
       point4Title: "Loaded and inspected.",
-      point4Body: "Container loading plans, CBM per SKU, and pre-shipment inspection on every order. FOB Guangzhou / Shenzhen, CIF and DDP on request. <span class=\"verify\">[confirm ports and Incoterms]</span>",
+      point4Body: "Container loading plans, CBM per SKU, and pre-shipment inspection on every order. FOB Guangzhou / Shenzhen, CIF and DDP on request.",
       matRope: "Olefin rope weave", matAlu: "Powder-coated aluminium", matTeak: "Solid teak",
       materialsCare: "Materials & care →", materialsCareShort: "Materials & care",
 
@@ -90,7 +90,7 @@
       customQuote: "Custom quote", add: "Add", added: "Added",
 
       frameFinish: "Frame finish", ropeColour: "Rope colour", selected: "Selected",
-      moqLine: "Quotation within 24 hours · MOQ confirmed per model <span class=\"verify\">[verify]</span>",
+      moqLine: "Quotation within 24 hours · MOQ confirmed per model",
       addToSelection: "Add to selection", inSelection: "✓ In your selection",
       inquireModel: "Inquire about this model", askOnWhatsApp: "Ask on WhatsApp",
       specifications: "Specifications",
@@ -102,10 +102,10 @@
       relatedModels: "Related models", allInCategory: "All {name} →",
       specCatalogRef: "Catalog reference", specCollection: "Collection", specCategory: "Category",
       specCatalogPage: "Catalog page", specSource: "Photography", specSourceValue: "2026 printed catalog",
-      specLead: "Lead time", specLeadValue: "Quoted per order [verify]",
-      specMoq: "MOQ", specMoqValue: "Confirmed per model [verify]",
+      specLead: "Lead time", specLeadValue: "Quoted per order",
+      specMoq: "MOQ", specMoqValue: "Confirmed per model",
       specModel: "Factory model", specDimensions: "Dimensions",
-      specDimsPending: "On request — not published in the factory quote book",
+      specDimsPending: "Available on request",
 
       navSignature: "Signature", navSettings: "Browse by Setting",
       sigKicker: "The house line",
@@ -161,14 +161,13 @@
       factoryBody2: "We supply importers, hospitality groups and specifiers across Europe, the Middle East, Southeast Asia, North America and Australia.",
       slotFactoryFloor: "Photography needed · factory floor, weaving line · 4:3",
       capability: "Capability", underOneRoof: "Under one roof",
-      capabilityNote: "Bracketed figures are placeholders — replace with confirmed numbers from Fianna before launch.",
       requestQuote: "Request a quote",
 
       materialsKicker: "Materials, finishes & care",
       materialsTitle: "What it's made of, and how it holds up.",
       materialsIntro: "Five material families, the finishes we hold in stock, and the care instructions to pass on to your customer.",
       stockFinishes: "Stock frame finishes",
-      ralNote: "Custom RAL matching available above MOQ. <span class=\"verify\">[confirm MOQ]</span>",
+      ralNote: "Custom RAL matching available above MOQ.",
       care: "Care",
 
       shippingKicker: "Shipping, MOQ & lead times", shippingTitle: "From our floor to your port.",
@@ -182,7 +181,8 @@
       hoursValue: "Mon–Sat, 09:00–18:00 (GMT+8)",
       chatOnWhatsApp: "Chat on WhatsApp",
       slotShowroom: "Photography needed · showroom or factory gate · 4:3",
-      slotMap: "Map embed · Chancheng, Foshan",
+      mapTitle: "KORDIA location — Chancheng District, Foshan",
+      mapOpen: "Open in Baidu Maps ↗",
 
       company_: "Company", forBuyers: "For buyers", browseAll: "Browse all models",
       footerAddress: "Chancheng, Foshan<br>Guangdong, China",
@@ -249,11 +249,11 @@
       point1Title: "没有贸易商差价。",
       point1Body: "您直接对接佛山禅城的生产线——同一条线正在供应欧洲与中东的进口商。从报价到装柜，全程一个对接人。",
       point2Title: "为户外气候而造，而非展厅。",
-      point2Body: "6063 铝合金喷粉框架、抗紫外线丙纶绳、实心柚木与速干海绵。框架颜色、绳编配色与面料均可指定，常备现货。<span class=\"verify\">[待确认：铝材与绳材料规格]</span>",
+      point2Body: "6063 铝合金喷粉框架、抗紫外线丙纶绳、实心柚木与速干海绵。框架颜色、绳编配色与面料均可指定，常备现货。",
       point3Title: "贴您自己的品牌。",
       point3Body: "定制配色、专属尺寸、中性或品牌包装，花箱与建筑结构可做标识。专属模具亦可按需开发。",
       point4Title: "装柜与验货。",
-      point4Body: "提供装柜方案、单款 CBM 数据，每单出货前均安排验货。支持广州／深圳 FOB，亦可 CIF 与 DDP。<span class=\"verify\">[待确认：港口与贸易条款]</span>",
+      point4Body: "提供装柜方案、单款 CBM 数据，每单出货前均安排验货。支持广州／深圳 FOB，亦可 CIF 与 DDP。",
       matRope: "丙纶绳编织", matAlu: "铝合金喷粉", matTeak: "实心柚木",
       materialsCare: "材质与保养 →", materialsCareShort: "材质与保养",
 
@@ -276,7 +276,7 @@
       customQuote: "定制报价", add: "加入", added: "已加入",
 
       frameFinish: "框架颜色", ropeColour: "绳编配色", selected: "已选",
-      moqLine: "24 小时内回复报价 · 起订量按款确认 <span class=\"verify\">[待确认]</span>",
+      moqLine: "24 小时内回复报价 · 起订量按款确认",
       addToSelection: "加入选品", inSelection: "✓ 已加入选品",
       inquireModel: "咨询此款", askOnWhatsApp: "WhatsApp 咨询",
       specifications: "产品参数",
@@ -288,10 +288,10 @@
       relatedModels: "相关款式", allInCategory: "查看全部{name} →",
       specCatalogRef: "目录编号", specCollection: "产品系列", specCategory: "产品类别",
       specCatalogPage: "目录页码", specSource: "图片来源", specSourceValue: "2026 纸质目录",
-      specLead: "交货周期", specLeadValue: "按订单报价 [待确认]",
-      specMoq: "起订量", specMoqValue: "按款确认 [待确认]",
+      specLead: "交货周期", specLeadValue: "按订单报价",
+      specMoq: "起订量", specMoqValue: "按款确认",
       specModel: "工厂型号", specDimensions: "尺寸",
-      specDimsPending: "面议 — 报价册未列明",
+      specDimsPending: "可提供，请联系我们",
 
       navSignature: "臻选系列", navSettings: "按场景选购",
       sigKicker: "自主设计系列",
@@ -347,14 +347,13 @@
       factoryBody2: "我们为欧洲、中东、东南亚、北美与澳洲的进口商、酒店集团及设计单位供货。",
       slotFactoryFloor: "待补拍摄 · 工厂车间／编织线 · 4:3",
       capability: "生产能力", underOneRoof: "全流程自有",
-      capabilityNote: "方括号内为占位数据——上线前请替换为 Fianna 确认的实际数字。",
       requestQuote: "索取报价",
 
       materialsKicker: "材质、表面处理与保养",
       materialsTitle: "用什么做的，能扛多久。",
       materialsIntro: "五大材质体系、常备表面处理颜色，以及可转交终端客户的保养说明。",
       stockFinishes: "常备框架颜色",
-      ralNote: "达到起订量可定制 RAL 配色。<span class=\"verify\">[待确认起订量]</span>",
+      ralNote: "达到起订量可定制 RAL 配色。",
       care: "保养",
 
       shippingKicker: "物流、起订量与交期", shippingTitle: "从我们的车间，到您的港口。",
@@ -368,7 +367,8 @@
       hoursValue: "周一至周六 09:00–18:00（GMT+8）",
       chatOnWhatsApp: "WhatsApp 咨询",
       slotShowroom: "待补拍摄 · 展厅或工厂门口 · 4:3",
-      slotMap: "地图嵌入 · 佛山禅城",
+      mapTitle: "KORDIA 位置 — 佛山市禅城区",
+      mapOpen: "在百度地图中打开 ↗",
 
       company_: "公司", forBuyers: "采购专区", browseAll: "浏览全部产品",
       footerAddress: "中国广东省<br>佛山市禅城区",
@@ -432,6 +432,10 @@
     { id: "proj-courtyard",     cap: "capCourtyard", type: "subHospitality", w: 1170 },
   ];
   const FEATURE_PROJECT = { id: "proj-resort-pool", cap: "capResortPool", widths: [960, 1600, 2200] };
+
+  // A tile whose figure is still "[__]" is hidden rather than shown as a gap.
+  // Fill the value in and the tile returns on its own.
+  const withValue = (row) => !String(row.v).includes("[__]");
 
   const CAPABILITY = [
     { v: "[__] m²",  en: "Production area",     zh: "生产面积" },
@@ -533,6 +537,7 @@
     document.querySelectorAll("[data-i18n-placeholder]").forEach((n) => { n.placeholder = t(n.dataset.i18nPlaceholder); });
     document.querySelectorAll("[data-i18n-label]").forEach((n) => { n.setAttribute("aria-label", t(n.dataset.i18nLabel)); });
     document.querySelectorAll("[data-i18n-alt]").forEach((n) => { n.alt = t(n.dataset.i18nAlt); });
+    document.querySelectorAll("[data-i18n-title]").forEach((n) => { n.title = t(n.dataset.i18nTitle); });
     document.querySelectorAll("[data-lang-label]").forEach((n) => {
       n.classList.toggle("is-active", n.dataset.langLabel === state.lang);
     });
@@ -856,9 +861,9 @@
 
   /* ------------------------------------------------------------------ static */
   function renderStaticScreens() {
-    byId("capability-grid").innerHTML = CAPABILITY.map((c) =>
+    byId("capability-grid").innerHTML = CAPABILITY.filter(withValue).map((c) =>
       `<div><b>${esc(c.v)}</b><span>${esc(c[state.lang])}</span></div>`).join("");
-    byId("shipping-grid").innerHTML = SHIPPING_FACTS.map((c) =>
+    byId("shipping-grid").innerHTML = SHIPPING_FACTS.filter(withValue).map((c) =>
       `<div><b>${esc(c.v)}</b><span>${esc(c[state.lang])}</span></div>`).join("");
     // Rendered as a numbered list rather than six image slots: only three
     // factory photographs exist, and five striped placeholders next to one real
@@ -1084,17 +1089,25 @@
   // The eleven Signature renders are page-keyed, not product-keyed — they came
   // from a separate PDF and have no SKU behind them yet.
   function renderSignature() {
+    // Three sheets carry two subjects each; the client asked for one product
+    // per tile, so those use reframed files with their own max width.
+    const SIG_CROPS = { p003: 1250, p009: 1320, p010: 1320 };
     const el = byId("sig-grid");
     if (!el || el.dataset.filled) return;
     const sig = catalog.signature;
     if (!sig) return;
-    el.innerHTML = sig.renders.map((pg, i) => `
+    el.innerHTML = sig.renders.map((pg, i) => {
+      const cropMax = SIG_CROPS[pg];
+      const base = `kordia-${pg}${cropMax ? "c" : ""}`;
+      const max = cropMax || 1600;
+      return `
       <figure class="sig-item${i % 3 === 0 ? " sig-item-wide" : ""}">
-        <img src="assets/images/signature/kordia-${pg}-880.webp"
-             srcset="assets/images/signature/kordia-${pg}-440.webp 440w, assets/images/signature/kordia-${pg}-880.webp 880w, assets/images/signature/kordia-${pg}-1600.webp 1600w"
+        <img src="assets/images/signature/${base}-880.webp"
+             srcset="assets/images/signature/${base}-440.webp 440w, assets/images/signature/${base}-880.webp 880w, assets/images/signature/${base}-${max}.webp ${max}w"
              sizes="(min-width: 981px) 46vw, 100vw"
              loading="lazy" decoding="async" alt="KORDIA Signature ${esc(pg)}">
-      </figure>`).join("");
+      </figure>`;
+    }).join("");
     el.dataset.filled = "1";
   }
 
