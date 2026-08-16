@@ -11,10 +11,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" type="image/webp"
-      href="assets/images/hero/hero-1-1600.webp"
-      imagesrcset="assets/images/hero/hero-1-960.webp 960w, assets/images/hero/hero-1-1600.webp 1600w, assets/images/hero/hero-1-2200.webp 2200w"
+      href="assets/images/hero/hero-sig-1-1600.webp?v=20260807-no-white"
+      imagesrcset="assets/images/hero/hero-sig-1-960.webp?v=20260807-no-white 960w, assets/images/hero/hero-sig-1-1600.webp?v=20260807-no-white 1600w, assets/images/hero/hero-sig-1-2350.webp?v=20260807-no-white 2350w"
       imagesizes="100vw">
-<link rel="stylesheet" href="assets/styles.css?v=20260806-hires">
+<link rel="stylesheet" href="assets/styles.css?v=20260816-projects">
 </head>
 <body>
 
@@ -40,6 +40,7 @@
         <span data-i18n="navCollections">Collections</span> <span class="caret" aria-hidden="true">▾</span>
       </button>
       <button data-go="settings" type="button" data-i18n="navSettings">Browse by Setting</button>
+      <button data-go="projects" type="button" data-i18n="navProjects">Projects</button>
       <button data-go="factory" type="button" data-i18n="navFactory">Factory</button>
       <button data-go="materials" type="button" data-i18n="navMaterials">Materials</button>
       <button data-go="contact" type="button" data-i18n="navContact">Contact</button>
@@ -75,6 +76,7 @@
     <button data-go="signature" type="button" data-i18n="navSignature">Signature</button>
     <button data-go="collections" type="button" data-i18n="navCollections">Collections</button>
     <button data-go="settings" type="button" data-i18n="navSettings">Browse by Setting</button>
+    <button data-go="projects" type="button" data-i18n="navProjects">Projects</button>
     <button data-go="factory" type="button" data-i18n="navFactory">Factory</button>
     <button data-go="materials" type="button" data-i18n="navMaterials">Materials</button>
     <button data-go="shipping" type="button" data-i18n="navShipping">Shipping</button>
@@ -213,8 +215,8 @@
           <div class="label" data-i18n="matAlu">Powder-coated aluminium</div>
         </div>
         <div class="material-tile reveal d3">
-          <img src="assets/images/material/teak-440.webp"
-               srcset="assets/images/material/teak-440.webp 440w, assets/images/material/teak-880.webp 880w"
+          <img src="assets/images/material/material-teak-440.webp"
+               srcset="assets/images/material/material-teak-440.webp 440w, assets/images/material/material-teak-880.webp 880w"
                sizes="(min-width: 981px) calc((min(1440px, 100vw - 64px) - 48px) / 3), (min-width: 621px) calc((100vw - 72px) / 2), calc((100vw - 54px) / 2)"
                width="440" height="587" loading="lazy" decoding="async" alt="Solid teak grain detail">
           <div class="label" data-i18n="matTeak">Solid teak</div>
@@ -240,8 +242,8 @@
     </div>
   </section>
 
-  <!-- Where it ships. Placeholder until the client supplies installation
-       photography — see IA-PROPOSAL.md §"The narrative spine", item 3. -->
+  <!-- Where it ships — IA-PROPOSAL.md §"The narrative spine", item 3.
+       Filled 2026-08-16 with the client's installation photography. -->
   <section class="section section-white" id="home-projects">
     <div class="shell">
       <div class="section-head reveal" style="max-width:58ch">
@@ -250,8 +252,9 @@
         <h2 class="h-sec" data-i18n="projTitle">Hotels, terraces, public parks.</h2>
         <p class="lede" data-i18n="projBody">KORDIA furniture leaves Foshan by the container for importers, hospitality groups and municipal contracts across 40+ countries.</p>
       </div>
-      <div class="proj-placeholder reveal">
-        <span data-i18n="projPending">Installation photography to follow — awaiting project images from the client.</span>
+      <div class="thirds" id="home-projects-grid"></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:28px">
+        <button class="link-underline" data-go="projects" type="button" data-i18n="seeAllProjects">See all projects →</button>
       </div>
     </div>
   </section>
@@ -622,6 +625,42 @@
   </div>
 </section>
 
+<!-- ============================ PROJECTS ============================ -->
+<section class="screen" id="screen-projects" hidden>
+  <div style="background:var(--cream);padding:64px 0 140px">
+    <div class="shell">
+      <nav class="crumb"><button data-go="home" type="button" data-i18n="crumbHome">Home</button> / <span class="here" data-i18n="navProjects">Projects</span></nav>
+      <div class="section-head" style="max-width:760px">
+        <span class="kicker" data-i18n="projectsKicker">Installed and in use</span>
+        <h1 class="h-page" style="margin:22px 0" data-i18n="projectsTitle">Where our furniture ends up.</h1>
+        <p class="lede" data-i18n="projectsIntro">Seafront suites, rooftop restaurants, resort pool decks and private terraces — photographed after installation by the buyers who specified them.</p>
+      </div>
+
+      <figure class="project-feature reveal">
+        <button type="button" data-lightbox="proj-seaside-suite" data-cap="capSeaside">
+          <img src="assets/images/projects/proj-seaside-suite-1600.webp"
+               srcset="assets/images/projects/proj-seaside-suite-960.webp 960w, assets/images/projects/proj-seaside-suite-1600.webp 1600w, assets/images/projects/proj-seaside-suite-2200.webp 2200w"
+               sizes="calc(min(1440px, 100vw - 64px))"
+               width="1600" height="900" decoding="async"
+               data-i18n-alt="capSeaside" alt="Seafront hotel suite with balcony bistro set">
+        </button>
+        <figcaption class="eyebrow" data-i18n="capSeaside">Seafront hotel suite · balcony bistro seating</figcaption>
+      </figure>
+
+      <div class="thirds" id="projects-grid" style="margin-top:24px"></div>
+
+      <div class="project-cta reveal">
+        <h2 class="h-sub" data-i18n="projectsCtaTitle">Specifying for a project?</h2>
+        <p data-i18n="projectsCtaBody">Send the drawings, the mood board or a photo of what you have in mind. We quote hospitality and contract volumes directly.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+          <button class="btn btn-primary" data-go="inquiry" type="button" data-i18n="requestQuote">Request a quote</button>
+          <a class="btn btn-outline" data-wa="heroChatMessage" target="_blank" rel="noopener" href="https://wa.me/8613450846180" data-i18n="chatOnWhatsApp">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ FACTORY ============================ -->
 <section class="screen" id="screen-factory" hidden>
   <section class="section-navy" style="padding:120px 0">
@@ -632,9 +671,13 @@
         <p style="margin:0 0 20px;color:rgba(237,240,248,.8);max-width:58ch;text-wrap:pretty" data-i18n="factoryBody1">KORDIA manufactures in Chancheng District, Foshan — the centre of China's outdoor furniture industry. Production covers rope weaving, aluminium tube fabrication, cast-aluminium casting, powder coating, cushion sewing and final assembly under one roof, which is why a custom colourway is quoted in 48 hours instead of 4 weeks.</p>
         <p style="margin:0;color:rgba(237,240,248,.6);max-width:58ch" data-i18n-html="factoryBody2">We supply importers, hospitality groups and specifiers across Europe, the Middle East, North America and Australia. <span class="verify">[verify export history]</span></p>
       </div>
-      <div class="slot slot-dark ar-4-3">
-        <span class="slot-caption" data-i18n="slotFactoryFloor">Photography needed · factory floor, weaving line · 4:3</span>
-      </div>
+      <img class="ar-4-3" style="width:100%;object-fit:cover"
+      <img class="ar-4-3" style="width:100%;object-fit:cover"
+           src="assets/images/factory/factory-floor-1400.webp"
+           srcset="assets/images/factory/factory-floor-700.webp 700w, assets/images/factory/factory-floor-1400.webp 1400w, assets/images/factory/factory-floor-2100.webp 2100w"
+           sizes="(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 80px) / 2), calc(100vw - 48px)"
+           width="1400" height="1050" loading="lazy" decoding="async"
+           data-i18n-alt="altFactoryFloor" alt="KORDIA aluminium fabrication floor in Chancheng, Foshan">
     </div>
   </section>
 
@@ -649,6 +692,14 @@
   <section class="section section-white">
     <div class="shell">
       <h2 class="h-sub" style="margin-bottom:48px" data-i18n="underOneRoof">Under one roof</h2>
+      <figure class="photo-band reveal">
+        <img src="assets/images/factory/factory-teak-1400.webp"
+             srcset="assets/images/factory/factory-teak-700.webp 700w, assets/images/factory/factory-teak-1400.webp 1400w, assets/images/factory/factory-teak-2100.webp 2100w"
+             sizes="calc(min(1440px, 100vw - 64px))"
+             width="1400" height="1050" loading="lazy" decoding="async"
+             data-i18n-alt="altFactoryTeak" alt="Solid teak chair frames on the KORDIA assembly floor">
+        <figcaption class="eyebrow" data-i18n="capTeakWorkshop">Teak frame assembly · Chancheng, Foshan</figcaption>
+      </figure>
       <div class="thirds" id="process-grid"></div>
     </div>
   </section>
@@ -725,9 +776,13 @@
         </div>
       </div>
       <div>
-        <div class="slot ar-4-3" style="margin-bottom:24px">
-          <span class="slot-caption" data-i18n="slotShowroom">Photography needed · showroom or factory gate · 4:3</span>
-        </div>
+        <img class="ar-4-3" style="width:100%;object-fit:cover;margin-bottom:24px"
+        <img class="ar-4-3" style="width:100%;object-fit:cover;margin-bottom:24px"
+             src="assets/images/factory/factory-yard-880.webp"
+             srcset="assets/images/factory/factory-yard-440.webp 440w, assets/images/factory/factory-yard-880.webp 880w, assets/images/factory/factory-yard-1320.webp 1320w"
+             sizes="(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 64px) * 5 / 12), calc(100vw - 48px)"
+             width="880" height="660" loading="lazy" decoding="async"
+             data-i18n-alt="altFactoryYard" alt="Finished teak loungers in the KORDIA factory yard">
         <div class="slot ar-16-9" style="align-items:center;justify-content:center">
           <span class="slot-caption" data-i18n="slotMap">Map embed · Chancheng, Foshan</span>
         </div>
@@ -749,6 +804,7 @@
       <div>
         <div class="head" data-i18n="company">Company</div>
         <div class="footer-links">
+          <button data-go="projects" type="button" data-i18n="navProjects">Projects</button>
           <button data-go="factory" type="button" data-i18n="navFactory">Factory</button>
           <button data-go="materials" type="button" data-i18n="materialsCareShort">Materials &amp; care</button>
           <button data-go="shipping" type="button" data-i18n="shippingMoq">Shipping &amp; MOQ</button>
@@ -805,10 +861,19 @@
   <span data-i18n="chat">Chat</span>
 </a>
 
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-scrim" id="lightbox-scrim" type="button" aria-label="Close"></button>
+  <figure class="lightbox-fig">
+    <img id="lightbox-img" alt="">
+    <figcaption id="lightbox-cap" class="eyebrow"></figcaption>
+  </figure>
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
+</div>
+
 <div id="cursor" aria-hidden="true"></div>
 <div id="cursor-ring" aria-hidden="true"></div>
 
-<script src="assets/catalog-data.js?v=20260806-hires"></script>
-<script src="assets/app.js?v=20260807-grid-2wide"></script>
+<script src="assets/catalog-data.js?v=20260816-projects"></script>
+<script src="assets/app.js?v=20260816-projects"></script>
 </body>
 </html>

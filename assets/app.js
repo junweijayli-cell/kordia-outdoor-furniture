@@ -19,7 +19,29 @@
       skip: "Skip to content",
       introSub: "Outdoor Furniture · Foshan, China",
       navCollections: "Collections", navFactory: "Factory", navMaterials: "Materials",
-      navShipping: "Shipping", navContact: "Contact", menu: "Menu",
+      navShipping: "Shipping", navContact: "Contact", navProjects: "Projects", menu: "Menu",
+
+      projectsKicker: "Installed and in use",
+      projectsTitle: "Where our furniture ends up.",
+      projectsTeaseTitle: "Hotels, resorts and terraces already furnished.",
+      projectsIntro: "Seafront suites, rooftop restaurants, resort pool decks and private terraces — photographed after installation by the buyers who specified them.",
+      seeAllProjects: "See all projects →",
+      projectsCtaTitle: "Specifying for a project?",
+      projectsCtaBody: "Send the drawings, the mood board or a photo of what you have in mind. We quote hospitality and contract volumes directly.",
+      capSeaside: "Seafront hotel suite · balcony bistro seating",
+      capCourtyard: "Hotel courtyard · market parasol over curved bench seating",
+      capWaterside: "Overwater dining terrace · rattan-look bistro chair",
+      capParasols: "Beach club roof terrace · scalloped market parasols",
+      capRooftop: "Rooftop restaurant · cantilever parasols and rope dining",
+      capLakeside: "Private lakeside terrace · rope lounge set",
+      capResortPool: "Resort pool deck · sun loungers and parasols",
+      subHospitality: "Hospitality", subResidential: "Residential", subRestaurant: "Restaurant & café",
+      altFactoryFloor: "KORDIA aluminium fabrication floor in Chancheng, Foshan",
+      altFactoryYard: "Finished teak loungers in the KORDIA factory yard",
+      altFactoryTeak: "Solid teak chair frames on the KORDIA assembly floor",
+      capTeakWorkshop: "Teak frame assembly · Chancheng, Foshan",
+      close: "Close",
+
       selection: "Selection", getQuote: "Get a Quote", chat: "Chat", chatAria: "Chat on WhatsApp",
       crumbHome: "Home",
 
@@ -181,7 +203,29 @@
       skip: "跳到主要内容",
       introSub: "户外家具 · 中国佛山",
       navCollections: "产品系列", navFactory: "工厂实力", navMaterials: "材质工艺",
-      navShipping: "物流与起订量", navContact: "联系我们", menu: "菜单",
+      navShipping: "物流与起订量", navContact: "联系我们", navProjects: "工程案例", menu: "菜单",
+
+      projectsKicker: "已交付并投入使用",
+      projectsTitle: "我们的家具，最终落在这些地方。",
+      projectsTeaseTitle: "已完成配套的酒店、度假村与露台。",
+      projectsIntro: "海景客房、屋顶餐厅、度假村泳池区与私人露台——由采购方在安装完成后实地拍摄。",
+      seeAllProjects: "查看全部案例 →",
+      projectsCtaTitle: "正在为项目选型？",
+      projectsCtaBody: "把图纸、意向图或参考照片发给我们。酒店工程与大宗采购均可直接报价。",
+      capSeaside: "海景酒店客房 · 阳台咖啡桌椅",
+      capCourtyard: "酒店中庭 · 中柱伞与弧形卡座",
+      capWaterside: "临水用餐露台 · 藤编风格咖啡椅",
+      capParasols: "海滨会所屋顶 · 花边中柱伞",
+      capRooftop: "屋顶餐厅 · 悬臂伞与绳编餐椅",
+      capLakeside: "私人湖景露台 · 绳编沙发组合",
+      capResortPool: "度假村泳池区 · 沙滩椅与遮阳伞",
+      subHospitality: "酒店工程", subResidential: "住宅项目", subRestaurant: "餐饮空间",
+      altFactoryFloor: "KORDIA 佛山禅城铝材加工车间",
+      altFactoryYard: "KORDIA 工厂堆场内的成品柚木躺椅",
+      altFactoryTeak: "KORDIA 组装车间内的实心柚木椅架",
+      capTeakWorkshop: "柚木椅架组装 · 广东佛山禅城",
+      close: "关闭",
+
       selection: "已选产品", getQuote: "获取报价", chat: "咨询", chatAria: "通过 WhatsApp 咨询",
       crumbHome: "首页",
 
@@ -370,6 +414,19 @@
     { key: "olive",  hex: "#6E7355", en: "Olive",     zh: "橄榄绿" },
     { key: "carbon", hex: "#3B3B3D", en: "Carbon",    zh: "碳黑" },
   ];
+  // Client-supplied installation photography (August 2026). `w` is the widest
+  // variant that exists for each — the sources differ in size, so the srcset
+  // ladder is per-image rather than uniform.
+  const PROJECTS = [
+    { id: "proj-resort-pool", cap: "capResortPool", type: "subHospitality", w: 1320 },
+    { id: "proj-rooftop",     cap: "capRooftop",    type: "subRestaurant",  w: 1320 },
+    { id: "proj-parasols",    cap: "capParasols",   type: "subHospitality", w: 1320 },
+    { id: "proj-waterside",   cap: "capWaterside",  type: "subRestaurant",  w: 1280 },
+    { id: "proj-lakeside",    cap: "capLakeside",   type: "subResidential", w: 1320 },
+    { id: "proj-courtyard",   cap: "capCourtyard",  type: "subHospitality", w: 1170 },
+  ];
+  const FEATURE_PROJECT = { id: "proj-seaside-suite", cap: "capSeaside", widths: [960, 1600, 2200] };
+
   const CAPABILITY = [
     { v: "[__] m²",  en: "Production area",     zh: "生产面积" },
     { v: "[__]",     en: "Production lines",    zh: "生产线" },
@@ -469,6 +526,7 @@
     document.querySelectorAll("[data-i18n-html]").forEach((n) => { n.innerHTML = t(n.dataset.i18nHtml); });
     document.querySelectorAll("[data-i18n-placeholder]").forEach((n) => { n.placeholder = t(n.dataset.i18nPlaceholder); });
     document.querySelectorAll("[data-i18n-label]").forEach((n) => { n.setAttribute("aria-label", t(n.dataset.i18nLabel)); });
+    document.querySelectorAll("[data-i18n-alt]").forEach((n) => { n.alt = t(n.dataset.i18nAlt); });
     document.querySelectorAll("[data-lang-label]").forEach((n) => {
       n.classList.toggle("is-active", n.dataset.langLabel === state.lang);
     });
@@ -758,17 +816,52 @@
     }).join("");
   }
 
+  /* ---------------------------------------------------------------- projects */
+  const PROJECT_SIZES = "(min-width: 981px) calc((min(1440px, 100vw - 64px) - 48px) / 3), " +
+    "(min-width: 621px) calc((100vw - 72px) / 2), calc((100vw - 54px) / 2)";
+
+  function projectSrcset(p) {
+    return [440, 880, p.w].filter((w, i, a) => a.indexOf(w) === i && w <= p.w)
+      .map((w) => `assets/images/projects/${p.id}-${w}.webp ${w}w`).join(", ");
+  }
+
+  function projectCard(p) {
+    return `
+      <article class="project-card reveal">
+        <button type="button" data-lightbox="${p.id}" data-cap="${p.cap}" data-w="${p.w}"
+                aria-label="${esc(t(p.cap))}">
+          <img src="assets/images/projects/${p.id}-440.webp" srcset="${projectSrcset(p)}"
+               sizes="${PROJECT_SIZES}" width="440" height="330"
+               loading="lazy" decoding="async" alt="${esc(t(p.cap))}">
+        </button>
+        <div class="cap">${esc(t(p.cap))}</div>
+        <div class="sub">${esc(t(p.type))}</div>
+      </article>`;
+  }
+
+  function renderProjects() {
+    const grid = byId("projects-grid");
+    if (grid) grid.innerHTML = PROJECTS.map(projectCard).join("");
+    // V4 reserved a "Where it ships" section with id="home-projects"; the grid
+    // inside it is home-projects-grid so the two ids do not collide.
+    const home = byId("home-projects-grid");
+    if (home) home.innerHTML = PROJECTS.slice(0, 3).map(projectCard).join("");
+  }
+
   /* ------------------------------------------------------------------ static */
   function renderStaticScreens() {
     byId("capability-grid").innerHTML = CAPABILITY.map((c) =>
       `<div><b>${esc(c.v)}</b><span>${esc(c[state.lang])}</span></div>`).join("");
     byId("shipping-grid").innerHTML = SHIPPING_FACTS.map((c) =>
       `<div><b>${esc(c.v)}</b><span>${esc(c[state.lang])}</span></div>`).join("");
+    // Rendered as a numbered list rather than six image slots: only three
+    // factory photographs exist, and five striped placeholders next to one real
+    // photo reads as unfinished rather than as an honest gap.
     byId("process-grid").innerHTML = PROCESS.map((s) => {
       const [title, body] = s[state.lang];
-      return `<div>
-        <div class="slot ar-4-3"><span class="slot-caption">${esc(title)} · 4:3</span></div>
-        <div class="eyebrow" style="margin:16px 0 8px">${s.n}</div>
+      return `<div class="reveal">
+        <div style="height:1px;background:var(--line);margin-bottom:16px"></div>
+        <div class="eyebrow" style="margin-bottom:8px">${s.n}</div>
         <h3 style="font-family:var(--sans);font-size:1.25rem;font-weight:600;margin:0 0 8px">${esc(title)}</h3>
         <p style="margin:0;font-size:15px">${esc(body)}</p>
       </div>`;
@@ -920,7 +1013,7 @@
   }
 
   /* ------------------------------------------------------------------ router */
-  const SCREENS = ["home", "signature", "settings", "collections", "collection", "product", "inquiry", "factory", "materials", "shipping", "contact"];
+  const SCREENS = ["home", "signature", "settings", "collections", "collection", "product", "projects", "inquiry", "factory", "materials", "shipping", "contact"];
 
   function parseHash() {
     const h = location.hash.replace(/^#\/?/, "");
@@ -939,20 +1032,30 @@
     const r = parseHash();
     state.screen = r.screen;
     if (r.screen === "collection") {
-      if (r.setting !== undefined) {
-        const set = (catalog.settings || []).find((s) => s.slug === r.setting);
-        state.collection = set && set.from.length === 1 ? set.from[0] : "all";
+      // Unknown slugs fall back to "all" rather than rendering an empty grid
+      // that looks broken.
+      if (r.collection !== undefined) {
+        state.collection = collectionBySlug(r.collection) ? r.collection : "all";
         state.subcategory = "all";
       }
-      if (r.collection !== undefined) { state.collection = r.collection; state.subcategory = "all"; }
       if (r.subcategory !== undefined) {
         const sub = subBySlug(r.subcategory);
-        state.subcategory = r.subcategory;
+        state.subcategory = sub ? r.subcategory : "all";
         state.collection = sub ? sub.collection : "all";
       }
       state.limit = PAGE_SIZE;
     }
-    if (r.screen === "product" && r.productId) state.productId = r.productId;
+    // An unknown id used to leave the previous product's content on screen while
+    // the URL said something else, so a mistyped or stale link showed the wrong
+    // model. Send those to the collections index instead.
+    if (r.screen === "product") {
+      if (r.productId && productById(r.productId)) {
+        state.productId = r.productId;
+      } else {
+        location.replace("#/collections");
+        return;
+      }
+    }
 
     SCREENS.forEach((s) => { const el = byId(`screen-${s}`); if (el) el.hidden = s !== state.screen; });
     document.querySelectorAll(".main-nav [data-go]").forEach((b) => {
@@ -1057,6 +1160,7 @@
     renderMega();
     renderHome();
     renderCollectionsIndex();
+    renderProjects();
     renderStaticScreens();
     renderDrawer();
     // Language switch re-renders everything, so clear the fill guards first.
@@ -1079,8 +1183,14 @@
   }
 
   document.addEventListener("click", (ev) => {
-    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-open-setting],[data-add],[data-sub],[data-coll],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll]");
+    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-open-setting],[data-add],[data-sub],[data-coll],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll],[data-lightbox]");
     if (!el) return;
+
+    if (el.dataset.lightbox) {
+      lightboxOpener = el;
+      openLightbox(el.dataset.lightbox, el.dataset.cap, el.dataset.w || 2200);
+      return;
+    }
 
     if (el.dataset.go) { go(el.dataset.go === "home" ? "#/home" : `#/${el.dataset.go}`); return; }
     if (el.dataset.openSetting) { go(`#/set/${el.dataset.openSetting}`); return; }
@@ -1173,7 +1283,10 @@
   byId("drawer-body").addEventListener("change", (ev) => {
     const input = ev.target.closest("[data-qty]");
     if (!input) return;
-    const qty = Math.max(1, Number(input.value) || 1);
+    // Sets are whole units — "1.5 sets" would go out on a real quotation.
+    // Normalise and write the clean value back so the field matches what we send.
+    const qty = Math.min(99999, Math.max(1, Math.round(Number(input.value) || 1)));
+    input.value = String(qty);
     state.selection.set(input.dataset.qty, qty);
     saveSelection();
   });
@@ -1206,9 +1319,34 @@
     byId("wizard-done").scrollIntoView({ behavior: "smooth", block: "center" });
   });
 
+  /* ---------------------------------------------------------------- lightbox */
+  let lightboxOpener = null;
+  function openLightbox(id, capKey, widest) {
+    const img = byId("lightbox-img");
+    // Load the widest variant that exists for this photo; the sources differ in
+    // size so there is no single "large" tier to reach for.
+    img.src = `assets/images/projects/${id}-${widest}.webp`;
+    img.alt = t(capKey);
+    byId("lightbox-cap").textContent = t(capKey);
+    byId("lightbox").hidden = false;
+    document.body.style.overflow = "hidden";
+    byId("lightbox-close").focus();
+  }
+  function closeLightbox() {
+    byId("lightbox").hidden = true;
+    byId("lightbox-img").removeAttribute("src");
+    document.body.style.overflow = "";
+    if (lightboxOpener && lightboxOpener.isConnected) lightboxOpener.focus();
+    lightboxOpener = null;
+  }
+  byId("lightbox-close").addEventListener("click", closeLightbox);
+  byId("lightbox-scrim").addEventListener("click", closeLightbox);
+  byId("lightbox-close").setAttribute("aria-label", t("close"));
+
   document.addEventListener("keydown", (ev) => {
     if (ev.key !== "Escape") return;
-    if (!byId("drawer-layer").hidden) closeDrawer();
+    if (!byId("lightbox").hidden) closeLightbox();
+    else if (!byId("drawer-layer").hidden) closeDrawer();
     else if (!byId("mega").hidden) closeMega();
   });
 
