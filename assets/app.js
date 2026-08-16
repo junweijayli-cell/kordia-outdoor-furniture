@@ -28,9 +28,11 @@
       seeAllProjects: "See all projects →",
       projectsCtaTitle: "Specifying for a project?",
       projectsCtaBody: "Send the drawings, the mood board or a photo of what you have in mind. We quote hospitality and contract volumes directly.",
-      capSeaside: "Seafront hotel suite · balcony bistro seating",
+      capSeaside: "Seafront resort · suite terrace",
+      capAluLine: "Aluminium tube fabrication · cutting, bending, pressing",
+      altFactoryLine: "Aluminium tube cutting, bending and pressing line at KORDIA",
       capCourtyard: "Hotel courtyard · market parasol over curved bench seating",
-      capWaterside: "Overwater dining terrace · rattan-look bistro chair",
+      capWaterside: "Seafront resort · overwater dining terrace",
       capParasols: "Beach club roof terrace · scalloped market parasols",
       capRooftop: "Rooftop restaurant · cantilever parasols and rope dining",
       capLakeside: "Private lakeside terrace · rope lounge set",
@@ -156,7 +158,7 @@
       chancheng: "Chancheng, Foshan",
       factoryTitle: "A furniture factory, not a trading office.",
       factoryBody1: "KORDIA manufactures in Chancheng District, Foshan — the centre of China's outdoor furniture industry. Production covers rope weaving, aluminium tube fabrication, cast-aluminium casting, powder coating, cushion sewing and final assembly under one roof, which is why a custom colourway is quoted in 48 hours instead of 4 weeks.",
-      factoryBody2: "We supply importers, hospitality groups and specifiers across Europe, the Middle East, North America and Australia. <span class=\"verify\">[verify export history]</span>",
+      factoryBody2: "We supply importers, hospitality groups and specifiers across Europe, the Middle East, Southeast Asia, North America and Australia.",
       slotFactoryFloor: "Photography needed · factory floor, weaving line · 4:3",
       capability: "Capability", underOneRoof: "Under one roof",
       capabilityNote: "Bracketed figures are placeholders — replace with confirmed numbers from Fianna before launch.",
@@ -212,9 +214,11 @@
       seeAllProjects: "查看全部案例 →",
       projectsCtaTitle: "正在为项目选型？",
       projectsCtaBody: "把图纸、意向图或参考照片发给我们。酒店工程与大宗采购均可直接报价。",
-      capSeaside: "海景酒店客房 · 阳台咖啡桌椅",
+      capSeaside: "海景度假酒店 · 客房露台",
+      capAluLine: "铝管加工 · 切割、折弯与冲压",
+      altFactoryLine: "KORDIA 铝管切割、折弯与冲压生产线",
       capCourtyard: "酒店中庭 · 中柱伞与弧形卡座",
-      capWaterside: "临水用餐露台 · 藤编风格咖啡椅",
+      capWaterside: "海景度假酒店 · 临水餐位",
       capParasols: "海滨会所屋顶 · 花边中柱伞",
       capRooftop: "屋顶餐厅 · 悬臂伞与绳编餐椅",
       capLakeside: "私人湖景露台 · 绳编沙发组合",
@@ -340,7 +344,7 @@
       chancheng: "广东佛山禅城",
       factoryTitle: "我们是家具工厂，不是贸易公司。",
       factoryBody1: "KORDIA 的生产基地位于佛山禅城区——中国户外家具产业的中心。绳编、铝管加工、铸铝、喷粉、软包车缝与成品组装均在同一厂区完成，因此定制配色可在 48 小时内报价，而非 4 周。",
-      factoryBody2: "我们为欧洲、中东、北美与澳洲的进口商、酒店集团及设计单位供货。<span class=\"verify\">[待确认：出口业绩]</span>",
+      factoryBody2: "我们为欧洲、中东、东南亚、北美与澳洲的进口商、酒店集团及设计单位供货。",
       slotFactoryFloor: "待补拍摄 · 工厂车间／编织线 · 4:3",
       capability: "生产能力", underOneRoof: "全流程自有",
       capabilityNote: "方括号内为占位数据——上线前请替换为 Fianna 确认的实际数字。",
@@ -418,14 +422,16 @@
   // variant that exists for each — the sources differ in size, so the srcset
   // ladder is per-image rather than uniform.
   const PROJECTS = [
-    { id: "proj-resort-pool", cap: "capResortPool", type: "subHospitality", w: 1320 },
-    { id: "proj-rooftop",     cap: "capRooftop",    type: "subRestaurant",  w: 1320 },
-    { id: "proj-parasols",    cap: "capParasols",   type: "subHospitality", w: 1320 },
-    { id: "proj-waterside",   cap: "capWaterside",  type: "subRestaurant",  w: 1280 },
-    { id: "proj-lakeside",    cap: "capLakeside",   type: "subResidential", w: 1320 },
-    { id: "proj-courtyard",   cap: "capCourtyard",  type: "subHospitality", w: 1170 },
+    // The suite terrace and the overwater dining deck are the same resort, so
+    // they run consecutively instead of being scattered through the grid.
+    { id: "proj-seaside-suite", cap: "capSeaside",   type: "subHospitality", w: 1320 },
+    { id: "proj-waterside",     cap: "capWaterside", type: "subRestaurant",  w: 1280 },
+    { id: "proj-rooftop",       cap: "capRooftop",   type: "subRestaurant",  w: 1320 },
+    { id: "proj-parasols",      cap: "capParasols",  type: "subHospitality", w: 1320 },
+    { id: "proj-lakeside",      cap: "capLakeside",  type: "subResidential", w: 1320 },
+    { id: "proj-courtyard",     cap: "capCourtyard", type: "subHospitality", w: 1170 },
   ];
-  const FEATURE_PROJECT = { id: "proj-seaside-suite", cap: "capSeaside", widths: [960, 1600, 2200] };
+  const FEATURE_PROJECT = { id: "proj-resort-pool", cap: "capResortPool", widths: [960, 1600, 2200] };
 
   const CAPABILITY = [
     { v: "[__] m²",  en: "Production area",     zh: "生产面积" },

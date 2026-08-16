@@ -38,7 +38,12 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; max-width: 100%; }
+/* height:auto is load-bearing. The width/height attributes on every <img> become
+   presentational hints, and a fixed height beats `aspect-ratio` — so without
+   this, .ar-16-9 and friends are silently ignored and the image renders at its
+   attribute height. Rules that genuinely need height:100% set it by class and
+   still win over this type selector. */
+img { display: block; max-width: 100%; height: auto; }
 a { color: var(--red); text-decoration: none; }
 a:hover { color: var(--red-dark); }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -404,6 +409,11 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; color: var(--ink); m
 /* ---------- projects ---------- */
 .split-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; max-width: none; }
 .split-head > div { max-width: 760px; }
+.photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.photo-pair figure { margin: 0; }
+.photo-pair img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--sand); }
+.photo-pair figcaption { margin-top: 14px; }
+@media (max-width: 860px) { .photo-pair { grid-template-columns: 1fr; gap: 32px; } }
 .photo-band img { width: 100%; aspect-ratio: 4/3; max-height: 620px; object-fit: cover; background: var(--sand); }
 .photo-band { margin: 0; }
 .photo-band figcaption { margin-top: 14px; }
