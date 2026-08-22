@@ -59,6 +59,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
   background: var(--cream);
   color: var(--body);
   font-family: var(--sans);
@@ -564,7 +565,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
   .mobile-nav.is-open { display: block; }
   .header-inner { min-height: 68px; }
   .section { padding: 96px 0; }
-  .hero { min-height: calc(100vh - 68px); }
+  .hero { min-height: calc(100svh - 68px); }
   .hero-inner { padding: 110px var(--pad) 96px; }
   .hero-lede { max-width: 100%; }
   .browse-body { grid-template-columns: 1fr; gap: 32px; }
@@ -606,6 +607,65 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
   .chat-fab { right: 16px; bottom: 16px; padding: 0 16px; }
   .drawer { border-radius: 0; }
   .ar-21-9 { aspect-ratio: 16/9; }
+
+  /* The header carried four controls behind white-space:nowrap, so it could not
+     shrink below 398px and forced ~190px of horizontal scroll on every phone.
+     Get-a-Quote already appears in the mobile menu, in the hero and as the chat
+     FAB, so the header keeps only brand / language / selection / menu. */
+  .header-actions { gap: 8px; }
+  .header-actions .btn-primary { display: none; }
+  .selection-btn span { display: none; }
+  .selection-btn { padding: 0 10px; }
+  .header-inner { gap: 8px; }
+
+  /* Hero content ran 791px against a 780px viewport — nothing below the
+     headline was reachable without scrolling past a full screen of padding. */
+  .hero-inner { padding: 72px var(--pad) 56px; }
+
+  /* iOS zooms the whole page when a focused control is under 16px. */
+  /* Class-scoped rules (.sort-wrap select, .drawer-item input) outrank a bare
+     element selector, so they are named explicitly. */
+  input, select, textarea, .field-line,
+  .sort-wrap select, .drawer-item input { font-size: 16px; }
+
+  /* Give the lightbox the screen; 40px of desktop padding left a 295px image. */
+  .lightbox { padding: 12px; }
+  .lightbox-close { right: 10px; top: 10px; }
+  .lightbox-fig img { max-height: calc(100vh - 96px); }
+}
+
+/* Landscape phones. The hero is sized for a tall screen, so on a 375px-high
+   viewport it ran 2.1x the screen — two-plus swipes of hero before any content.
+   Keyed to height rather than width, because an 812px-wide landscape phone
+   otherwise looks like a small desktop to the width queries. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: 0; }
+  .hero-inner { padding: 56px var(--pad) 40px; }
+  .hero h1 { font-size: clamp(32px, 5.4vw, 58px); margin-bottom: 20px; }
+  .hero-lede { font-size: 15px; margin-bottom: 24px; }
+  .hero-stats { margin-bottom: 24px; gap: 24px; }
+  /* Vertical space is the scarce axis here, so the actions go back to a row. */
+  .hero-actions { flex-direction: row; flex-wrap: wrap; }
+  .hero-actions .btn { width: auto; }
+  .sig-hero { min-height: 0; padding: 56px 0 40px; }
+  .section { padding: 56px 0; }
+}
+
+/* Touch targets. Keyed to the pointer, not the width — a small tablet is still
+   a finger. 44px is the WCAG 2.5.5 / Apple HIG minimum; inline links inside
+   running text are exempt and deliberately not touched here. */
+@media (pointer: coarse) {
+  .facet-list button { min-height: 44px; }
+  .steps button { min-height: 44px; }
+  .chip { min-height: 44px; }
+  .text-link { min-height: 44px; display: inline-flex; align-items: center; }
+  .drawer-remove { min-height: 44px; padding: 0 4px; }
+  .hero-pager button { min-height: 44px; }
+  .add-btn { min-height: 44px; }
+  /* Breadcrumbs are exempt from the 44px rule as inline text, but the hit area
+     is free to grow: the negative margin absorbs the padding so the trail sits
+     exactly where it did. */
+  .crumb button { padding: 11px 2px; margin: -11px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
