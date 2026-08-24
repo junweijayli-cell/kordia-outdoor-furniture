@@ -399,12 +399,12 @@
     })),
   };
   const COLLECTION_META = {
-    "sofa-lounge":      { cover: "KD-C034-01", ar: "ar-16-9", span: "span-8" },
-    "dining":           { cover: "KD-C071-01", ar: "ar-3-4",  span: "span-4" },
-    "sun-leisure":      { cover: "KD-C105-02", ar: "ar-16-9", span: "span-8" },
-    "shade-structures": { coverImage: PERGOLA_COVER, ar: "ar-3-4", span: "span-4" },
-    "fire-kitchen":     { cover: "KD-C133-02", ar: "ar-3-4",  span: "span-4" },
-    "garden-public":    { cover: "KD-C132-03", ar: "ar-16-9", span: "span-8" },
+    "sofa-lounge":      { cover: "KD-C034-01", ar: "ar-3-2", span: "span-6" },
+    "dining":           { cover: "KD-C071-01", ar: "ar-3-2", span: "span-6" },
+    "sun-leisure":      { cover: "KD-C105-02", ar: "ar-3-2", span: "span-6" },
+    "shade-structures": { coverImage: PERGOLA_COVER, ar: "ar-3-2", span: "span-6" },
+    "fire-kitchen":     { cover: "KD-C133-02", ar: "ar-3-2", span: "span-6" },
+    "garden-public":    { cover: "KD-C132-03", ar: "ar-3-2", span: "span-6" },
   };
   const collectionCover = (slug) => {
     const meta = COLLECTION_META[slug];
@@ -600,6 +600,8 @@
       const wide = meta.span === "span-12";
       const coverSizes = meta.span === "span-12"
         ? "calc(min(1440px, 100vw - 64px))"
+        : meta.span === "span-6"
+          ? "(min-width: 981px) calc((min(1440px, 100vw) - 88px) / 2), (min-width: 621px) calc((100vw - 72px) / 2), calc(100vw - 36px)"
         : meta.span === "span-8"
           ? "(min-width: 981px) 950px, (min-width: 621px) 50vw, 100vw"
           : "(min-width: 981px) 950px, (min-width: 621px) 100vw, 200vw";
