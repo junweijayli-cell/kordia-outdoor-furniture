@@ -606,7 +606,7 @@
           ? "(min-width: 981px) 950px, (min-width: 621px) 50vw, 100vw"
           : "(min-width: 981px) 950px, (min-width: 621px) 100vw, 200vw";
       return `
-        <button class="coll-card reveal d${(i % 4) + 1} ${meta.span}" type="button" data-open-collection="${c.slug}">
+        <button class="coll-card ${meta.span}" type="button" data-open-collection="${c.slug}">
           <span class="frame ${meta.ar}" style="display:block">
             <img src="${v.src}" srcset="${srcset(cover)}"
                  sizes="${coverSizes}"

@@ -277,10 +277,11 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
 
 /* collection cards on home */
 .home-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px 24px; }
-.coll-card { background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.coll-card { align-self: start; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
 .coll-card .frame { overflow: hidden; background: var(--sand); }
 .coll-card .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2,.7,.3,1); }
 .coll-card:hover .frame img { transform: scale(1.04); }
+.coll-card[data-open-collection="shade-structures"] .frame img { height: calc(100% + 4px); }
 .coll-card h3 { font-size: 1.5rem; margin: 20px 0 8px; }
 .coll-card p { margin: 0 0 10px; font-size: 15px; color: var(--muted); max-width: 52ch; }
 .coll-card .count { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); font-weight: 500; }
