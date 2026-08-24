@@ -388,13 +388,28 @@
     },
   };
 
+  // Covers are normally catalogue product ids. shade-structures is the exception:
+  // the client rejected the thatched-gazebo render, so its cover is a standalone
+  // installation photo of the white louvred pergola (WENS gazebo catalogue, p.31).
+  // Same shape as a product so srcset()/atLeast() need no special case.
+  const PERGOLA_COVER = {
+    variants: [440, 880, 1320, 1600].map((w) => ({
+      w, h: Math.round((w * 934) / 1686),
+      src: `assets/images/collections/shade-pergola-white-${w}.webp`,
+    })),
+  };
   const COLLECTION_META = {
-    "sofa-lounge":      { cover: "KD-C003-02", ar: "ar-16-9", span: "span-8" },
+    "sofa-lounge":      { cover: "KD-C034-01", ar: "ar-16-9", span: "span-8" },
     "dining":           { cover: "KD-C071-01", ar: "ar-3-4",  span: "span-4" },
     "sun-leisure":      { cover: "KD-C105-02", ar: "ar-16-9", span: "span-8" },
-    "shade-structures": { cover: "KD-C118-01", ar: "ar-3-4",  span: "span-4" },
+    "shade-structures": { coverImage: PERGOLA_COVER, ar: "ar-3-4", span: "span-4" },
     "fire-kitchen":     { cover: "KD-C133-02", ar: "ar-3-4",  span: "span-4" },
     "garden-public":    { cover: "KD-C132-03", ar: "ar-16-9", span: "span-8" },
+  };
+  const collectionCover = (slug) => {
+    const meta = COLLECTION_META[slug];
+    return meta.coverImage || productById(meta.cover) ||
+      catalog.products.find((p) => p.collection === slug);
   };
   const TAGLINES = {
     "sofa-lounge": { en: "Rope-weave and aluminium sofa sets, modular sectionals and lounge chairs.", zh: "绳编与铝合金沙发组合、模块化沙发及休闲单椅。" },
@@ -580,7 +595,7 @@
     byId("stat-categories").textContent = String(catalog.subcategories.length);
     byId("home-collections").innerHTML = catalog.collections.map((c, i) => {
       const meta = COLLECTION_META[c.slug];
-      const cover = productById(meta.cover) || catalog.products.find((p) => p.collection === c.slug);
+      const cover = collectionCover(c.slug);
       const v = atLeast(cover, 800);
       const wide = meta.span === "span-12";
       const coverSizes = meta.span === "span-12"
@@ -622,7 +637,7 @@
     byId("collections-kicker").textContent =
       `${catalog.subcategories.length} ${t("category")} · ${catalog.total} ${t("photos")}`;
     byId("collections-list").innerHTML = catalog.collections.map((c) => {
-      const cover = productById(COLLECTION_META[c.slug].cover) || catalog.products.find((p) => p.collection === c.slug);
+      const cover = collectionCover(c.slug);
       const v = atLeast(cover, 800);
       return `
         <div class="coll-row">
