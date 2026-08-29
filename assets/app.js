@@ -90,6 +90,14 @@
       customQuote: "Custom quote", add: "Add", added: "Added",
 
       frameFinish: "Frame finish", ropeColour: "Rope colour", selected: "Selected",
+      supplierMaterialReference: "Supplier material reference",
+      supplierPaletteTitle: "Supplier finish & weave references",
+      supplierPaletteIntro: "Real production samples from our outdoor-material supplier, matched only to product types that can use them.",
+      finishReferenceTitle: "Outdoor powder-coat finishes",
+      finishReferenceBody: "Neutral weather-resistant frame finishes for applicable aluminium furniture and shade structures.",
+      ropeReferenceTitle: "Outdoor rope & weave options",
+      ropeReferenceBody: "Representative rope and woven patterns for applicable seating and dining models.",
+      paletteNote: "Reference samples only. Final colour, texture and availability are confirmed with your quotation.",
       moqLine: "Quotation within 24 hours · MOQ confirmed per model",
       addToSelection: "Add to selection", inSelection: "✓ In your selection",
       inquireModel: "Inquire about this model", askOnWhatsApp: "Ask on WhatsApp",
@@ -276,6 +284,14 @@
       customQuote: "定制报价", add: "加入", added: "已加入",
 
       frameFinish: "框架颜色", ropeColour: "绳编配色", selected: "已选",
+      supplierMaterialReference: "供应商材质参考",
+      supplierPaletteTitle: "供应商表面处理与编织参考",
+      supplierPaletteIntro: "来自户外材料供应商的实物样卡，仅匹配可使用相应工艺的产品类别。",
+      finishReferenceTitle: "户外喷粉表面处理",
+      finishReferenceBody: "适用于相关铝合金家具与遮阳结构的耐候中性色框架饰面。",
+      ropeReferenceTitle: "户外绳编与编织选项",
+      ropeReferenceBody: "适用于相关座椅与餐桌系列的绳编和编织纹样参考。",
+      paletteNote: "图片仅作样品参考，最终颜色、质感与供货情况以报价确认结果为准。",
       moqLine: "24 小时内回复报价 · 起订量按款确认",
       addToSelection: "加入选品", inSelection: "✓ 已加入选品",
       inquireModel: "咨询此款", askOnWhatsApp: "WhatsApp 咨询",
@@ -389,12 +405,12 @@
   };
 
   // Covers are normally catalogue product ids. shade-structures is the exception:
-  // the client rejected the thatched-gazebo render, so its cover is a standalone
-  // installation photo of the white louvred pergola (WENS gazebo catalogue, p.31).
+  // the client supplied a separate high-resolution white louvred gazebo image
+  // after rejecting the earlier thatched-gazebo cover.
   // Same shape as a product so srcset()/atLeast() need no special case.
   const PERGOLA_COVER = {
     variants: [440, 880, 1320, 1600].map((w) => ({
-      w, h: Math.round((w * 934) / 1686),
+      w, h: Math.round((w * 3312) / 5120),
       src: `assets/images/collections/shade-pergola-white-${w}.webp`,
     })),
   };
@@ -433,6 +449,46 @@
     { key: "olive",  hex: "#6E7355", en: "Olive",     zh: "橄榄绿" },
     { key: "carbon", hex: "#3B3B3D", en: "Carbon",    zh: "碳黑" },
   ];
+  const FRAME_FINISH_SUBCATEGORIES = new Set([
+    "rope-sofa-sets", "aluminium-sofa-sets", "modular-sofas", "lounge-chairs", "rocking-recliners",
+    "rope-dining", "teak-dining", "bistro-sets", "bar-sets", "sun-loungers", "daybeds",
+    "garden-swings", "hanging-chairs", "pergolas-gazebos", "parasols", "fire-pits",
+    "benches", "picnic-public", "planters",
+  ]);
+  const ROPE_SUBCATEGORIES = new Set(["rope-sofa-sets", "rope-dining", "hanging-chairs"]);
+  const MATERIAL_REFERENCES = {
+    finish: {
+      title: "finishReferenceTitle", body: "finishReferenceBody", alt: "Outdoor powder-coat finish sample cards",
+      src: "assets/images/material-references/frame-finishes-480.webp",
+      srcset: "assets/images/material-references/frame-finishes-480.webp 480w, assets/images/material-references/frame-finishes-960.webp 960w",
+      width: 480, height: 640,
+    },
+    rope: {
+      title: "ropeReferenceTitle", body: "ropeReferenceBody", alt: "Outdoor rope and weave material samples",
+      src: "assets/images/material-references/rope-weave-480.webp",
+      srcset: "assets/images/material-references/rope-weave-480.webp 480w, assets/images/material-references/rope-weave-960.webp 960w",
+      width: 480, height: 360,
+    },
+  };
+  const materialReferenceCard = (ref) => `
+    <article class="material-reference-card">
+      <span class="material-reference-media">
+        <img src="${ref.src}" srcset="${ref.srcset}"
+             sizes="(min-width: 981px) 420px, calc(100vw - 80px)"
+             width="${ref.width}" height="${ref.height}" loading="lazy" decoding="async"
+             alt="${esc(ref.alt)}">
+      </span>
+      <span class="material-reference-copy">
+        <strong>${esc(t(ref.title))}</strong>
+        <span>${esc(t(ref.body))}</span>
+      </span>
+    </article>`;
+  const materialReferencesFor = (product) => {
+    const refs = [];
+    if (FRAME_FINISH_SUBCATEGORIES.has(product.subcategory)) refs.push(MATERIAL_REFERENCES.finish);
+    if (ROPE_SUBCATEGORIES.has(product.subcategory)) refs.push(MATERIAL_REFERENCES.rope);
+    return refs;
+  };
   // Client-supplied installation photography (August 2026). `w` is the widest
   // variant that exists for each — the sources differ in size, so the srcset
   // ladder is per-image rather than uniform.
@@ -793,6 +849,11 @@
       </button>`;
     }).join("");
 
+    const finishApplies = FRAME_FINISH_SUBCATEGORIES.has(p.subcategory);
+    const ropeApplies = ROPE_SUBCATEGORIES.has(p.subcategory);
+    byId("pd-finish-group").hidden = !finishApplies;
+    byId("pd-rope-group").hidden = !ropeApplies;
+
     byId("pd-finishes").innerHTML = FINISHES.map((f) => `
       <button class="swatch ${state.finish === f.key ? "is-active" : ""}" type="button"
               data-finish="${f.key}" title="${esc(f[state.lang])}" aria-label="${esc(f[state.lang])}"
@@ -804,13 +865,21 @@
     byId("pd-finish-label").textContent = FINISHES.find((f) => f.key === state.finish)[state.lang];
     byId("pd-rope-label").textContent = ROPES.find((r) => r.key === state.rope)[state.lang];
 
+    const materialRefs = materialReferencesFor(p);
+    const materialRefPanel = byId("pd-material-reference");
+    materialRefPanel.hidden = materialRefs.length === 0;
+    materialRefPanel.innerHTML = materialRefs.length ? `
+      <div class="facet-label">${esc(t("supplierMaterialReference"))}</div>
+      <div class="material-reference-grid">${materialRefs.map(materialReferenceCard).join("")}</div>
+      <p class="material-reference-note">${esc(t("paletteNote"))}</p>` : "";
+
     const sel = state.selection.has(p.id);
     const add = byId("pd-add");
     add.textContent = sel ? t("inSelection") : t("addToSelection");
     add.setAttribute("aria-pressed", String(sel));
     byId("pd-whatsapp").href = wa(`${t("productMessage")} ${p.id} — ${p.name[state.lang]}.`);
 
-    byId("pd-specs").innerHTML = [
+    const specs = [
       [t("specCatalogRef"), p.id],
       [t("specModel"), p.model || "—"],
       [t("specDimensions"), p.dimensions && p.dimensions.length
@@ -819,11 +888,15 @@
       [t("specCollection"), p.collectionName[state.lang]],
       [t("specCategory"), p.subcategoryName[state.lang]],
       [t("specCatalogPage"), String(p.catalogPage)],
-      [t("frameFinish"), FINISHES.find((f) => f.key === state.finish)[state.lang]],
-      [t("ropeColour"), ROPES.find((r) => r.key === state.rope)[state.lang]],
+    ];
+    if (finishApplies) specs.push([t("frameFinish"), FINISHES.find((f) => f.key === state.finish)[state.lang]]);
+    if (ropeApplies) specs.push([t("ropeColour"), ROPES.find((r) => r.key === state.rope)[state.lang]]);
+    specs.push(
       [t("specLead"), t("specLeadValue")],
       [t("specMoq"), t("specMoqValue")],
-    ].map(([k, v]) => `<tr><th scope="row">${esc(k)}</th><td class="tabular">${esc(v)}</td></tr>`).join("");
+    );
+    byId("pd-specs").innerHTML = specs.map(([k, v]) =>
+      `<tr><th scope="row">${esc(k)}</th><td class="tabular">${esc(v)}</td></tr>`).join("");
 
     const relBtn = byId("pd-all-in-category");
     relBtn.textContent = fmt("allInCategory", { name: p.subcategoryName[state.lang] });
@@ -919,6 +992,9 @@
 
     byId("finish-strip").innerHTML = FINISHES.map((f) =>
       `<div><div class="sw" style="background:${f.hex}"></div><span>${esc(f[state.lang])}</span></div>`).join("");
+
+    byId("material-reference-grid").innerHTML = [MATERIAL_REFERENCES.finish, MATERIAL_REFERENCES.rope]
+      .map(materialReferenceCard).join("");
 
     byId("footer-collections").innerHTML = catalog.collections.map((c) =>
       `<button type="button" data-open-collection="${c.slug}">${esc(label(c))}</button>`).join("");

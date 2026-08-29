@@ -13,7 +13,7 @@
       href="assets/images/hero/hero-sig-1-1600.webp?v=20260807-no-white"
       imagesrcset="assets/images/hero/hero-sig-1-960.webp?v=20260807-no-white 960w, assets/images/hero/hero-sig-1-1600.webp?v=20260807-no-white 1600w, assets/images/hero/hero-sig-1-2350.webp?v=20260807-no-white 2350w"
       imagesizes="100vw">
-<link rel="stylesheet" href="assets/styles.css?v=20260825-align">
+<link rel="stylesheet" href="assets/styles.css?v=20260830-materials">
 </head>
 <body>
 
@@ -457,17 +457,19 @@
             <ul class="dim-list" id="pd-dimensions"></ul>
           </div>
 
-          <div class="swatch-group">
+          <div class="swatch-group" id="pd-finish-group">
             <div class="facet-label" data-i18n="frameFinish">Frame finish</div>
             <div class="swatches" id="pd-finishes"></div>
             <div class="swatch-note"><span data-i18n="selected">Selected</span>: <span id="pd-finish-label" style="color:var(--ink)"></span></div>
           </div>
 
-          <div class="swatch-group" style="margin-bottom:36px">
+          <div class="swatch-group" id="pd-rope-group" style="margin-bottom:36px">
             <div class="facet-label" data-i18n="ropeColour">Rope colour</div>
             <div class="swatches" id="pd-ropes"></div>
             <div class="swatch-note"><span data-i18n="selected">Selected</span>: <span id="pd-rope-label" style="color:var(--ink)"></span></div>
           </div>
+
+          <div class="product-material-reference" id="pd-material-reference" hidden></div>
 
           <div class="moq tabular" data-i18n-html="moqLine">Quotation within 24 hours · MOQ on request</div>
 
@@ -736,6 +738,16 @@
         <div class="finish-strip" id="finish-strip"></div>
         <p style="margin:28px 0 0;font-size:15px" data-i18n-html="ralNote">Custom RAL matching available above MOQ.</p>
       </div>
+
+      <div class="supplier-reference-block">
+        <div class="section-head supplier-reference-head">
+          <span class="kicker" data-i18n="supplierMaterialReference">Supplier material reference</span>
+          <h2 class="h-sub" data-i18n="supplierPaletteTitle">Supplier finish &amp; weave references</h2>
+          <p data-i18n="supplierPaletteIntro">Real production samples from our outdoor-material supplier, matched only to product types that can use them.</p>
+        </div>
+        <div class="material-reference-grid material-reference-grid-wide" id="material-reference-grid"></div>
+        <p class="material-reference-note" data-i18n="paletteNote">Reference samples only. Final colour, texture and availability are confirmed with your quotation.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -882,6 +894,6 @@
 <div id="cursor-ring" aria-hidden="true"></div>
 
 <script src="assets/catalog-data.js?v=20260822-type"></script>
-<script src="assets/app.js?v=20260825-align"></script>
+<script src="assets/app.js?v=20260830-materials"></script>
 </body>
 </html>

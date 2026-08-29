@@ -281,7 +281,6 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
 .coll-card .frame { overflow: hidden; background: var(--sand); }
 .coll-card .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2,.7,.3,1); }
 .coll-card:hover .frame img { transform: scale(1.04); }
-.coll-card[data-open-collection="shade-structures"] .frame img { height: calc(100% + 4px); }
 .coll-card h3 { font-size: 1.5rem; margin: 20px 0 8px; }
 .coll-card p { margin: 0 0 10px; font-size: 15px; color: var(--muted); max-width: 52ch; }
 .coll-card .count { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); font-weight: 500; }
@@ -395,6 +394,21 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
 .swatch { width: 44px; height: 44px; border-radius: 4px; cursor: pointer; border: 1px solid var(--line); }
 .swatch.is-active { outline: 2px solid var(--ink); outline-offset: 2px; }
 .swatch-note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+.product-material-reference { margin: 0 0 28px; padding-top: 4px; }
+.material-reference-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.material-reference-card { display: flex; flex-direction: column; min-width: 0; background: var(--paper); border: 1px solid var(--line); }
+.material-reference-media { display: grid; place-items: center; aspect-ratio: 4/3; overflow: hidden; background: #e9e7e0; }
+.material-reference-media img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.material-reference-copy { display: flex; flex-direction: column; gap: 8px; padding: 16px; }
+.material-reference-copy strong { color: var(--ink); font-size: 14px; line-height: 1.35; }
+.material-reference-copy > span { color: var(--muted); font-size: 13px; line-height: 1.5; }
+.material-reference-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.supplier-reference-block { margin-top: 72px; padding-top: 72px; border-top: 1px solid var(--line); }
+.supplier-reference-head { margin-bottom: 32px; }
+.supplier-reference-head h2 { margin: 18px 0 12px; }
+.supplier-reference-head p { margin: 0; color: var(--muted); max-width: 64ch; }
+.material-reference-grid-wide { gap: 24px; }
+.material-reference-grid-wide .material-reference-copy { padding: 22px; }
 .moq { padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 28px; font-size: 15px; color: var(--ink); }
 .pd-actions { display: flex; flex-direction: column; gap: 14px; }
 .pd-actions .row { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -599,6 +613,8 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
   .hero-div { display: none; }
   .hero-pager { display: none; }
   .home-grid > * { grid-column: span 12 !important; }
+  .material-reference-grid { grid-template-columns: 1fr; }
+  .supplier-reference-block { margin-top: 48px; padding-top: 48px; }
   .product-grid, .related-grid, .thirds, .cap-grid, .footer-cols, .pd-thumbs { grid-template-columns: repeat(2, 1fr); }
   .product-grid { gap: 28px 16px; }
   .band-copy { padding: 64px var(--pad); }
