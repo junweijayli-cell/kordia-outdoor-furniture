@@ -293,10 +293,10 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
 .split-5-7 { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; }
 .split-7-5 { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; }
 .sticky-col { position: sticky; top: 120px; }
-.point { display: grid; grid-template-columns: auto 1fr; gap: 0 32px; padding: 40px 0; border-bottom: 1px solid var(--line); }
+.point { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 0 32px; padding: 40px 0; border-bottom: 1px solid var(--line); }
 .point:first-child { padding-top: 0; }
 .point:last-child { border-bottom: 0; padding-bottom: 0; }
-.point b { font-family: var(--sans); font-size: 3rem; color: var(--line); line-height: 1; font-weight: 600; }
+.point b { font-family: var(--sans); font-size: 3rem; color: var(--line); line-height: 1; font-weight: 600; font-variant-numeric: tabular-nums; }
 .point h3 { font-family: var(--sans); font-size: 1.25rem; font-weight: 600; margin: 0 0 12px; }
 .point p { margin: 0; max-width: 60ch; }
 .verify { color: var(--red); }
@@ -635,6 +635,7 @@ h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.015em
   .chat-fab { right: 16px; bottom: 16px; padding: 0 16px; }
   .drawer { border-radius: 0; }
   .ar-21-9 { aspect-ratio: 16/9; }
+  .point { grid-template-columns: 58px minmax(0, 1fr); column-gap: 20px; }
 
   /* The header carried four controls behind white-space:nowrap, so it could not
      shrink below 398px and forced ~190px of horizontal scroll on every phone.
