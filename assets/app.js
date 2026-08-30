@@ -10,6 +10,19 @@
     return;
   }
 
+  // These two collection covers were previously enlarged with an AI upscaler,
+  // which shifted their catalogue colours. Serve variants rebuilt directly
+  // from the untouched RGB source photography instead.
+  ["034-01", "071-01"].forEach((ref) => {
+    const product = catalog.products.find((item) => item.ref === ref);
+    if (!product) return;
+    product.image = `assets/images/catalog/catalog-${ref}-source-800.webp`;
+    product.variants = [400, 800, 1600, 2400].map((w) => ({
+      w, h: Math.round((w * 695) / 1069),
+      src: `assets/images/catalog/catalog-${ref}-source-${w}.webp`,
+    }));
+  });
+
   const WA = "8613450846180";
   const PAGE_SIZE = 24;
 
