@@ -91,8 +91,8 @@
 
       frameFinish: "Frame finish", ropeColour: "Rope colour", selected: "Selected",
       supplierMaterialReference: "Supplier material reference",
-      supplierPaletteTitle: "Supplier finish & weave references",
-      supplierPaletteIntro: "Real production samples from our outdoor-material supplier, matched only to product types that can use them.",
+      supplierPaletteTitle: "Colour & weave palette library",
+      supplierPaletteIntro: "Seven production sample palettes from our outdoor-material supplier, matched only to product types that can use them.",
       finishReferenceTitle: "Outdoor powder-coat finishes",
       finishReferenceBody: "Neutral weather-resistant frame finishes for applicable aluminium furniture and shade structures.",
       ropeReferenceTitle: "Outdoor rope & weave options",
@@ -285,8 +285,8 @@
 
       frameFinish: "框架颜色", ropeColour: "绳编配色", selected: "已选",
       supplierMaterialReference: "供应商材质参考",
-      supplierPaletteTitle: "供应商表面处理与编织参考",
-      supplierPaletteIntro: "来自户外材料供应商的实物样卡，仅匹配可使用相应工艺的产品类别。",
+      supplierPaletteTitle: "颜色与编织样板库",
+      supplierPaletteIntro: "七组来自户外材料供应商的实物样板，仅匹配可使用相应工艺的产品类别。",
       finishReferenceTitle: "户外喷粉表面处理",
       finishReferenceBody: "适用于相关铝合金家具与遮阳结构的耐候中性色框架饰面。",
       ropeReferenceTitle: "户外绳编与编织选项",
@@ -463,6 +463,36 @@
       srcset: "assets/images/material-references/frame-finishes-480.webp 480w, assets/images/material-references/frame-finishes-960.webp 960w",
       width: 480, height: 640,
     },
+    muted: {
+      alt: "Muted powder-coat colour sample fan",
+      src: "assets/images/material-references/muted-finishes-480.webp",
+      srcset: "assets/images/material-references/muted-finishes-480.webp 480w, assets/images/material-references/muted-finishes-960.webp 960w",
+      width: 480, height: 640,
+    },
+    warm: {
+      alt: "Warm textured powder-coat sample cards",
+      src: "assets/images/material-references/warm-finishes-480.webp",
+      srcset: "assets/images/material-references/warm-finishes-480.webp 480w, assets/images/material-references/warm-finishes-960.webp 960w",
+      width: 480, height: 640,
+    },
+    metallic: {
+      alt: "Cool metallic powder-coat sample cards",
+      src: "assets/images/material-references/metallic-finishes-480.webp",
+      srcset: "assets/images/material-references/metallic-finishes-480.webp 480w, assets/images/material-references/metallic-finishes-960.webp 960w",
+      width: 480, height: 640,
+    },
+    pastel: {
+      alt: "Pastel powder-coat colour sample fan",
+      src: "assets/images/material-references/pastel-finishes-480.webp",
+      srcset: "assets/images/material-references/pastel-finishes-480.webp 480w, assets/images/material-references/pastel-finishes-960.webp 960w",
+      width: 480, height: 480,
+    },
+    bright: {
+      alt: "Bright powder-coat colour sample fan",
+      src: "assets/images/material-references/bright-finishes-480.webp",
+      srcset: "assets/images/material-references/bright-finishes-480.webp 480w, assets/images/material-references/bright-finishes-960.webp 960w",
+      width: 480, height: 360,
+    },
     rope: {
       title: "ropeReferenceTitle", body: "ropeReferenceBody", alt: "Outdoor rope and weave material samples",
       src: "assets/images/material-references/rope-weave-480.webp",
@@ -470,18 +500,27 @@
       width: 480, height: 360,
     },
   };
-  const materialReferenceCard = (ref) => `
-    <article class="material-reference-card">
+  const MATERIAL_REFERENCE_GALLERY = [
+    MATERIAL_REFERENCES.finish,
+    MATERIAL_REFERENCES.muted,
+    MATERIAL_REFERENCES.warm,
+    MATERIAL_REFERENCES.metallic,
+    MATERIAL_REFERENCES.pastel,
+    MATERIAL_REFERENCES.bright,
+    MATERIAL_REFERENCES.rope,
+  ];
+  const materialReferenceCard = (ref, { imageOnly = false } = {}) => `
+    <article class="material-reference-card${imageOnly ? " is-image-only" : ""}">
       <span class="material-reference-media">
         <img src="${ref.src}" srcset="${ref.srcset}"
              sizes="(min-width: 981px) 420px, calc(100vw - 80px)"
              width="${ref.width}" height="${ref.height}" loading="lazy" decoding="async"
              alt="${esc(ref.alt)}">
       </span>
-      <span class="material-reference-copy">
+      ${imageOnly ? "" : `<span class="material-reference-copy">
         <strong>${esc(t(ref.title))}</strong>
         <span>${esc(t(ref.body))}</span>
-      </span>
+      </span>`}
     </article>`;
   const materialReferencesFor = (product) => {
     const refs = [];
@@ -993,8 +1032,8 @@
     byId("finish-strip").innerHTML = FINISHES.map((f) =>
       `<div><div class="sw" style="background:${f.hex}"></div><span>${esc(f[state.lang])}</span></div>`).join("");
 
-    byId("material-reference-grid").innerHTML = [MATERIAL_REFERENCES.finish, MATERIAL_REFERENCES.rope]
-      .map(materialReferenceCard).join("");
+    byId("material-reference-grid").innerHTML = MATERIAL_REFERENCE_GALLERY
+      .map((ref) => materialReferenceCard(ref, { imageOnly: true })).join("");
 
     byId("footer-collections").innerHTML = catalog.collections.map((c) =>
       `<button type="button" data-open-collection="${c.slug}">${esc(label(c))}</button>`).join("");
