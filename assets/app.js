@@ -10,16 +10,16 @@
     return;
   }
 
-  // These two collection covers were previously enlarged with an AI upscaler,
-  // which shifted their catalogue colours. Serve variants rebuilt directly
-  // from the untouched RGB source photography instead.
+  // These two collection covers read too green when placed side by side.
+  // Serve variants rebuilt from the untouched RGB sources with a controlled
+  // green/cyan saturation reduction; geometry and luminance stay unchanged.
   ["034-01", "071-01"].forEach((ref) => {
     const product = catalog.products.find((item) => item.ref === ref);
     if (!product) return;
-    product.image = `assets/images/catalog/catalog-${ref}-source-800.webp`;
+    product.image = `assets/images/catalog/catalog-${ref}-soft-800.webp`;
     product.variants = [400, 800, 1600, 2400].map((w) => ({
       w, h: Math.round((w * 695) / 1069),
-      src: `assets/images/catalog/catalog-${ref}-source-${w}.webp`,
+      src: `assets/images/catalog/catalog-${ref}-soft-${w}.webp`,
     }));
   });
 
