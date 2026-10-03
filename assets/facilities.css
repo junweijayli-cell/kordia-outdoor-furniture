@@ -1,0 +1,35 @@
+/* Factory overview: complete workshop image with an uncropped landscape frame. */
+.kr-facilities { position: relative; z-index: 2; background: var(--navy); color: var(--light); padding-top: 64px; }
+.kr-facilities .kr-curve::before { background: var(--navy); }
+.kr-facilities-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 7%; align-items: center; }
+.kr-facilities-heading { min-width: 0; }
+.kr-facilities h2 { color: var(--light); font-size: clamp(38px, 4.4vw, 66px); max-width: 19ch; }
+.kr-facilities .kr-eyebrow { color: #bfcbe3; font-size: 11px; letter-spacing: .15em; }
+.kr-facilities-intro p { color: #e1e6f0; font-size: 16px; margin: 26px 0 18px; }
+.kr-facilities .kr-link:hover { color: white; }
+.kr-facility-grid { min-width: 0; }
+.kr-facility-card { margin: 0; min-width: 0; }
+.kr-facility-frame { aspect-ratio: 3 / 2; background: var(--navy-2); isolation: isolate; }
+.kr-facility-frame img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+.kr-facility-card figcaption { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 7px 12px; padding-top: 22px; border-top: 1px solid #8795b455; margin-top: 18px; }
+.kr-facility-number { color: #bfcbe3; font-size: 12px; padding-top: 5px; }
+.kr-facility-card h3 { color: var(--light); font-size: 24px; margin: 0; }
+.kr-facility-card p { color: #d3dcef; font-size: 14px; line-height: 1.55; margin: 9px 0 0; }
+.kr-concept-label { grid-column: 2; color: #bfcbe3; font-size: 11px; letter-spacing: .04em; }
+.kr-factory-intro { padding: clamp(64px, 7vw, 110px) 0; }
+.kr-factory-intro .split-5-7 { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; }
+.kr-factory-intro .kicker { color: #bfcbe3; }
+.kr-facility-detail { margin: 0; min-width: 0; }
+.kr-facility-detail img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+.kr-facility-detail figcaption { margin-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.section-navy .kr-facility-detail figcaption { color: #bfcbe3; }
+@media (max-width: 860px) {
+  .kr-factory-intro .split-5-7 { grid-template-columns: 1fr; gap: 36px; }
+  .kr-facilities-layout { grid-template-columns: 1fr; gap: 36px; }
+  .kr-facilities h2 { max-width: 23ch; }
+}
+@media (max-width: 700px) {
+  .kr-facilities h2 { font-size: 40px; }
+  .kr-facility-card h3 { font-size: 23px; }
+  .kr-facility-card figcaption { padding-top: 16px; margin-top: 14px; }
+}

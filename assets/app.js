@@ -52,6 +52,7 @@
       capResortPool: "Resort pool deck · sun loungers and parasols",
       subHospitality: "Hospitality", subResidential: "Residential", subRestaurant: "Restaurant & café",
       altFactoryFloor: "KORDIA aluminium fabrication floor in Chancheng, Foshan",
+      altFactoryConcept: "AI visualisation of an outdoor furniture assembly and weaving workshop",
       altFactoryYard: "Finished teak loungers in the KORDIA factory yard",
       altFactoryTeak: "Solid teak chair frames on the KORDIA assembly floor",
       capTeakWorkshop: "Teak frame assembly · Chancheng, Foshan",
@@ -60,7 +61,7 @@
       selection: "Selection", getQuote: "Get a Quote", chat: "Chat", chatAria: "Chat on WhatsApp",
       crumbHome: "Home",
 
-      heroTitle: "Built for<em>outdoor lifestyle.</em>",
+      heroTitle: "Built for <em>outdoor lifestyle.</em>",
       heroBody: "500+ models of rope-weave, cast-aluminium and teak — sofas, dining, shade and outdoor kitchens — manufactured in Foshan, shipped to 40+ countries.",
       statModels: "Models", statCategories: "Categories", statCountries: "Countries",
       exploreCollections: "Explore Collections", requestCatalog: "Request the 2026 Catalog",
@@ -86,7 +87,7 @@
 
       catalogBandTitle: "The 2026 catalog. 140 pages, 500+ models.",
       catalogBandBody: "Full product line with model numbers, dimensions and finishes. Tell us your market and we'll send the sections that matter to you.",
-      photoQuoteTitle: "Send us a photo.<em>We'll quote it.</em>",
+      photoQuoteTitle: "Send us a photo. <em>We'll quote it.</em>",
       photoQuoteBody: "A catalog page, a Pinterest screenshot, a competitor's product — send what you have and our team will come back within 24 hours with specification and pricing.",
       startInquiry: "Start your inquiry",
 
@@ -173,7 +174,7 @@
       back: "← Back", next: "Continue", send: "Send via WhatsApp",
       stepOf: "Step {n} of 4",
       inquiryReceived: "Inquiry ready", inquiryRef: "Reference {ref}",
-      inquiryDoneBody: "We've opened WhatsApp with your inquiry attached. If the window didn't open, use the button below and the same details will be sent.",
+      inquiryDoneBody: "Your inquiry message is ready. Open WhatsApp to review the details, then send it when you are ready.",
       openWhatsApp: "Open WhatsApp",
 
       chancheng: "Chancheng, Foshan",
@@ -246,6 +247,7 @@
       capResortPool: "度假村泳池区 · 沙滩椅与遮阳伞",
       subHospitality: "酒店工程", subResidential: "住宅项目", subRestaurant: "餐饮空间",
       altFactoryFloor: "KORDIA 佛山禅城铝材加工车间",
+      altFactoryConcept: "户外家具组装与绳编车间的 AI 效果示意",
       altFactoryYard: "KORDIA 工厂堆场内的成品柚木躺椅",
       altFactoryTeak: "KORDIA 组装车间内的实心柚木椅架",
       capTeakWorkshop: "柚木椅架组装 · 广东佛山禅城",
@@ -367,7 +369,7 @@
       back: "← 返回", next: "继续", send: "通过 WhatsApp 发送",
       stepOf: "第 {n} 步，共 4 步",
       inquiryReceived: "询价已生成", inquiryRef: "编号 {ref}",
-      inquiryDoneBody: "我们已打开 WhatsApp 并附上您的询价内容。若窗口未打开，请点击下方按钮，内容相同。",
+      inquiryDoneBody: "您的询价消息已准备好。点击打开 WhatsApp，核对内容后即可自行发送。",
       openWhatsApp: "打开 WhatsApp",
 
       chancheng: "广东佛山禅城",
@@ -700,19 +702,13 @@
 
   /* -------------------------------------------------------------------- home */
   function renderHome() {
-    byId("stat-categories").textContent = String(catalog.subcategories.length);
+    if (byId("stat-categories")) byId("stat-categories").textContent = String(catalog.subcategories.length);
     byId("home-collections").innerHTML = catalog.collections.map((c, i) => {
       const meta = COLLECTION_META[c.slug];
       const cover = collectionCover(c.slug);
       const v = atLeast(cover, 800);
       const wide = meta.span === "span-12";
-      const coverSizes = meta.span === "span-12"
-        ? "calc(min(1440px, 100vw - 64px))"
-        : meta.span === "span-6"
-          ? "(min-width: 981px) calc((min(1440px, 100vw) - 88px) / 2), (min-width: 621px) calc((100vw - 72px) / 2), calc(100vw - 36px)"
-        : meta.span === "span-8"
-          ? "(min-width: 981px) 950px, (min-width: 621px) 50vw, 100vw"
-          : "(min-width: 981px) 950px, (min-width: 621px) 100vw, 200vw";
+      const coverSizes = "(min-width: 701px) 29vw, 45vw";
       return `
         <button class="coll-card ${meta.span}" type="button" data-open-collection="${c.slug}">
           <span class="frame ${meta.ar}" style="display:block">
@@ -734,6 +730,7 @@
         </button>`;
     }).join("");
 
+    if (!byId("catalog-band-img")) return;
     const band = productById("KD-C061-01") || catalog.products[40];
     const bv = atLeast(band, 800);
     const bandImg = byId("catalog-band-img");
@@ -1180,7 +1177,10 @@
     if (a === "p") return { screen: "product", productId: b };
     // A setting is a saved view over the same catalogue, not a separate data
     // set — it resolves to the collections that feed it.
-    if (a === "set") return { screen: "collection", setting: b || "all" };
+    if (a === "set") {
+      const setting = (catalog.settings || []).find(s => s.slug === b);
+      return { screen: "collection", collection: setting?.from?.[0] || "all" };
+    }
     return { screen: SCREENS.includes(a) ? a : "home" };
   }
 
@@ -1260,14 +1260,19 @@
     const el = byId(targetId);
     if (!el || el.dataset.filled) return;
     const sets = catalog.settings || [];
+    const isHome = targetId === "home-settings";
+    const spaceCovers = { "terrace-balcony": "KD-C034-01", "public-municipal": "KD-C129-06" };
     el.innerHTML = sets.map((s) => {
       const n = catalog.products.filter((p) => p.setting === s.slug).length;
-      // Lead image: first product of the feeding collection, so the tile is
-      // never empty and always shows real stock.
-      const lead = catalog.products.find((p) => p.setting === s.slug);
-      const v = lead ? atLeast(lead, 800) : null;
-      return `<button class="set-card reveal" type="button" data-open-setting="${s.slug}">
-        ${v ? `<img src="${v.src}" width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="">` : ""}
+      // Keep the existing setting order and counts; home covers make the space
+      // recognizable, with the first matching catalogue image as a fallback.
+      const lead = (isHome && productById(spaceCovers[s.slug])) || catalog.products.find((p) => p.setting === s.slug);
+      const v = isHome && s.slug === "poolside-resort"
+        ? { src: "assets/images/projects/proj-resort-pool-960.webp", w: 960, h: 540 }
+        : lead ? atLeast(lead, 800) : null;
+      const thumbnail = v ? `<img src="${v.src}" width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="">` : "";
+      return `<button class="set-card reveal" type="button" data-open-setting="${s.slug}"${isHome ? ' data-kr-reveal="image"' : ""}>
+        ${isHome ? `<span class="set-card-image" aria-hidden="true">${thumbnail}</span>` : thumbnail}
         <span class="set-card-body">
           <span class="set-card-name">${esc(s.name[state.lang])}</span>
           <span class="set-card-count">${esc(fmt("setCount", { n: n }))}</span>
@@ -1479,7 +1484,7 @@
     byId("wizard-ref").textContent = fmt("inquiryRef", { ref });
     byId("wizard-wa").href = wa(msg);
     byId("wizard-done").hidden = false;
-    window.open(wa(msg), "_blank", "noopener");
+    // Keep the prepared inquiry local until the visitor chooses Open WhatsApp.
     byId("wizard-done").scrollIntoView({ behavior: "smooth", block: "center" });
   });
 
@@ -1516,46 +1521,26 @@
 
   window.addEventListener("hashchange", () => route());
 
-  /* -------------------------------------------------------- intro and cursor */
+  /* ------------------------------------------------------------------- intro */
+  // The site's entrance animation remains motion-aware. Custom cursors stay
+  // removed so native pointer and accessibility behavior remain predictable.
   const intro = byId("intro");
-  if (sessionStorage.getItem("kordia-intro") === "seen"
-      || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    intro.remove();
-  } else {
-    sessionStorage.setItem("kordia-intro", "seen");
-    setTimeout(() => {
-      intro.classList.add("done");
-      setTimeout(() => intro.remove(), 900);
-    }, 1900);
+  if (intro) {
+    if (sessionStorage.getItem("kordia-intro") === "seen"
+        || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      intro.remove();
+    } else {
+      sessionStorage.setItem("kordia-intro", "seen");
+      setTimeout(() => {
+        intro.classList.add("done");
+        setTimeout(() => intro.remove(), 900);
+      }, 1900);
+    }
   }
-
-  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches
-      && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const dot = byId("cursor"), ring = byId("cursor-ring");
-    let rx = -100, ry = -100, x = -100, y = -100;
-    document.addEventListener("mousemove", (e) => {
-      x = e.clientX; y = e.clientY;
-      dot.style.left = `${x}px`; dot.style.top = `${y}px`;
-      const over = e.target.closest("a,button,[data-open-product],input,select,textarea");
-      ring.classList.toggle("grow", !!over);
-    });
-    (function loop() {
-      rx += (x - rx) * .18; ry += (y - ry) * .18;
-      ring.style.left = `${rx}px`; ring.style.top = `${ry}px`;
-      requestAnimationFrame(loop);
-    })();
-  } else {
-    byId("cursor").remove(); byId("cursor-ring").remove();
-  }
+  byId("cursor")?.remove();
+  byId("cursor-ring")?.remove();
 
   /* -------------------------------------------------------------------- boot */
   renderAll();
   route(false);
-  setHero(0);
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    setInterval(() => { if (state.screen === "home") setHero(state.heroIndex + 1); }, 5500);
-  }
-  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1200));
-  if (document.readyState === "complete") idle(() => slides.forEach(hydrate));
-  else window.addEventListener("load", () => idle(() => slides.forEach(hydrate)), { once: true });
 })();

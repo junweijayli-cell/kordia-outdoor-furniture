@@ -1,0 +1,31 @@
+/* Restore visual browsing by space, using the existing six catalogue settings. */
+.kr-settings .kr-settings-grid { display: block; }
+.kr-settings .kr-settings-copy { display: grid; grid-template-columns: 1.1fr 1fr; gap: 10%; align-items: end; }
+.kr-settings .kr-settings-copy h2 { max-width: 15ch; font-size: clamp(42px, 4.7vw, 72px); }
+.kr-settings .kr-settings-copy p { margin: 0; max-width: 49ch; }
+.kr-settings #home-settings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 32px; margin-top: 56px; }
+.kr-settings #home-settings .set-card { min-width: 0; min-height: 0; aspect-ratio: auto; align-self: start; overflow: visible; border: 0; padding: 0; background: transparent; }
+.kr-settings #home-settings .set-card::after { content: none; }
+.kr-settings #home-settings .set-card-image { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--sand); }
+.kr-settings #home-settings img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.kr-settings #home-settings .set-card-body { position: relative; inset: auto; display: block; padding: 18px 32px 0 0; }
+.kr-settings #home-settings .set-card-body::after { content: '↗'; position: absolute; right: 2px; top: 18px; color: var(--ink); font-size: 22px; }
+.kr-settings #home-settings .set-card-name { color: var(--ink); font-size: clamp(19px, 1.65vw, 24px); font-weight: 500; line-height: 1.35; margin: 0 0 8px; }
+.kr-settings #home-settings .set-card-count { display: block; color: var(--muted); font-size: 12px; letter-spacing: .07em; }
+.kr-settings #home-settings .set-card:hover .set-card-name { color: var(--red-dark); }
+@media (max-width: 980px) {
+  .kr-settings .kr-settings-copy { grid-template-columns: 1fr; gap: 24px; }
+  .kr-settings .kr-settings-copy h2 { max-width: 19ch; }
+  .kr-settings .kr-settings-copy p { max-width: 60ch; }
+  .kr-settings #home-settings { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; margin-top: 40px; }
+}
+@media (max-width: 620px) {
+  .kr-settings #home-settings { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; }
+  .kr-settings .kr-settings-copy h2 { font-size: 42px; }
+  .kr-settings #home-settings .set-card-image { aspect-ratio: 4 / 3; }
+  .kr-settings #home-settings .set-card-name { font-size: 22px; }
+}
+@media (max-width: 370px) {
+  .kr-settings .kr-settings-copy h2 { font-size: 36px; }
+  .kr-settings #home-settings .set-card-name { font-size: 20px; }
+}

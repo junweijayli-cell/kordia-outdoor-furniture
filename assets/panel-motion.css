@@ -1,0 +1,51 @@
+/* Perspective, reflected light and independent image/caption depth below hero. */
+#screen-home [data-kr-panel] { position: relative; transform-style: preserve-3d; }
+#screen-home .kr-panel-engaged {
+  z-index: 2;
+  transform: perspective(1100px) translateY(var(--kr-panel-lift, 0px)) rotateX(var(--kr-panel-rx, 0deg)) rotateY(var(--kr-panel-ry, 0deg));
+  will-change: transform;
+}
+#screen-home [data-kr-panel]::before {
+  content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: radial-gradient(ellipse at var(--kr-panel-light-x, 50%) var(--kr-panel-light-y, 50%), #fff 0%, #ffffff35 35%, transparent 72%);
+  opacity: var(--kr-panel-light-opacity, 0); border-radius: inherit;
+  translate: 0 0 1px;
+}
+#screen-home [data-kr-panel] img {
+  /* Individual translate composes with the existing scroll-linked transform. */
+  translate: var(--kr-panel-image-x, 0px) var(--kr-panel-image-y, 0px);
+}
+#screen-home [data-kr-panel="image"]>.frame,
+#screen-home [data-kr-panel="image"]>.kr-material-frame,
+#screen-home [data-kr-panel="image"]>.set-card-image,
+#screen-home [data-kr-panel="image"]>button {
+  translate: 0 0 12px;
+  box-shadow: var(--kr-panel-shadow-x, 0px) var(--kr-panel-shadow-y, 0px) 42px rgb(18 34 79 / var(--kr-panel-shadow-opacity, 0));
+}
+#screen-home [data-kr-panel="scene"] {
+  box-shadow: var(--kr-panel-shadow-x, 0px) var(--kr-panel-shadow-y, 0px) 48px rgb(18 34 79 / var(--kr-panel-shadow-opacity, 0));
+}
+#screen-home [data-kr-panel="image"]>.frame img,
+#screen-home [data-kr-panel="image"]>.set-card-image img,
+#screen-home .kr-project-grid [data-kr-panel]>button img { transform: none; scale: 1.06; }
+#screen-home .kr-pool-frame[data-kr-panel] img { scale: 1.035; }
+#screen-home [data-kr-panel]>:is(h2,h3,p,figcaption,.cap,.sub,.coll-card-wide-foot,.set-card-body) {
+  translate: var(--kr-panel-content-x, 0px) var(--kr-panel-content-y, 0px) 26px;
+}
+#screen-home [data-kr-panel="text"]::before { inset: -12px; }
+#screen-home .kr-catalog-copy[data-kr-panel]::before { inset: 0; }
+/* Give the moving cards breathing room inside the horizontal viewport. */
+.kr-horizontal .kr-collection-window { padding-top: 32px; padding-bottom: 28px; margin-top: -24px; margin-bottom: -18px; }
+/* Keyboard readers get a stable face and the original focus indicator. */
+#screen-home .kr-panel-engaged:has(:focus-visible),
+#screen-home .kr-panel-engaged:focus-visible { transform: none; }
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  #screen-home [data-kr-panel] { transform-style: flat; }
+  #screen-home [data-kr-panel]::before { display: none; }
+  #screen-home [data-kr-panel] img { translate: none; scale: none; }
+  #screen-home [data-kr-panel]>* { translate: none; }
+}
+html:not(.kr-motion-on) #screen-home [data-kr-panel] { transform: none; transform-style: flat; }
+html:not(.kr-motion-on) #screen-home [data-kr-panel]::before { display: none; }
+html:not(.kr-motion-on) #screen-home [data-kr-panel] img { translate: none; scale: none; }
+html:not(.kr-motion-on) #screen-home [data-kr-panel]>* { translate: none; }
