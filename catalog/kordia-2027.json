@@ -1,0 +1,198 @@
+{
+  "source": {
+    "title": "KORDIA 2027 Collection",
+    "archivedPdf": "../Correspondence/20261003/KORDIA-2027.pdf",
+    "sha256": "D986E16B96694FADF6030274624D86AD5C3080AFE1A2E14659281D5F1A6E7DE0",
+    "pdfPages": 70,
+    "picturedRecordCount": 66,
+    "canonicalProductCount": 61
+  },
+  "subcategories": [
+    {
+      "slug": "coffee-side-tables",
+      "collection": "sofa-lounge",
+      "name": { "en": "Coffee & side tables", "zh": "茶几与边几" }
+    },
+    {
+      "slug": "outdoor-accessories",
+      "collection": "dining",
+      "name": { "en": "Outdoor accessories", "zh": "户外配套用品" }
+    }
+  ],
+  "series": [
+    {
+      "slug": "ames",
+      "name": { "en": "Ames", "zh": "Ames 系列" },
+      "patentCodes": ["2026304049415"],
+      "cover": { "sourcePdfPage": 4, "xref": 12, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Charcoal gray"],
+        "ropeWicker": ["Gray brown", "Nature", "Beige", "Charcoal gray"],
+        "ropeGauge": "15mm / 9mm",
+        "fabric": ["Beige", "Gray"],
+        "tableTop": ["Madrid yellow cave", "Phantom of gold", "Madrid blue cave"]
+      }
+    },
+    {
+      "slug": "paros",
+      "name": { "en": "Paros", "zh": "Paros 系列" },
+      "patentCodes": ["2026304076380"],
+      "cover": { "sourcePdfPage": 10, "xref": 58, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Charcoal gray"],
+        "ropeWicker": ["Beige", "Nature", "Gray brown"],
+        "ropeGauge": "14mm / 9mm",
+        "fabric": ["Beige"],
+        "tableTop": ["Madrid yellow cave", "Phantom of gold", "Madrid blue cave"]
+      }
+    },
+    {
+      "slug": "capella",
+      "name": { "en": "Capella", "zh": "Capella 系列" },
+      "patentCodes": ["2026303651686", "2026304280999", "2026303651879", "2026303651845"],
+      "cover": { "sourcePdfPage": 16, "xref": 95, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Olive Green"],
+        "ropeWicker": ["Beige", "Nature", "Gray brown", "Olive Green", "Terracotta"],
+        "ropeGauge": "6mm",
+        "fabric": ["Beige"],
+        "tableTop": ["Madrid yellow cave", "Phantom of gold", "Madrid blue cave"]
+      }
+    },
+    {
+      "slug": "daisy",
+      "name": { "en": "Daisy", "zh": "Daisy 系列" },
+      "patentCodes": ["2026304049398"],
+      "cover": { "sourcePdfPage": 28, "xref": 171, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Chestnut", "Olive Green", "Nature"],
+        "ropeWicker": ["Nature", "Gray brown", "Olive Green", "Terracotta"],
+        "ropeGauge": "7mm",
+        "fabric": ["Beige"],
+        "tableTop": ["Madrid yellow cave", "Phantom of gold"]
+      }
+    },
+    {
+      "slug": "bellano",
+      "name": { "en": "Bellano", "zh": "Bellano 系列" },
+      "patentCodes": ["2026303651597"],
+      "cover": { "sourcePdfPage": 36, "xref": 221, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Chestnut", "Olive Green", "Blue", "Charcoal gray"],
+        "ropeWicker": ["Beige", "Nature", "Gray brown", "Olive Green", "Terracotta", "Blue", "Charcoal gray"],
+        "ropeGauge": "6mm / 9mm",
+        "fabric": ["Beige"],
+        "tableTop": ["Madrid yellow cave", "Phantom of gold", "Madrid blue cave"]
+      }
+    },
+    {
+      "slug": "tevera",
+      "name": { "en": "Tevera", "zh": "Tevera 系列" },
+      "patentCodes": ["2026303651883", "2026303651794"],
+      "cover": { "sourcePdfPage": 43, "xref": 260, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Charcoal gray"],
+        "ropeWicker": ["Nature", "Charcoal gray"],
+        "ropeGauge": "7mm",
+        "fabric": ["Beige", "Gray"],
+        "tableTop": ["Madrid yellow cave", "Phantom of gold", "Madrid blue cave", "Heat transfer printing"]
+      }
+    },
+    {
+      "slug": "free-form",
+      "name": { "en": "Free Form", "zh": "Free Form 系列" },
+      "patentCodes": ["2026303651703", "2026303487380", "2026303487304", "2026303487319"],
+      "cover": { "sourcePdfPage": 51, "xref": 323, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Chestnut", "Olive Green", "Blue", "Charcoal gray"],
+        "ropeWicker": ["Beige", "Nature", "Charcoal gray", "Gray brown", "Olive Green", "Chestnut"],
+        "ropeGauge": "6mm",
+        "fabric": ["Olefin - Beige", "PVC - Beige", "Olefin - Gray", "PVC - Olive Green"],
+        "tableTop": ["Heat transfer printing"]
+      }
+    },
+    {
+      "slug": "lovi",
+      "name": { "en": "Lovi", "zh": "Lovi 系列" },
+      "patentCodes": ["2026303651718", "2026303651760"],
+      "cover": { "sourcePdfPage": 64, "xref": 428, "focalPoint": "50% 50%" },
+      "materials": {
+        "frame": ["Beige", "Chestnut", "Olive Green", "Blue"],
+        "ropeWicker": ["Nature", "Olive Green", "Terracotta"],
+        "ropeGauge": "20x2mm",
+        "fabric": [],
+        "tableTop": ["HPL"]
+      }
+    }
+  ],
+  "products": [
+    { "id": "KD-27-AMES-0016201", "name": { "en": "Ames single sofa", "zh": "Ames 单人沙发" }, "supplierCodes": ["0016201"], "sourcePdfPage": 9, "printedPage": "013", "xref": 36, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "Single sofa", "cm": "W 80 x D 84.5 x H 65 cm" }], "seriesSlugs": ["ames"], "setting": "terrace-balcony" },
+    { "id": "KD-27-AMES-0016203", "name": { "en": "Ames 3-seat sofa", "zh": "Ames 三人沙发" }, "supplierCodes": ["0016203"], "sourcePdfPage": 9, "printedPage": "013", "xref": 46, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "3-seat sofa", "cm": "W 225 x D 84.5 x H 65 cm" }], "seriesSlugs": ["ames"], "setting": "terrace-balcony" },
+    { "id": "KD-27-AMES-0016321", "name": { "en": "Ames coffee table", "zh": "Ames 茶几" }, "supplierCodes": ["0016321"], "sourcePdfPage": 9, "printedPage": "013", "xref": 47, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Coffee table", "cm": "L 130 x W 70 x H 32 cm" }], "seriesSlugs": ["ames"], "setting": "terrace-balcony" },
+    { "id": "KD-27-AMES-0016101", "name": { "en": "Ames dining chair", "zh": "Ames 餐椅" }, "supplierCodes": ["0016101"], "sourcePdfPage": 9, "printedPage": "013", "xref": 49, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining chair", "cm": "W 59 x D 60.5 x H 78 cm" }], "seriesSlugs": ["ames"], "setting": "alfresco-dining" },
+    { "id": "KD-27-0003311", "name": { "en": "220 cm dining table", "zh": "220 厘米餐桌" }, "supplierCodes": ["0003311"], "sourcePdfPage": 9, "sourcePdfPages": [9, 27, 35, 42], "printedPage": "013 / 048-049 / 064-065 / 079", "xref": 556, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining table", "cm": "L 220 x W 100 x H 75 cm" }], "seriesSlugs": ["ames", "capella", "daisy", "bellano"], "setting": "alfresco-dining" },
+
+    { "id": "KD-27-PAROS-0018201", "name": { "en": "Paros single sofa", "zh": "Paros 单人沙发" }, "supplierCodes": ["0018201"], "sourcePdfPage": 15, "printedPage": "025", "xref": 80, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "Single sofa", "cm": "W 85 x D 82 x H 77 cm" }], "seriesSlugs": ["paros"], "setting": "terrace-balcony" },
+    { "id": "KD-27-PAROS-0018203", "name": { "en": "Paros 3-seat sofa", "zh": "Paros 三人沙发" }, "supplierCodes": ["0018203"], "sourcePdfPage": 15, "printedPage": "025", "xref": 90, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "3-seat sofa", "cm": "W 225 x D 82 x H 77 cm" }], "seriesSlugs": ["paros"], "setting": "terrace-balcony" },
+    { "id": "KD-27-PAROS-0018101", "name": { "en": "Paros dining chair", "zh": "Paros 餐椅" }, "supplierCodes": ["0018101"], "sourcePdfPage": 15, "printedPage": "025", "xref": 82, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining chair", "cm": "W 62 x D 61 x H 80 cm" }], "seriesSlugs": ["paros"], "setting": "alfresco-dining" },
+    { "id": "KD-27-PAROS-0018321", "name": { "en": "Paros coffee table", "zh": "Paros 茶几" }, "supplierCodes": ["0018321"], "sourcePdfPage": 15, "printedPage": "025", "xref": 86, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Coffee table", "cm": "L 131 x W 71 x H 40 cm" }], "seriesSlugs": ["paros"], "setting": "terrace-balcony" },
+    { "id": "KD-27-PAROS-0018311", "name": { "en": "Paros dining table", "zh": "Paros 餐桌" }, "supplierCodes": ["0018311"], "sourcePdfPage": 15, "printedPage": "025", "xref": 88, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining table", "cm": "L 220 x W 100 x H 75 cm" }], "seriesSlugs": ["paros"], "setting": "alfresco-dining" },
+
+    { "id": "KD-27-CAPELLA-0003201", "name": { "en": "Capella single sofa", "zh": "Capella 单人沙发" }, "supplierCodes": ["0003201"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 140, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "Single sofa", "cm": "W 85 x D 81 x H 74 cm" }], "seriesSlugs": ["capella"], "setting": "terrace-balcony" },
+    { "id": "KD-27-CAPELLA-0003203", "name": { "en": "Capella 3-seat sofa", "zh": "Capella 三人沙发" }, "supplierCodes": ["0003203"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 149, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "3-seat sofa", "cm": "W 225 x D 81 x H 74 cm" }], "seriesSlugs": ["capella"], "setting": "terrace-balcony" },
+    { "id": "KD-27-CAPELLA-0003217", "name": { "en": "Capella swivel chair", "zh": "Capella 旋转休闲椅" }, "supplierCodes": ["0003217"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 142, "collection": "sofa-lounge", "subcategory": "lounge-chairs", "dimensions": [{ "label": "Swivel chair", "cm": "W 85 x D 81 x H 74 cm" }], "seriesSlugs": ["capella"], "setting": "terrace-balcony" },
+    { "id": "KD-27-CAPELLA-0003120", "name": { "en": "Capella barstool", "zh": "Capella 吧椅" }, "supplierCodes": ["0003120"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 151, "collection": "dining", "subcategory": "bar-sets", "dimensions": [{ "label": "Barstool", "cm": "W 64 x D 70 x H 110 cm" }], "seriesSlugs": ["capella"], "setting": "alfresco-dining" },
+    { "id": "KD-27-CAPELLA-0003226-0003223", "name": { "en": "Capella left/right arm sofa", "zh": "Capella 左/右扶手沙发" }, "supplierCodes": ["0003226", "0003223"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 157, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "Left/right arm sofa", "cm": "W 173 x D 92.2 x H 74 cm" }], "seriesSlugs": ["capella"], "setting": "terrace-balcony" },
+    { "id": "KD-27-CAPELLA-0003101", "name": { "en": "Capella dining chair", "zh": "Capella 餐椅" }, "supplierCodes": ["0003101"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 161, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining chair", "cm": "W 64 x D 64.5 x H 77.5 cm" }], "seriesSlugs": ["capella"], "setting": "alfresco-dining" },
+    { "id": "KD-27-CAPELLA-0003431", "name": { "en": "Capella daybed", "zh": "Capella 户外日光床" }, "supplierCodes": ["0003431"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 159, "collection": "sun-leisure", "subcategory": "daybeds", "dimensions": [{ "label": "Daybed", "cm": "W 160 x D 155 x H 75 cm" }], "seriesSlugs": ["capella"], "setting": "poolside-resort" },
+    { "id": "KD-27-CAPELLA-0003411", "name": { "en": "Capella lounge chaise", "zh": "Capella 户外躺椅" }, "supplierCodes": ["0003411"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 163, "collection": "sun-leisure", "subcategory": "sun-loungers", "dimensions": [{ "label": "Lounge chaise", "cm": "L 205 x W 80 x H 32 cm" }], "seriesSlugs": ["capella"], "setting": "poolside-resort" },
+    { "id": "KD-27-CAPELLA-0003323", "name": { "en": "Capella small coffee table", "zh": "Capella 小茶几" }, "supplierCodes": ["0003323"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 165, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Small coffee table", "cm": "L 75 x W 50 x H 25 cm" }], "seriesSlugs": ["capella"], "setting": "terrace-balcony" },
+    { "id": "KD-27-CAPELLA-0003322", "name": { "en": "Capella large coffee table", "zh": "Capella 大茶几" }, "supplierCodes": ["0003322"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 167, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Large coffee table", "cm": "Diameter 75 x H 32.5 cm" }], "seriesSlugs": ["capella"], "setting": "terrace-balcony" },
+    { "id": "KD-27-CAPELLA-0003313", "name": { "en": "Capella round dining table", "zh": "Capella 圆形餐桌" }, "supplierCodes": ["0003313"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 155, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Round dining table", "cm": "Diameter 120 x H 75 cm" }], "seriesSlugs": ["capella"], "setting": "alfresco-dining" },
+    { "id": "KD-27-CAPELLA-0003141", "name": { "en": "Capella bar table", "zh": "Capella 吧台桌" }, "supplierCodes": ["0003141"], "sourcePdfPage": 27, "printedPage": "048-049", "xref": 153, "collection": "dining", "subcategory": "bar-sets", "dimensions": [{ "label": "Bar table", "cm": "Diameter 70 x H 110 cm" }], "seriesSlugs": ["capella"], "setting": "alfresco-dining" },
+    { "id": "KD-27-0003331", "name": { "en": "Round side table", "zh": "圆形边几" }, "supplierCodes": ["0003331"], "sourcePdfPage": 27, "sourcePdfPages": [27, 35, 42], "printedPage": "048-049 / 064-065 / 079", "xref": 146, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Side table", "cm": "Diameter 45 x H 49 cm" }], "seriesSlugs": ["capella", "daisy", "bellano"], "setting": "terrace-balcony" },
+
+    { "id": "KD-27-DAISY-0017201", "name": { "en": "Daisy single sofa", "zh": "Daisy 单人沙发" }, "supplierCodes": ["0017201"], "sourcePdfPage": 35, "printedPage": "064-065", "xref": 202, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "Single sofa", "cm": "W 85 x D 83 x H 77.5 cm" }], "seriesSlugs": ["daisy"], "setting": "terrace-balcony" },
+    { "id": "KD-27-DAISY-0017203", "name": { "en": "Daisy 3-seat sofa", "zh": "Daisy 三人沙发" }, "supplierCodes": ["0017203"], "sourcePdfPage": 35, "printedPage": "064-065", "xref": 207, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "3-seat sofa", "cm": "W 225 x D 83 x H 77.5 cm" }], "seriesSlugs": ["daisy"], "setting": "terrace-balcony" },
+    { "id": "KD-27-DAISY-0017219", "name": { "en": "Daisy rocking chair", "zh": "Daisy 摇椅" }, "supplierCodes": ["0017219"], "sourcePdfPage": 35, "printedPage": "064-065", "xref": 204, "collection": "sofa-lounge", "subcategory": "rocking-recliners", "dimensions": [{ "label": "Rocking chair", "cm": "W 85 x D 90 x H 78.5 cm" }], "seriesSlugs": ["daisy"], "setting": "terrace-balcony" },
+    { "id": "KD-27-DAISY-0017204", "name": { "en": "Daisy ottoman", "zh": "Daisy 脚踏" }, "supplierCodes": ["0017204"], "sourcePdfPage": 35, "printedPage": "064-065", "xref": 211, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "Ottoman", "cm": "W 76 x D 68 x H 41 cm" }], "seriesSlugs": ["daisy"], "setting": "terrace-balcony" },
+    { "id": "KD-27-DAISY-0017441", "name": { "en": "Daisy hanging swing", "zh": "Daisy 吊椅秋千" }, "supplierCodes": ["0017441"], "sourcePdfPage": 35, "printedPage": "064-065", "xref": 213, "collection": "sun-leisure", "subcategory": "garden-swings", "dimensions": [{ "label": "Hanging swing", "cm": "W 85 x D 90 x H 57 cm" }], "seriesSlugs": ["daisy"], "setting": "shaded-garden" },
+    { "id": "KD-27-DAISY-0017101", "name": { "en": "Daisy dining chair", "zh": "Daisy 餐椅" }, "supplierCodes": ["0017101"], "sourcePdfPage": 35, "printedPage": "064-065", "xref": 217, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining chair", "cm": "W 66 x D 68 x H 82 cm" }], "seriesSlugs": ["daisy"], "setting": "alfresco-dining" },
+    { "id": "KD-27-DAISY-0017321", "name": { "en": "Daisy coffee table", "zh": "Daisy 茶几" }, "supplierCodes": ["0017321"], "sourcePdfPage": 35, "printedPage": "064-065", "xref": 215, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Coffee table", "cm": "L 130 x W 70 x H 38 cm" }], "seriesSlugs": ["daisy"], "setting": "terrace-balcony" },
+
+    { "id": "KD-27-BELLANO-0001201", "name": { "en": "Bellano single sofa", "zh": "Bellano 单人沙发" }, "supplierCodes": ["0001201"], "sourcePdfPage": 42, "printedPage": "079", "xref": 243, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "Single sofa", "cm": "W 86 x D 80 x H 77 cm" }], "seriesSlugs": ["bellano"], "setting": "terrace-balcony" },
+    { "id": "KD-27-BELLANO-0001203", "name": { "en": "Bellano 3-seat sofa", "zh": "Bellano 三人沙发" }, "supplierCodes": ["0001203"], "sourcePdfPage": 42, "printedPage": "079", "xref": 244, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "3-seat sofa", "cm": "W 225 x D 80 x H 77 cm" }], "seriesSlugs": ["bellano"], "setting": "terrace-balcony" },
+    { "id": "KD-27-BELLANO-0001101", "name": { "en": "Bellano dining chair", "zh": "Bellano 餐椅" }, "supplierCodes": ["0001101"], "sourcePdfPage": 42, "printedPage": "079", "xref": 255, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining chair", "cm": "W 65 x D 64 x H 79 cm" }], "seriesSlugs": ["bellano"], "setting": "alfresco-dining" },
+    { "id": "KD-27-BELLANO-0001321", "name": { "en": "Bellano coffee table", "zh": "Bellano 茶几" }, "supplierCodes": ["0001321"], "sourcePdfPage": 42, "printedPage": "079", "xref": 251, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Coffee table", "cm": "W 130 x D 70 x H 38 cm" }], "seriesSlugs": ["bellano"], "setting": "terrace-balcony" },
+
+    { "id": "KD-27-TEVERA-0008213", "name": { "en": "Tevera 3-seat sofa", "zh": "Tevera 三人沙发" }, "supplierCodes": ["0008213"], "sourcePdfPage": 50, "printedPage": "095", "xref": 292, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "3-seat sofa", "cm": "W 227 x D 93 x H 72 cm" }], "seriesSlugs": ["tevera"], "setting": "terrace-balcony" },
+    { "id": "KD-27-TEVERA-0008215", "name": { "en": "Tevera 2-seat sofa", "zh": "Tevera 双人沙发" }, "supplierCodes": ["0008215"], "sourcePdfPage": 50, "printedPage": "095", "xref": 309, "collection": "sofa-lounge", "subcategory": "rope-sofa-sets", "dimensions": [{ "label": "2-seat sofa", "cm": "W 162 x D 93 x H 72 cm" }], "seriesSlugs": ["tevera"], "setting": "terrace-balcony" },
+    { "id": "KD-27-TEVERA-0008411", "name": { "en": "Tevera lounge chaise 1", "zh": "Tevera 户外躺椅 1" }, "supplierCodes": ["0008411"], "sourcePdfPage": 50, "printedPage": "095", "xref": 307, "collection": "sun-leisure", "subcategory": "sun-loungers", "dimensions": [{ "label": "Lounge chaise 1", "cm": "L 206 x W 91 x H 38 cm" }], "seriesSlugs": ["tevera"], "setting": "poolside-resort" },
+    { "id": "KD-27-TEVERA-0008415", "name": { "en": "Tevera lounge chaise 2", "zh": "Tevera 户外躺椅 2" }, "supplierCodes": ["0008415"], "sourcePdfPage": 50, "printedPage": "095", "xref": 294, "collection": "sun-leisure", "subcategory": "sun-loungers", "dimensions": [{ "label": "Lounge chaise 2", "cm": "L 200 x W 70 x H 33 cm" }], "seriesSlugs": ["tevera"], "setting": "poolside-resort" },
+    { "id": "KD-27-TEVERA-0008321", "name": { "en": "Tevera coffee table", "zh": "Tevera 茶几" }, "supplierCodes": ["0008321"], "sourcePdfPage": 50, "printedPage": "095", "xref": 311, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Coffee table", "cm": "L 112.5 x W 70 x H 25 cm" }], "seriesSlugs": ["tevera"], "setting": "terrace-balcony" },
+
+    { "id": "KD-27-FREE-FORM-0002201", "name": { "en": "Free Form single sofa", "zh": "Free Form 单人沙发" }, "supplierCodes": ["0002201"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 369, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "Single sofa", "cm": "W 85 x D 85 x H 78 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002203", "name": { "en": "Free Form 3-seat sofa", "zh": "Free Form 三人沙发" }, "supplierCodes": ["0002203"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 370, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "3-seat sofa", "cm": "W 85 x D 85 x H 78 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002202", "name": { "en": "Free Form 2-seat sofa", "zh": "Free Form 双人沙发" }, "supplierCodes": ["0002202"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 384, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "2-seat sofa", "cm": "W 130 x D 70 x H 38 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002209", "name": { "en": "Free Form armless 2-seat sofa", "zh": "Free Form 双人无扶手沙发" }, "supplierCodes": ["0002209"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 390, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "Armless 2-seat sofa", "cm": "W 85 x D 85 x H 78 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002212-0009215", "name": { "en": "Free Form left/right 2-seat sofa A", "zh": "Free Form 左/右双人沙发 A" }, "supplierCodes": ["0002212", "0009215"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 386, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "Left/right 2-seat sofa A", "cm": "W 130 x D 70 x H 38 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002215-0009202", "name": { "en": "Free Form left/right 2-seat sofa B", "zh": "Free Form 左/右双人沙发 B" }, "supplierCodes": ["0002215", "0009202"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 392, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "Left/right 2-seat sofa B", "cm": "W 85 x D 85 x H 78 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002235-0009235", "name": { "en": "Free Form corner module 1", "zh": "Free Form 角位模块 1" }, "supplierCodes": ["0002235", "0009235"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 388, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "Corner module 1", "cm": "W 73 x D 73 x H 25/33 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002205-0009205", "name": { "en": "Free Form corner module 2", "zh": "Free Form 角位模块 2" }, "supplierCodes": ["0002205", "0009205"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 394, "collection": "sofa-lounge", "subcategory": "modular-sofas", "dimensions": [{ "label": "Corner module 2", "cm": "W 82 x D 78 x H 69 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0009321", "name": { "en": "Free Form coffee table 1", "zh": "Free Form 茶几 1" }, "supplierCodes": ["0009321"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 396, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Coffee table 1", "cm": "L 120 x W 58 x H 38 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002321", "name": { "en": "Free Form coffee table 2", "zh": "Free Form 茶几 2" }, "supplierCodes": ["0002321"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 398, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Coffee table 2", "cm": "L 130 x W 71 x H 39 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002331", "name": { "en": "Free Form side table", "zh": "Free Form 边几" }, "supplierCodes": ["0002331"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 372, "collection": "sofa-lounge", "subcategory": "coffee-side-tables", "dimensions": [{ "label": "Side table", "cm": "L 73 x W 73 x H 25 cm" }], "seriesSlugs": ["free-form"], "setting": "terrace-balcony" },
+    { "id": "KD-27-FREE-FORM-0002411", "name": { "en": "Free Form lounge chaise", "zh": "Free Form 户外躺椅" }, "supplierCodes": ["0002411"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 374, "collection": "sun-leisure", "subcategory": "sun-loungers", "dimensions": [{ "label": "Lounge chaise", "cm": "L 205 x W 72 x H 25 cm" }], "seriesSlugs": ["free-form"], "setting": "poolside-resort" },
+    { "id": "KD-27-FREE-FORM-0009501-STOOL", "name": { "en": "Free Form barstool", "zh": "Free Form 吧椅" }, "supplierCodes": ["0009501"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 376, "collection": "dining", "subcategory": "bar-sets", "dimensions": [{ "label": "Barstool", "cm": "W 54.5 x D 54 x H 110 cm" }], "seriesSlugs": ["free-form"], "setting": "alfresco-dining", "codeStatus": "needs-verification", "codeNote": "The source PDF also prints 0009501 for the Free Form bar cart." },
+    { "id": "KD-27-FREE-FORM-0009501-CART", "name": { "en": "Free Form bar cart", "zh": "Free Form 移动酒水车" }, "supplierCodes": ["0009501"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 378, "collection": "dining", "subcategory": "outdoor-accessories", "dimensions": [{ "label": "Bar cart", "cm": "L 90 x W 58 x H 82 cm" }], "seriesSlugs": ["free-form"], "setting": "alfresco-dining", "codeStatus": "needs-verification", "codeNote": "The source PDF also prints 0009501 for the Free Form barstool." },
+    { "id": "KD-27-FREE-FORM-0010504", "name": { "en": "Free Form sink module", "zh": "Free Form 水槽模块" }, "supplierCodes": ["0010504"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 380, "collection": "fire-kitchen", "subcategory": "outdoor-kitchens", "dimensions": [{ "label": "Sink module", "cm": "L 200 x D 58.5 x H 110 cm" }], "seriesSlugs": ["free-form"], "setting": "fire-social" },
+    { "id": "KD-27-FREE-FORM-0010503", "name": { "en": "Free Form oven module", "zh": "Free Form 烤炉模块" }, "supplierCodes": ["0010503"], "sourcePdfPage": 62, "printedPage": "118-119", "xref": 382, "collection": "fire-kitchen", "subcategory": "outdoor-kitchens", "dimensions": [{ "label": "Oven module", "cm": "L 82 x D 58.5 x H 114 cm" }], "seriesSlugs": ["free-form"], "setting": "fire-social" },
+    { "id": "KD-27-FREE-FORM-0010502", "name": { "en": "Free Form flower box", "zh": "Free Form 花箱" }, "supplierCodes": ["0010502"], "sourcePdfPage": 63, "printedPage": "120-121", "xref": 412, "collection": "garden-public", "subcategory": "planters", "dimensions": [{ "label": "Flower box", "cm": "L 100 x D 58.5 x H 165 cm" }], "seriesSlugs": ["free-form"], "setting": "public-municipal" },
+
+    { "id": "KD-27-LOVI-0014101", "name": { "en": "Lovi dining chair 1", "zh": "Lovi 餐椅 1" }, "supplierCodes": ["0014101"], "sourcePdfPage": 69, "printedPage": "133", "xref": 451, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining chair 1", "cm": "W 57 x D 59 x H 84 cm" }], "seriesSlugs": ["lovi"], "setting": "alfresco-dining" },
+    { "id": "KD-27-LOVI-0004101", "name": { "en": "Lovi dining chair 2", "zh": "Lovi 餐椅 2" }, "supplierCodes": ["0004101"], "sourcePdfPage": 69, "printedPage": "133", "xref": 453, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining chair 2", "cm": "W 57 x D 59 x H 84 cm" }], "seriesSlugs": ["lovi"], "setting": "alfresco-dining" },
+    { "id": "KD-27-LOVI-0014120", "name": { "en": "Lovi barstool 1", "zh": "Lovi 吧椅 1" }, "supplierCodes": ["0014120"], "sourcePdfPage": 69, "printedPage": "133", "xref": 455, "collection": "dining", "subcategory": "bar-sets", "dimensions": [{ "label": "Barstool 1", "cm": "W 57 x D 61 x H 120 cm" }], "seriesSlugs": ["lovi"], "setting": "alfresco-dining" },
+    { "id": "KD-27-LOVI-0004120", "name": { "en": "Lovi barstool 2", "zh": "Lovi 吧椅 2" }, "supplierCodes": ["0004120"], "sourcePdfPage": 69, "printedPage": "133", "xref": 457, "collection": "dining", "subcategory": "bar-sets", "dimensions": [{ "label": "Barstool 2", "cm": "W 57 x D 61 x H 120 cm" }], "seriesSlugs": ["lovi"], "setting": "alfresco-dining" },
+    { "id": "KD-27-LOVI-0004311", "name": { "en": "Lovi dining table", "zh": "Lovi 餐桌" }, "supplierCodes": ["0004311"], "sourcePdfPage": 69, "printedPage": "133", "xref": 459, "collection": "dining", "subcategory": "rope-dining", "dimensions": [{ "label": "Dining table", "cm": "W 67 x D 67 x H 75 cm" }], "seriesSlugs": ["lovi"], "setting": "alfresco-dining" }
+  ]
+}

@@ -1,4 +1,4 @@
-/* KORDIA 2026 site behaviour.
+/* KORDIA catalogue site behaviour.
    Screens are hash-routed so the browser back button works, which the design
    comp's screen-picker prototype could not do. */
 (() => {
@@ -23,7 +23,7 @@
     }));
   });
 
-  const WA = "8613450846180";
+  const WA = "86136030102587";
   const PAGE_SIZE = 24;
 
   /* ------------------------------------------------------------------ i18n */
@@ -64,10 +64,10 @@
       heroTitle: "Built for <em>outdoor lifestyle</em>",
       heroBody: "500+ models of rope-weave, cast-aluminium and teak — sofas, dining, shade and outdoor kitchens — manufactured in Foshan, shipped to 40+ countries.",
       statModels: "Models", statCategories: "Categories", statCountries: "Countries",
-      exploreCollections: "Explore Collections", requestCatalog: "Request the 2026 Catalog",
+      exploreCollections: "Explore Collections", requestCatalog: "Request the Latest Catalogues",
       whatsappChat: "WhatsApp Chat",
 
-      programmeKicker: "The 2026 programme",
+      programmeKicker: "The current programme",
       programmeTitle: "A complete outdoor programme, from one factory floor",
       programmeBody: "Six collections that furnish an entire terrace — seating, dining, shade, fire and landscape — so you consolidate a container instead of chasing six suppliers.",
 
@@ -85,21 +85,21 @@
       matRope: "Olefin rope weave", matAlu: "Powder-coated aluminium", matTeak: "Solid teak",
       materialsCare: "Materials & care →", materialsCareShort: "Materials & care",
 
-      catalogBandTitle: "The 2026 catalog — 140 pages, 500+ models",
-      catalogBandBody: "Full product line with model numbers, dimensions and finishes. Tell us your market and we'll send the sections that matter to you.",
+      catalogBandTitle: "2026 catalogue + 2027 collection",
+      catalogBandBody: "The established 2026 range and the new eight-series 2027 collection, with model numbers, dimensions and finish options. Tell us your market and we'll send the relevant sections.",
       photoQuoteTitle: "Send us a photo — <em>we'll quote it</em>",
       photoQuoteBody: "A catalog page, a Pinterest screenshot, a competitor's product — send what you have and our team will come back within 24 hours with specification and pricing.",
       startInquiry: "Start your inquiry",
 
-      collectionsIntro: "Six collections, twenty-two categories, one production floor. Every model can be re-specified in your frame finish, rope colour and fabric.",
-      enterCollection: "Enter collection", photos: "photographs", photosShort: "photographs",
+      collectionsIntro: "Six collections, twenty-four categories, one production floor. The established range now includes eight new 2027 series, with frame, rope and fabric options by model.",
+      enterCollection: "Enter collection", photos: "products", photosShort: "models", categories: "categories",
 
-      filter: "Filter", searchLabel: "Search", searchPlaceholder: "Reference or category",
-      collection: "Collection", category: "Category", clearFilters: "Clear all filters",
-      allCollections: "All collections", allCategories: "All categories",
+      filter: "Filter", searchLabel: "Search", searchPlaceholder: "Reference, supplier code, series or category",
+      collection: "Collection", category: "Category", series: "2027 series", clearFilters: "Clear all filters",
+      allCollections: "All collections", allCategories: "All categories", allSeries: "All series",
       sort: "Sort", sortCatalog: "Catalog order", sortReverse: "Catalog order, reversed", sortCategory: "Category",
       noResults: "No models match these filters.",
-      showing: "Showing {shown} of {total} photographs",
+      showing: "Showing {shown} of {total} products",
       loadMore: "Load {n} more",
       customQuote: "Custom quote", add: "Add", added: "Added",
 
@@ -123,7 +123,12 @@
       samplingBody: "Samples can be produced in your specified finish before a production order. Lead time and sample cost are quoted with the model.",
       relatedModels: "Related models", allInCategory: "All {name} →",
       specCatalogRef: "Catalog reference", specCollection: "Collection", specCategory: "Category",
-      specCatalogPage: "Catalog page", specSource: "Photography", specSourceValue: "2026 printed catalog",
+      specCatalogPage: "Catalog page", specSource: "Source", specSourceValue: "2026 printed catalog",
+      specSourceValue2027: "KORDIA 2027 Collection PDF",
+      specEdition: "Catalogue edition", specSeries: "Series", specSupplierCode: "Supplier code",
+      specPatent: "Patent reference", specSourcePage: "Source PDF page",
+      specFrameOptions: "Frame options", specRopeOptions: "Rope / wicker options",
+      specFabricOptions: "Fabric options", specTopOptions: "Tabletop options",
       specLead: "Lead time", specLeadValue: "Quoted per order",
       specMoq: "MOQ", specMoqValue: "Confirmed per model",
       specModel: "Factory model", specDimensions: "Dimensions",
@@ -137,7 +142,7 @@
       sigStoryTitle: "One family, not a catalogue",
       sigStoryBody: "The trade catalogue answers \"what do you make?\". Signature answers \"what would you specify?\". Every piece shares a frame language, a rope gauge and a cushion tone, so an importer can furnish a whole space from one page and know it will arrive matching.",
       sigDisclosure: "Signature imagery is computer-rendered. Production samples are photographed on request — ask us before you specify a finish.",
-      sigToCatalogue: "See the full 2026 catalogue →",
+      sigToCatalogue: "See the full catalogue →",
       setKicker: "Where it goes",
       setTitle: "Start from the space, not the product",
       setIntro: "Most buyers arrive with a place in mind — a hotel poolside, a restaurant terrace, a municipal park — rather than a product category. Each setting below opens the models that suit it.",
@@ -208,7 +213,7 @@
 
       company_: "Company", forBuyers: "For buyers", browseAll: "Browse all models",
       footerAddress: "Chancheng, Foshan<br>Guangdong, China",
-      footerWechat: "WeChat · +86 134 5084 6180",
+      footerWechat: "WeChat · +86 136030102587",
 
       yourSelection: "Your selection", modelsSelected: "{n} models", modelsSelected_one: "1 model",
       attachedCount_one: "1 model attached",
@@ -217,7 +222,7 @@
       drawerCta: "Request a quote for these",
       remove: "Remove", sets: "sets",
 
-      catalogRequestMessage: "Hello Fianna, please send me the KORDIA 2026 catalog. My market is:",
+      catalogRequestMessage: "Hello Fianna, please send me the KORDIA 2026 catalogue and 2027 collection. My market is:",
       heroChatMessage: "Hello Fianna, I'm interested in KORDIA outdoor furniture.",
       floatingChatMessage: "Hello Fianna, I'm viewing the KORDIA website.",
       productMessage: "Hello Fianna, I'd like more information about",
@@ -259,10 +264,10 @@
       heroTitle: "为户外生活<em>而造</em>",
       heroBody: "500多款绳编、铸铝与柚木户外家具——沙发、餐桌、遮阳与户外厨房，佛山制造，出口全球40多个国家和地区。",
       statModels: "产品型号", statCategories: "产品类别", statCountries: "出口国家",
-      exploreCollections: "浏览产品系列", requestCatalog: "索取2026产品目录",
+      exploreCollections: "浏览产品系列", requestCatalog: "索取最新产品目录",
       whatsappChat: "WhatsApp 咨询",
 
-      programmeKicker: "2026 产品规划",
+      programmeKicker: "现有产品规划",
       programmeTitle: "一个工厂，一套完整的户外方案",
       programmeBody: "六大系列覆盖整个户外空间——座椅、餐桌、遮阳、火焰与庭园，让您一柜集齐，而不必对接六家供应商。",
 
@@ -280,21 +285,21 @@
       matRope: "丙纶绳编织", matAlu: "铝合金喷粉", matTeak: "实心柚木",
       materialsCare: "材质与保养 →", materialsCareShort: "材质与保养",
 
-      catalogBandTitle: "2026 产品目录：140 页，500+ 款型",
-      catalogBandBody: "完整产品线，含型号、尺寸与表面处理。告诉我们您的目标市场，我们会发送最相关的章节。",
+      catalogBandTitle: "2026 产品目录 + 2027 新系列",
+      catalogBandBody: "现有 2026 产品线与全新八大 2027 系列，包含型号、尺寸与可选饰面。告诉我们您的目标市场，我们会发送最相关的章节。",
       photoQuoteTitle: "发张照片给我们，<em>我们来报价</em>",
       photoQuoteBody: "一页目录、一张截图、一款竞品照片——把您手上的资料发来，我们会在 24 小时内回复规格与价格。",
       startInquiry: "开始询价",
 
-      collectionsIntro: "六大系列，二十二个类别，同一条生产线。每一款都可按您指定的框架颜色、绳编配色与面料重新配置。",
-      enterCollection: "进入系列", photos: "张产品图", photosShort: "张产品图",
+      collectionsIntro: "六大产品系列，二十四个类别，同一条生产线。现有产品线新增八个 2027 设计系列，各款可选框架、绳编与面料配置。",
+      enterCollection: "进入系列", photos: "款产品", photosShort: "款", categories: "个类别",
 
-      filter: "筛选", searchLabel: "搜索", searchPlaceholder: "编号或类别",
-      collection: "产品系列", category: "产品类别", clearFilters: "清除全部筛选",
-      allCollections: "全部系列", allCategories: "全部类别",
+      filter: "筛选", searchLabel: "搜索", searchPlaceholder: "目录编号、供应商款号、设计系列或类别",
+      collection: "产品系列", category: "产品类别", series: "2027 设计系列", clearFilters: "清除全部筛选",
+      allCollections: "全部产品系列", allCategories: "全部类别", allSeries: "全部设计系列",
       sort: "排序", sortCatalog: "按目录顺序", sortReverse: "按目录倒序", sortCategory: "按类别",
       noResults: "没有符合筛选条件的产品。",
-      showing: "显示 {total} 张中的 {shown} 张",
+      showing: "显示 {total} 款中的 {shown} 款",
       loadMore: "再加载 {n} 张",
       customQuote: "定制报价", add: "加入", added: "已加入",
 
@@ -318,7 +323,12 @@
       samplingBody: "量产前可按您指定的配色打样，打样周期与费用随款报价。",
       relatedModels: "相关款式", allInCategory: "查看全部{name} →",
       specCatalogRef: "目录编号", specCollection: "产品系列", specCategory: "产品类别",
-      specCatalogPage: "目录页码", specSource: "图片来源", specSourceValue: "2026 纸质目录",
+      specCatalogPage: "目录页码", specSource: "资料来源", specSourceValue: "2026 纸质目录",
+      specSourceValue2027: "KORDIA 2027 产品系列 PDF",
+      specEdition: "目录年份", specSeries: "设计系列", specSupplierCode: "供应商款号",
+      specPatent: "专利参考号", specSourcePage: "源 PDF 页码",
+      specFrameOptions: "框架选项", specRopeOptions: "绳编／藤编选项",
+      specFabricOptions: "面料选项", specTopOptions: "台面选项",
       specLead: "交货周期", specLeadValue: "按订单报价",
       specMoq: "起订量", specMoqValue: "按款确认",
       specModel: "工厂型号", specDimensions: "尺寸",
@@ -332,7 +342,7 @@
       sigStoryTitle: "一个家族，而非一本目录",
       sigStoryBody: "贸易目录回答「我们能做什么」，臻选系列回答「我们会如何指定」。每件产品共享同一框架语言、绳径与坐垫色调，采购商可在一页之内完成整个空间的配置，并确信到货时彼此相配。",
       sigDisclosure: "臻选系列图片为电脑渲染图。量产样品可应要求实拍 — 指定饰面前请先与我们确认。",
-      sigToCatalogue: "查看 2026 完整目录 →",
+      sigToCatalogue: "查看完整产品目录 →",
       setKicker: "适用场景",
       setTitle: "从空间出发，而非从产品出发",
       setIntro: "多数买家心中先有一个场所 — 酒店泳池、餐厅露台、市政公园 — 而非产品类别。以下每个场景将打开适配的款式。",
@@ -403,7 +413,7 @@
 
       company_: "公司", forBuyers: "采购专区", browseAll: "浏览全部产品",
       footerAddress: "中国广东省<br>佛山市禅城区",
-      footerWechat: "微信 · +86 134 5084 6180",
+      footerWechat: "微信 · +86 136030102587",
 
       yourSelection: "已选产品", modelsSelected: "{n} 款",
       drawerEmpty: "您还没有选择产品。浏览时加入感兴趣的款式，可合并为一次询价发送。",
@@ -411,7 +421,7 @@
       drawerCta: "为这些款式索取报价",
       remove: "移除", sets: "套",
 
-      catalogRequestMessage: "您好 Fianna，请发送 KORDIA 2026 产品目录给我。我的目标市场是：",
+      catalogRequestMessage: "您好 Fianna，请发送 KORDIA 2026 产品目录和 2027 新系列给我。我的目标市场是：",
       heroChatMessage: "您好 Fianna，我对 KORDIA 户外家具很感兴趣。",
       floatingChatMessage: "您好 Fianna，我正在浏览 KORDIA 网站。",
       productMessage: "您好 Fianna，我想进一步了解",
@@ -605,6 +615,7 @@
     screen: "home",
     collection: "all",
     subcategory: "all",
+    series: "all",
     query: "",
     sort: "catalog",
     limit: PAGE_SIZE,
@@ -642,7 +653,27 @@
   const productById = (id) => catalog.products.find((p) => p.id === id);
   const collectionBySlug = (s) => catalog.collections.find((c) => c.slug === s);
   const subBySlug = (s) => catalog.subcategories.find((x) => x.slug === s);
+  const seriesBySlug = (s) => (catalog.series || []).find((x) => x.slug === s);
   const label = (o) => (o ? o.name[state.lang] : "");
+  const seriesLabel = (p) => (p.seriesNames || []).map((name) => name[state.lang]).join(" / ");
+  const supplierCodeLabel = (p) => (p.supplierCodes || [p.model]).filter(Boolean).join(" / ");
+  const productIdentity = (p) => {
+    const code = supplierCodeLabel(p);
+    const series = seriesLabel(p);
+    return [p.id, code && `${t("specSupplierCode")} ${code}`, series].filter(Boolean).join(" · ");
+  };
+  const MATERIAL_OPTION_ZH = {
+    "Beige": "米色", "Charcoal gray": "炭灰色", "Gray": "灰色", "Gray brown": "灰棕色",
+    "Nature": "原色", "Olive Green": "橄榄绿", "Terracotta": "陶土色", "Chestnut": "栗色",
+    "Blue": "蓝色", "Olefin - Beige": "丙纶 - 米色", "PVC - Beige": "PVC - 米色",
+    "Olefin - Gray": "丙纶 - 灰色", "PVC - Olive Green": "PVC - 橄榄绿",
+    "Madrid yellow cave": "马德里黄洞石", "Phantom of gold": "幻彩金",
+    "Madrid blue cave": "马德里蓝洞石", "Heat transfer printing": "热转印", "HPL": "HPL 高压装饰板",
+  };
+  const materialOptionLabel = (value) => state.lang === "zh" ? (MATERIAL_OPTION_ZH[value] || value) : value;
+  const dimensionLabel = (dimension) => state.lang === "zh"
+    ? (dimension.labelZh || dimension.label || "—")
+    : (dimension.label || "—");
 
   // Grid slots are ~1/3 of a 1440 shell on desktop, halving down the breakpoints.
   const GRID_SIZES = "(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 288px - 56px - 48px) / 3), " +
@@ -742,7 +773,7 @@
   /* ------------------------------------------------------------- collections */
   function renderCollectionsIndex() {
     byId("collections-kicker").textContent =
-      `${catalog.subcategories.length} ${t("category")} · ${catalog.total} ${t("photos")}`;
+      `${catalog.subcategories.length} ${t("categories")} · ${catalog.total} ${t("photos")}`;
     byId("collections-list").innerHTML = catalog.collections.map((c) => {
       const cover = collectionCover(c.slug);
       const v = atLeast(cover, 800);
@@ -773,9 +804,13 @@
     let list = catalog.products.filter((p) => {
       if (state.collection !== "all" && p.collection !== state.collection) return false;
       if (state.subcategory !== "all" && p.subcategory !== state.subcategory) return false;
+      if (state.series !== "all" && !(p.seriesSlugs || []).includes(state.series)) return false;
       if (!q) return true;
       return [p.id, p.ref, p.catalogPage, p.name.en, p.name.zh, p.collectionName.en, p.collectionName.zh,
-        p.subcategoryName.en, p.subcategoryName.zh].join(" ").toLowerCase().includes(q);
+        p.subcategoryName.en, p.subcategoryName.zh, p.catalogEdition,
+        ...(p.supplierCodes || []), ...(p.patentCodes || []),
+        ...(p.seriesNames || []).flatMap((name) => [name.en, name.zh])]
+        .join(" ").toLowerCase().includes(q);
     });
     if (state.sort === "reverse") list = [...list].reverse();
     else if (state.sort === "category") {
@@ -788,14 +823,16 @@
     const sel = state.selection.has(p.id);
     const v = atLeast(p, 400);
     return `
-      <article class="p-card">
+      <article class="p-card ${p.imageFit === "contain" ? "is-product-cutout" : ""}">
         <button type="button" data-open-product="${p.id}">
           <span class="frame" style="display:block">
             <img src="${v.src}" srcset="${srcset(p)}" sizes="${GRID_SIZES}"
-                 width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(p.name[state.lang])}">
+                 width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(p.name[state.lang])}"
+                 style="object-position:${esc(p.focalPoint || "50% 50%")}">
+            ${p.catalogEdition === "2027" ? '<span class="edition-badge">2027</span>' : ""}
           </span>
           <span class="name" style="display:block">${esc(p.name[state.lang])}</span>
-          <span class="meta tabular" style="display:block">${esc(p.id)} · ${esc(p.subcategoryName[state.lang])}</span>
+          <span class="meta tabular" style="display:block">${esc(p.catalogEdition === "2027" ? `${seriesLabel(p)} · ${supplierCodeLabel(p)}` : `${p.id} · ${p.subcategoryName[state.lang]}`)}</span>
         </button>
         <div class="foot">
           <span>${esc(t("customQuote"))}</span>
@@ -808,13 +845,14 @@
   function renderBrowse() {
     const coll = state.collection === "all" ? null : collectionBySlug(state.collection);
     const sub = state.subcategory === "all" ? null : subBySlug(state.subcategory);
-    const title = sub ? label(sub) : (coll ? label(coll) : t("browseAll"));
+    const activeSeries = state.series === "all" ? null : seriesBySlug(state.series);
+    const title = activeSeries ? label(activeSeries) : (sub ? label(sub) : (coll ? label(coll) : t("browseAll")));
     byId("browse-crumb").textContent = title;
     byId("browse-title").textContent = title;
     byId("browse-intro").textContent = coll ? TAGLINES[coll.slug][state.lang] : t("collectionsIntro");
 
     const all = filtered();
-    byId("browse-total").textContent = String(sub ? sub.photoCount : (coll ? coll.photoCount : catalog.total));
+    byId("browse-total").textContent = String(all.length);
     byId("browse-total-label").textContent = t("photosShort");
 
     // sub chips for the active collection
@@ -833,6 +871,23 @@
     byId("facet-subcategories").innerHTML = [
       `<button type="button" data-sub="all" class="${state.subcategory === "all" ? "is-active" : ""}">${esc(t("allCategories"))}</button>`,
       ...subs.map((s) => `<button type="button" data-sub="${s.slug}" class="${state.subcategory === s.slug ? "is-active" : ""}">${esc(label(s))} (${s.photoCount})</button>`),
+    ].join("");
+
+    const series = catalog.series || [];
+    byId("facet-series").innerHTML = [
+      `<button type="button" data-series="all" class="${state.series === "all" ? "is-active" : ""}">${esc(t("allSeries"))}</button>`,
+      ...series.map((item) => {
+        const count = catalog.products.filter((p) =>
+          (p.seriesSlugs || []).includes(item.slug) &&
+          (state.collection === "all" || p.collection === state.collection) &&
+          (state.subcategory === "all" || p.subcategory === state.subcategory)
+        ).length;
+        const cover = atLeast(item, 440);
+        return `<button type="button" data-series="${item.slug}" class="series-facet-option ${state.series === item.slug ? "is-active" : ""}">
+          <img src="${cover.src}" width="48" height="36" loading="lazy" alt="">
+          <span>${esc(label(item))} (${count})</span>
+        </button>`;
+      }),
     ].join("");
 
     const shown = all.slice(0, state.limit);
@@ -860,20 +915,29 @@
     img.sizes = "(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 64px) * 7 / 12), " +
       "(min-width: 621px) calc(100vw - 48px), 125vw";
     img.width = big.w; img.height = big.h; img.alt = p.name[state.lang];
+    img.classList.toggle("is-contain", p.imageFit === "contain");
+    img.style.objectPosition = p.focalPoint || "50% 50%";
 
     byId("pd-crumb-collection").textContent = p.collectionName[state.lang];
     byId("pd-crumb-collection").dataset.openCollection = p.collection;
     byId("pd-crumb-ref").textContent = p.id;
     byId("pd-subcategory").textContent = p.subcategoryName[state.lang];
     byId("pd-title").textContent = p.name[state.lang];
-    byId("pd-ref").textContent = `${t("specCatalogRef")} ${p.id}`;
+    byId("pd-ref").textContent = p.catalogEdition === "2027"
+      ? `${t("specCatalogRef")} ${p.id} · ${t("specSupplierCode")} ${supplierCodeLabel(p)}`
+      : `${t("specCatalogRef")} ${p.id}`;
 
-    byId("pd-glance").innerHTML = [
+    const glance = [
       [t("specModel"), p.model || "—"],
       [t("specCollection"), p.collectionName[state.lang]],
       [t("specCategory"), p.subcategoryName[state.lang]],
       [t("specCatalogPage"), String(p.catalogPage)],
-    ].map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("");
+    ];
+    if (p.catalogEdition === "2027") {
+      glance.unshift([t("specEdition"), p.catalogEdition], [t("specSeries"), seriesLabel(p)]);
+    }
+    byId("pd-glance").innerHTML = glance
+      .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("");
 
     // Per-piece dimensions from the factory quote book. Products the book
     // leaves blank say so — we never publish an inferred measurement.
@@ -881,7 +945,7 @@
     if (dimEl) {
       if (p.dimensions && p.dimensions.length) {
         dimEl.innerHTML = p.dimensions.map((d) =>
-          `<li><span class="dim-label">${esc(d.label || "—")}</span>` +
+          `<li><span class="dim-label">${esc(dimensionLabel(d))}</span>` +
           `<span class="dim-value tabular">${esc(d.cm)}</span></li>`).join("");
       } else {
         dimEl.innerHTML = `<li class="dim-pending">${esc(t("specDimsPending"))}</li>`;
@@ -894,7 +958,7 @@
     byId("pd-thumbs").innerHTML = thumbs.map((x) => {
       const v = atLeast(x, 400);
       return `<button type="button" class="${x.id === p.id ? "is-active" : ""}" data-open-product="${x.id}">
-        <img src="${v.src}" width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(x.name[state.lang])}">
+        <img class="${x.imageFit === "contain" ? "is-contain" : ""}" src="${v.src}" width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(x.name[state.lang])}">
       </button>`;
     }).join("");
 
@@ -926,18 +990,38 @@
     const add = byId("pd-add");
     add.textContent = sel ? t("inSelection") : t("addToSelection");
     add.setAttribute("aria-pressed", String(sel));
-    byId("pd-whatsapp").href = wa(`${t("productMessage")} ${p.id} — ${p.name[state.lang]}.`);
+    byId("pd-whatsapp").href = wa(`${t("productMessage")} ${productIdentity(p)} — ${p.name[state.lang]}.`);
 
     const specs = [
       [t("specCatalogRef"), p.id],
       [t("specModel"), p.model || "—"],
       [t("specDimensions"), p.dimensions && p.dimensions.length
-        ? p.dimensions.map((d) => (d.label ? d.label + " " : "") + d.cm).join("  ·  ")
+        ? p.dimensions.map((d) => dimensionLabel(d) + " " + d.cm).join("  ·  ")
         : t("specDimsPending")],
       [t("specCollection"), p.collectionName[state.lang]],
       [t("specCategory"), p.subcategoryName[state.lang]],
       [t("specCatalogPage"), String(p.catalogPage)],
     ];
+    if (p.catalogEdition === "2027") {
+      specs.splice(1, 0,
+        [t("specEdition"), p.catalogEdition],
+        [t("specSeries"), seriesLabel(p)],
+        [t("specSupplierCode"), supplierCodeLabel(p)],
+        [t("specPatent"), (p.patentCodes || []).join(" / ") || "—"],
+        [t("specSourcePage"), String(p.sourcePdfPage)],
+      );
+      const materials = p.materials || {};
+      const materialRows = [
+        [t("specFrameOptions"), materials.frame],
+        [t("specRopeOptions"), [materials.ropeGauge, ...(materials.ropeWicker || [])].filter(Boolean)],
+        [t("specFabricOptions"), materials.fabric],
+        [t("specTopOptions"), materials.tableTop],
+      ];
+      materialRows.forEach(([key, values]) => {
+        if (values && values.length) specs.push([key, values.map(materialOptionLabel).join(" / ")]);
+      });
+      specs.push([t("specSource"), t("specSourceValue2027")]);
+    }
     if (finishApplies) specs.push([t("frameFinish"), FINISHES.find((f) => f.key === state.finish)[state.lang]]);
     if (ropeApplies) specs.push([t("ropeColour"), ROPES.find((r) => r.key === state.rope)[state.lang]]);
     specs.push(
@@ -958,7 +1042,7 @@
         <span class="frame ar-4-3" style="display:block;overflow:hidden;background:var(--sand)">
           <img src="${v.src}" srcset="${srcset(x)}" sizes="${GRID_SIZES}" width="${v.w}" height="${v.h}"
                loading="lazy" decoding="async" alt="${esc(x.name[state.lang])}"
-               style="width:100%;height:100%;object-fit:cover">
+               style="width:100%;height:100%;object-fit:${x.imageFit === "contain" ? "contain" : "cover"};padding:${x.imageFit === "contain" ? "10%" : "0"}">
         </span>
         <span style="display:block;font-size:15px;font-weight:500;color:var(--ink);margin-top:14px">${esc(x.name[state.lang])}</span>
         <span class="tabular" style="display:block;font-size:13px;color:var(--muted);margin-top:4px">${esc(x.id)}</span>
@@ -1060,7 +1144,7 @@
         <img src="${v.src}" width="84" height="63" loading="lazy" alt="">
         <div style="flex:1">
           <div class="name">${esc(p.name[state.lang])}</div>
-          <div class="ref tabular">${esc(p.id)} · ${esc(p.subcategoryName[state.lang])}</div>
+          <div class="ref tabular">${esc(p.catalogEdition === "2027" ? productIdentity(p) : `${p.id} · ${p.subcategoryName[state.lang]}`)}</div>
           <div class="row">
             <input class="tabular" type="number" min="1" value="${qty}" data-qty="${p.id}" aria-label="${esc(t("sets"))}">
             <span style="font-size:12px;color:var(--muted)">${esc(t("sets"))}</span>
@@ -1124,7 +1208,8 @@
                 data-wizard-coll="${c.slug}" aria-pressed="${state.wizardCollections.has(c.slug)}">${esc(label(c))}</button>`).join("");
     }
     const n = state.selection.size;
-    const text = n ? fmt("attachedCount", { n }) + " — " + [...state.selection.keys()].join(", ") : t("noneAttached");
+    const text = n ? fmt("attachedCount", { n }) + " — " + [...state.selection.keys()]
+      .map((id) => productById(id)).filter(Boolean).map(productIdentity).join(", ") : t("noneAttached");
     const a = byId("wizard-attached");
     if (a) a.textContent = text;
     const s = byId("wizard-summary");
@@ -1159,7 +1244,7 @@
       lines.push("", `${t("attachedModels")}:`);
       [...state.selection].forEach(([id, qty]) => {
         const p = productById(id);
-        if (p) lines.push(`• ${id} — ${p.name[state.lang]} × ${qty} ${t("sets")}`);
+        if (p) lines.push(`• ${productIdentity(p)} — ${p.name[state.lang]} × ${qty} ${t("sets")}`);
       });
     }
     return lines.join("\n");
@@ -1193,11 +1278,13 @@
       if (r.collection !== undefined) {
         state.collection = collectionBySlug(r.collection) ? r.collection : "all";
         state.subcategory = "all";
+        state.series = "all";
       }
       if (r.subcategory !== undefined) {
         const sub = subBySlug(r.subcategory);
         state.subcategory = sub ? r.subcategory : "all";
         state.collection = sub ? sub.collection : "all";
+        state.series = "all";
       }
       state.limit = PAGE_SIZE;
     }
@@ -1352,7 +1439,7 @@
   }
 
   document.addEventListener("click", (ev) => {
-    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-open-setting],[data-add],[data-sub],[data-coll],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll],[data-lightbox]");
+    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-open-setting],[data-add],[data-sub],[data-coll],[data-series],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll],[data-lightbox]");
     if (!el) return;
 
     if (el.dataset.lightbox) {
@@ -1371,7 +1458,7 @@
     if (el.dataset.hero !== undefined) { setHero(Number(el.dataset.hero)); return; }
 
     if (el.dataset.coll) {
-      state.collection = el.dataset.coll; state.subcategory = "all"; state.limit = PAGE_SIZE;
+      state.collection = el.dataset.coll; state.subcategory = "all"; state.series = "all"; state.limit = PAGE_SIZE;
       renderBrowse(); return;
     }
     if (el.dataset.sub) {
@@ -1381,6 +1468,10 @@
         state.subcategory = el.dataset.sub;
         if (sub && state.collection !== "all" && sub.collection !== state.collection) state.collection = sub.collection;
       }
+      state.limit = PAGE_SIZE; renderBrowse(); return;
+    }
+    if (el.dataset.series) {
+      state.series = el.dataset.series;
       state.limit = PAGE_SIZE; renderBrowse(); return;
     }
     if (el.dataset.finish) {
@@ -1431,7 +1522,7 @@
   byId("browse-sort").addEventListener("change", (ev) => { state.sort = ev.target.value; renderBrowse(); });
   byId("load-more").addEventListener("click", () => { state.limit += PAGE_SIZE; renderBrowse(); });
   const resetFilters = () => {
-    state.collection = "all"; state.subcategory = "all"; state.query = ""; state.limit = PAGE_SIZE;
+    state.collection = "all"; state.subcategory = "all"; state.series = "all"; state.query = ""; state.limit = PAGE_SIZE;
     byId("browse-search").value = ""; renderBrowse();
   };
   byId("reset-filters").addEventListener("click", resetFilters);
