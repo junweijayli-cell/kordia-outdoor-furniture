@@ -127,6 +127,7 @@
       specSourceValue2027: "KORDIA 2027 Collection PDF",
       specEdition: "Catalogue edition", specSeries: "Series", specSupplierCode: "Supplier code",
       specPatent: "Patent reference", specSourcePage: "Source PDF page",
+      sceneView: "Lifestyle rendering", productView: "Product view",
       specFrameOptions: "Frame options", specRopeOptions: "Rope / wicker options",
       specFabricOptions: "Fabric options", specTopOptions: "Tabletop options",
       specLead: "Lead time", specLeadValue: "Quoted per order",
@@ -327,6 +328,7 @@
       specSourceValue2027: "KORDIA 2027 产品系列 PDF",
       specEdition: "目录年份", specSeries: "设计系列", specSupplierCode: "供应商款号",
       specPatent: "专利参考号", specSourcePage: "源 PDF 页码",
+      sceneView: "场景效果图", productView: "产品图",
       specFrameOptions: "框架选项", specRopeOptions: "绳编／藤编选项",
       specFabricOptions: "面料选项", specTopOptions: "台面选项",
       specLead: "交货周期", specLeadValue: "按订单报价",
@@ -620,6 +622,7 @@
     sort: "catalog",
     limit: PAGE_SIZE,
     productId: null,
+    productMedia: "scene",
     selection: new Map(readSelection()),
     finish: "charcoal",
     rope: "chalk",
@@ -681,6 +684,14 @@
     "(min-width: 621px) calc((100vw - 72px) / 2), calc((100vw - 54px) / 2)";
   const srcset = (p) => p.variants.map((v) => `${v.src} ${v.w}w`).join(", ");
   const atLeast = (p, w) => p.variants.find((v) => v.w >= w) || p.variants[p.variants.length - 1];
+  const sceneMedia = (p) => p.sceneVariants && p.sceneVariants.length ? {
+    image: p.sceneImage,
+    width: p.sceneWidth,
+    height: p.sceneHeight,
+    variants: p.sceneVariants,
+    focalPoint: p.sceneFocalPoint || "50% 50%",
+  } : null;
+  const displayMedia = (p) => sceneMedia(p) || p;
 
   /* ------------------------------------------------------------- translation */
   function applyStatic() {
@@ -821,14 +832,17 @@
 
   function productCard(p) {
     const sel = state.selection.has(p.id);
-    const v = atLeast(p, 400);
+    const media = displayMedia(p);
+    const v = atLeast(media, 400);
+    const cutout = sceneMedia(p) ? atLeast(p, 400) : null;
     return `
-      <article class="p-card ${p.imageFit === "contain" ? "is-product-cutout" : ""}">
+      <article class="p-card ${cutout ? "has-lifestyle-scene" : (p.imageFit === "contain" ? "is-product-cutout" : "")}">
         <button type="button" data-open-product="${p.id}">
           <span class="frame" style="display:block">
-            <img src="${v.src}" srcset="${srcset(p)}" sizes="${GRID_SIZES}"
+            <img src="${v.src}" srcset="${srcset(media)}" sizes="${GRID_SIZES}"
                  width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(p.name[state.lang])}"
-                 style="object-position:${esc(p.focalPoint || "50% 50%")}">
+                 style="object-position:${esc(media.focalPoint || "50% 50%")}">
+            ${cutout ? `<span class="product-cutout-inset" aria-hidden="true"><img src="${cutout.src}" width="${cutout.w}" height="${cutout.h}" loading="lazy" decoding="async" alt=""></span>` : ""}
             ${p.catalogEdition === "2027" ? '<span class="edition-badge">2027</span>' : ""}
           </span>
           <span class="name" style="display:block">${esc(p.name[state.lang])}</span>
@@ -909,14 +923,16 @@
   function renderProduct() {
     const p = productById(state.productId);
     if (!p) return;
-    const big = p.variants[p.variants.length - 1];
+    const scene = sceneMedia(p);
+    const media = scene && state.productMedia === "scene" ? scene : p;
+    const big = media.variants[media.variants.length - 1];
     const img = byId("pd-image");
-    img.src = big.src; img.srcset = srcset(p);
+    img.src = big.src; img.srcset = srcset(media);
     img.sizes = "(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 64px) * 7 / 12), " +
       "(min-width: 621px) calc(100vw - 48px), 125vw";
     img.width = big.w; img.height = big.h; img.alt = p.name[state.lang];
-    img.classList.toggle("is-contain", p.imageFit === "contain");
-    img.style.objectPosition = p.focalPoint || "50% 50%";
+    img.classList.toggle("is-contain", media === p && p.imageFit === "contain");
+    img.style.objectPosition = media.focalPoint || p.focalPoint || "50% 50%";
 
     byId("pd-crumb-collection").textContent = p.collectionName[state.lang];
     byId("pd-crumb-collection").dataset.openCollection = p.collection;
@@ -952,15 +968,31 @@
       }
     }
 
-    // Sibling photographs from the same catalog page act as alternate views.
-    const siblings = catalog.products.filter((x) => x.catalogPage === p.catalogPage);
-    const thumbs = (siblings.length > 1 ? siblings : catalog.products.filter((x) => x.subcategory === p.subcategory)).slice(0, 4);
-    byId("pd-thumbs").innerHTML = thumbs.map((x) => {
-      const v = atLeast(x, 400);
-      return `<button type="button" class="${x.id === p.id ? "is-active" : ""}" data-open-product="${x.id}">
-        <img class="${x.imageFit === "contain" ? "is-contain" : ""}" src="${v.src}" width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(x.name[state.lang])}">
-      </button>`;
-    }).join("");
+    const thumbsEl = byId("pd-thumbs");
+    thumbsEl.classList.toggle("is-media-switcher", Boolean(scene));
+    if (scene) {
+      const sceneThumb = atLeast(scene, 440);
+      const cutoutThumb = atLeast(p, 400);
+      thumbsEl.innerHTML = `
+        <button type="button" class="media-thumb ${state.productMedia === "scene" ? "is-active" : ""}" data-product-media="scene" aria-label="${esc(t("sceneView"))}">
+          <img src="${sceneThumb.src}" width="${sceneThumb.w}" height="${sceneThumb.h}" loading="lazy" decoding="async" alt="${esc(t("sceneView"))}">
+          <span>${esc(t("sceneView"))}</span>
+        </button>
+        <button type="button" class="media-thumb ${state.productMedia === "cutout" ? "is-active" : ""}" data-product-media="cutout" aria-label="${esc(t("productView"))}">
+          <img class="is-contain" src="${cutoutThumb.src}" width="${cutoutThumb.w}" height="${cutoutThumb.h}" loading="lazy" decoding="async" alt="${esc(t("productView"))}">
+          <span>${esc(t("productView"))}</span>
+        </button>`;
+    } else {
+      // Sibling photographs from the same catalog page act as alternate views.
+      const siblings = catalog.products.filter((x) => x.catalogPage === p.catalogPage);
+      const thumbs = (siblings.length > 1 ? siblings : catalog.products.filter((x) => x.subcategory === p.subcategory)).slice(0, 4);
+      thumbsEl.innerHTML = thumbs.map((x) => {
+        const v = atLeast(x, 400);
+        return `<button type="button" class="${x.id === p.id ? "is-active" : ""}" data-open-product="${x.id}">
+          <img class="${x.imageFit === "contain" ? "is-contain" : ""}" src="${v.src}" width="${v.w}" height="${v.h}" loading="lazy" decoding="async" alt="${esc(x.name[state.lang])}">
+        </button>`;
+      }).join("");
+    }
 
     const finishApplies = FRAME_FINISH_SUBCATEGORIES.has(p.subcategory);
     const ropeApplies = ROPE_SUBCATEGORIES.has(p.subcategory);
@@ -1037,12 +1069,13 @@
 
     const related = catalog.products.filter((x) => x.subcategory === p.subcategory && x.id !== p.id).slice(0, 4);
     byId("pd-related").innerHTML = related.map((x) => {
-      const v = atLeast(x, 400);
+      const relatedMedia = displayMedia(x);
+      const v = atLeast(relatedMedia, 400);
       return `<button type="button" data-open-product="${x.id}" style="background:none;border:0;padding:0;cursor:pointer;text-align:left">
         <span class="frame ar-4-3" style="display:block;overflow:hidden;background:var(--sand)">
-          <img src="${v.src}" srcset="${srcset(x)}" sizes="${GRID_SIZES}" width="${v.w}" height="${v.h}"
+          <img src="${v.src}" srcset="${srcset(relatedMedia)}" sizes="${GRID_SIZES}" width="${v.w}" height="${v.h}"
                loading="lazy" decoding="async" alt="${esc(x.name[state.lang])}"
-               style="width:100%;height:100%;object-fit:${x.imageFit === "contain" ? "contain" : "cover"};padding:${x.imageFit === "contain" ? "10%" : "0"}">
+               style="width:100%;height:100%;object-fit:${sceneMedia(x) ? "cover" : (x.imageFit === "contain" ? "contain" : "cover")};object-position:${esc(relatedMedia.focalPoint || x.focalPoint || "50% 50%")} ;padding:${sceneMedia(x) ? "0" : (x.imageFit === "contain" ? "10%" : "0")}">
         </span>
         <span style="display:block;font-size:15px;font-weight:500;color:var(--ink);margin-top:14px">${esc(x.name[state.lang])}</span>
         <span class="tabular" style="display:block;font-size:13px;color:var(--muted);margin-top:4px">${esc(x.id)}</span>
@@ -1293,6 +1326,9 @@
     // model. Send those to the collections index instead.
     if (r.screen === "product") {
       if (r.productId && productById(r.productId)) {
+        if (state.productId !== r.productId) {
+          state.productMedia = sceneMedia(productById(r.productId)) ? "scene" : "cutout";
+        }
         state.productId = r.productId;
       } else {
         location.replace("#/collections");
@@ -1439,7 +1475,7 @@
   }
 
   document.addEventListener("click", (ev) => {
-    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-open-setting],[data-add],[data-sub],[data-coll],[data-series],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll],[data-lightbox]");
+    const el = ev.target.closest("[data-go],[data-open-collection],[data-open-sub],[data-open-product],[data-open-setting],[data-add],[data-sub],[data-coll],[data-series],[data-finish],[data-rope],[data-remove],[data-hero],[data-step-to],[data-wizard-coll],[data-lightbox],[data-product-media]");
     if (!el) return;
 
     if (el.dataset.lightbox) {
@@ -1453,6 +1489,7 @@
     if (el.dataset.openCollection) { go(`#/c/${el.dataset.openCollection}`); return; }
     if (el.dataset.openSub) { go(`#/s/${el.dataset.openSub}`); return; }
     if (el.dataset.openProduct) { go(`#/p/${el.dataset.openProduct}`); return; }
+    if (el.dataset.productMedia) { state.productMedia = el.dataset.productMedia; renderProduct(); return; }
     if (el.dataset.add) { toggleSelection(el.dataset.add); return; }
     if (el.dataset.remove) { toggleSelection(el.dataset.remove); return; }
     if (el.dataset.hero !== undefined) { setHero(Number(el.dataset.hero)); return; }

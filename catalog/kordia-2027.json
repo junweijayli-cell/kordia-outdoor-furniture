@@ -25,6 +25,12 @@
       "name": { "en": "Ames", "zh": "Ames 系列" },
       "patentCodes": ["2026304049415"],
       "cover": { "sourcePdfPage": 4, "xref": 12, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "pool-sofa", "sourcePdfPage": 5, "xref": 18, "focalPoint": "50% 48%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "sea-sofa", "sourcePdfPage": 6, "xref": 22, "focalPoint": "50% 50%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "courtyard-dining", "sourcePdfPage": 7, "xref": 26, "focalPoint": "50% 48%", "appliesTo": ["rope-dining"] },
+        { "key": "modern-dining", "sourcePdfPage": 8, "xref": 30, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] }
+      ],
       "materials": {
         "frame": ["Beige", "Charcoal gray"],
         "ropeWicker": ["Gray brown", "Nature", "Beige", "Charcoal gray"],
@@ -38,6 +44,12 @@
       "name": { "en": "Paros", "zh": "Paros 系列" },
       "patentCodes": ["2026304076380"],
       "cover": { "sourcePdfPage": 10, "xref": 58, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "pool-sofa", "sourcePdfPage": 11, "xref": 65, "focalPoint": "50% 52%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "dark-terrace-sofa", "sourcePdfPage": 13, "xref": 72, "focalPoint": "50% 50%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "sunset-dining", "sourcePdfPage": 12, "xref": 69, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "garden-dining", "sourcePdfPage": 14, "xref": 76, "focalPoint": "50% 50%", "appliesTo": ["rope-dining"] }
+      ],
       "materials": {
         "frame": ["Beige", "Charcoal gray"],
         "ropeWicker": ["Beige", "Nature", "Gray brown"],
@@ -51,6 +63,16 @@
       "name": { "en": "Capella", "zh": "Capella 系列" },
       "patentCodes": ["2026303651686", "2026304280999", "2026303651879", "2026303651845"],
       "cover": { "sourcePdfPage": 16, "xref": 95, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "pool-modular", "sourcePdfPage": 18, "xref": 107, "focalPoint": "50% 52%", "appliesTo": ["rope-sofa-sets", "modular-sofas", "coffee-side-tables", "daybeds"] },
+        { "key": "garden-sofa", "sourcePdfPage": 19, "xref": 110, "focalPoint": "50% 50%", "appliesTo": ["rope-sofa-sets", "modular-sofas", "coffee-side-tables"] },
+        { "key": "forest-sofa", "sourcePdfPage": 23, "xref": 124, "focalPoint": "50% 52%", "appliesTo": ["rope-sofa-sets", "modular-sofas", "coffee-side-tables"] },
+        { "key": "sea-dining", "sourcePdfPage": 20, "xref": 114, "focalPoint": "50% 50%", "appliesTo": ["rope-dining"] },
+        { "key": "terrace-dining", "sourcePdfPage": 21, "xref": 118, "focalPoint": "50% 50%", "appliesTo": ["rope-dining"] },
+        { "key": "garden-bar", "sourcePdfPage": 22, "xref": 121, "focalPoint": "50% 50%", "appliesTo": ["bar-sets"] },
+        { "key": "garden-lounge", "sourcePdfPage": 24, "xref": 128, "focalPoint": "50% 50%", "appliesTo": ["lounge-chairs"] },
+        { "key": "pool-loungers", "sourcePdfPage": 25, "xref": 131, "focalPoint": "50% 55%", "appliesTo": ["sun-loungers", "daybeds"] }
+      ],
       "materials": {
         "frame": ["Beige", "Olive Green"],
         "ropeWicker": ["Beige", "Nature", "Gray brown", "Olive Green", "Terracotta"],
@@ -64,6 +86,13 @@
       "name": { "en": "Daisy", "zh": "Daisy 系列" },
       "patentCodes": ["2026304049398"],
       "cover": { "sourcePdfPage": 28, "xref": 171, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "pool-sofa", "sourcePdfPage": 29, "xref": 178, "focalPoint": "50% 50%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "garden-sofa", "sourcePdfPage": 31, "xref": 184, "focalPoint": "50% 52%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "garden-dining", "sourcePdfPage": 30, "xref": 181, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "family-dining", "sourcePdfPage": 32, "xref": 188, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "tree-lounge", "sourcePdfPage": 33, "xref": 192, "focalPoint": "50% 50%", "appliesTo": ["rocking-recliners", "garden-swings"] }
+      ],
       "materials": {
         "frame": ["Beige", "Chestnut", "Olive Green", "Nature"],
         "ropeWicker": ["Nature", "Gray brown", "Olive Green", "Terracotta"],
@@ -77,6 +106,13 @@
       "name": { "en": "Bellano", "zh": "Bellano 系列" },
       "patentCodes": ["2026303651597"],
       "cover": { "sourcePdfPage": 36, "xref": 221, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "lake-sofa", "sourcePdfPage": 37, "xref": 227, "focalPoint": "50% 50%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "pool-sofa", "sourcePdfPage": 38, "xref": 231, "focalPoint": "50% 50%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "modern-dining", "sourcePdfPage": 39, "xref": 234, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "ocean-dining", "sourcePdfPage": 40, "xref": 237, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "covered-dining", "sourcePdfPage": 41, "xref": 240, "focalPoint": "50% 50%", "appliesTo": ["rope-dining"] }
+      ],
       "materials": {
         "frame": ["Beige", "Chestnut", "Olive Green", "Blue", "Charcoal gray"],
         "ropeWicker": ["Beige", "Nature", "Gray brown", "Olive Green", "Terracotta", "Blue", "Charcoal gray"],
@@ -90,6 +126,13 @@
       "name": { "en": "Tevera", "zh": "Tevera 系列" },
       "patentCodes": ["2026303651883", "2026303651794"],
       "cover": { "sourcePdfPage": 43, "xref": 260, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "courtyard-sofa", "sourcePdfPage": 44, "xref": 267, "focalPoint": "50% 52%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "country-sofa", "sourcePdfPage": 45, "xref": 271, "focalPoint": "50% 52%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "garden-sofa", "sourcePdfPage": 46, "xref": 274, "focalPoint": "50% 52%", "appliesTo": ["rope-sofa-sets", "coffee-side-tables"] },
+        { "key": "pool-loungers", "sourcePdfPage": 48, "xref": 283, "focalPoint": "50% 52%", "appliesTo": ["sun-loungers"] },
+        { "key": "forest-loungers", "sourcePdfPage": 49, "xref": 286, "focalPoint": "50% 54%", "appliesTo": ["sun-loungers"] }
+      ],
       "materials": {
         "frame": ["Beige", "Charcoal gray"],
         "ropeWicker": ["Nature", "Charcoal gray"],
@@ -103,6 +146,15 @@
       "name": { "en": "Free Form", "zh": "Free Form 系列" },
       "patentCodes": ["2026303651703", "2026303487380", "2026303487304", "2026303487319"],
       "cover": { "sourcePdfPage": 51, "xref": 323, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "modern-sofa", "sourcePdfPage": 52, "xref": 329, "focalPoint": "50% 52%", "appliesTo": ["modular-sofas", "coffee-side-tables"] },
+        { "key": "pool-sofa", "sourcePdfPage": 53, "xref": 332, "focalPoint": "50% 52%", "appliesTo": ["modular-sofas", "coffee-side-tables"] },
+        { "key": "family-sofa", "sourcePdfPage": 55, "xref": 341, "focalPoint": "50% 50%", "appliesTo": ["modular-sofas", "coffee-side-tables"] },
+        { "key": "outdoor-kitchen", "sourcePdfPage": 57, "xref": 349, "focalPoint": "50% 50%", "appliesTo": ["outdoor-kitchens"] },
+        { "key": "bar-kitchen", "sourcePdfPage": 58, "xref": 353, "focalPoint": "50% 52%", "appliesTo": ["outdoor-kitchens", "bar-sets", "outdoor-accessories"] },
+        { "key": "garden-planters", "sourcePdfPage": 59, "xref": 357, "focalPoint": "50% 50%", "appliesTo": ["planters"] },
+        { "key": "pool-loungers", "sourcePdfPage": 60, "xref": 361, "focalPoint": "50% 52%", "appliesTo": ["sun-loungers"] }
+      ],
       "materials": {
         "frame": ["Beige", "Chestnut", "Olive Green", "Blue", "Charcoal gray"],
         "ropeWicker": ["Beige", "Nature", "Charcoal gray", "Gray brown", "Olive Green", "Chestnut"],
@@ -116,6 +168,12 @@
       "name": { "en": "Lovi", "zh": "Lovi 系列" },
       "patentCodes": ["2026303651718", "2026303651760"],
       "cover": { "sourcePdfPage": 64, "xref": 428, "focalPoint": "50% 50%" },
+      "scenes": [
+        { "key": "cafe-dining", "sourcePdfPage": 65, "xref": 434, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "sea-dining", "sourcePdfPage": 66, "xref": 437, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "courtyard-dining", "sourcePdfPage": 67, "xref": 440, "focalPoint": "50% 52%", "appliesTo": ["rope-dining"] },
+        { "key": "terrace-bar", "sourcePdfPage": 68, "xref": 445, "focalPoint": "50% 48%", "appliesTo": ["bar-sets"] }
+      ],
       "materials": {
         "frame": ["Beige", "Chestnut", "Olive Green", "Blue"],
         "ropeWicker": ["Nature", "Olive Green", "Terracotta"],

@@ -26,6 +26,7 @@ OUTPUT_PATH = ROOT / "assets" / "catalog-data.js"
 IMAGE_DIR = ROOT / "assets" / "images" / "catalog-2027"
 PRODUCT_WIDTHS = (400, 800)
 SERIES_WIDTHS = (440, 880, 1196)
+SCENE_WIDTHS = (440, 880, 1196)
 
 
 def read_json(path: Path) -> dict:
@@ -147,6 +148,7 @@ def build_catalog(write_images: bool = True) -> dict:
         raise ValueError("Series slugs must be unique")
 
     published_series = []
+    published_scenes_by_series = {}
     for series in imported["series"]:
         cover = series["cover"]
         image, source_width, source_height = extract_image(
@@ -161,6 +163,40 @@ def build_catalog(write_images: bool = True) -> dict:
             }
             for width in SERIES_WIDTHS
         ]
+        scene_keys = set()
+        published_scenes = []
+        for scene in series.get("scenes", []):
+            if scene["key"] in scene_keys:
+                raise ValueError(f"Duplicate scene key {scene['key']} in {series['slug']}")
+            scene_keys.add(scene["key"])
+            scene_image, scene_source_width, scene_source_height = extract_image(
+                document, scene["sourcePdfPage"], scene["xref"]
+            )
+            scene_base = f"scene-{series['slug']}-{scene['key']}"
+            scene_variants = save_variants(scene_image, scene_base, SCENE_WIDTHS) if write_images else [
+                {
+                    "w": width,
+                    "h": max(1, round(scene_source_height * width / scene_source_width)),
+                    "src": f"assets/images/catalog-2027/{scene_base}-{width}.webp",
+                }
+                for width in SCENE_WIDTHS
+            ]
+            published_scenes.append({
+                "key": scene["key"],
+                "sourcePdfPage": scene["sourcePdfPage"],
+                "appliesTo": scene["appliesTo"],
+                "focalPoint": scene["focalPoint"],
+                "image": scene_variants[-1]["src"],
+                "width": scene_variants[-1]["w"],
+                "height": scene_variants[-1]["h"],
+                "sourceWidth": scene_source_width,
+                "sourceHeight": scene_source_height,
+                "variants": scene_variants,
+            })
+        if not published_scenes:
+            raise ValueError(f"No lifestyle scenes defined for {series['slug']}")
+        published_scenes_by_series[series["slug"]] = published_scenes
+
         published_series.append({
             "slug": series["slug"],
             "name": series["name"],
@@ -175,6 +211,7 @@ def build_catalog(write_images: bool = True) -> dict:
             "sourceWidth": source_width,
             "sourceHeight": source_height,
             "variants": variants,
+            "scenes": published_scenes,
         })
 
     new_subcategories = imported["subcategories"]
@@ -189,6 +226,7 @@ def build_catalog(write_images: bool = True) -> dict:
     max_position = max(item.get("position", 0) for item in catalog["products"])
     new_products = []
     supplier_code_usage: Counter[str] = Counter()
+    scene_usage: Counter[tuple[str, str]] = Counter()
 
     for offset, record in enumerate(imported["products"], start=1):
         for slug in record["seriesSlugs"]:
@@ -221,6 +259,19 @@ def build_catalog(write_images: bool = True) -> dict:
         patents = merge_unique([item["patentCodes"] for item in series_defs])
         series_names = [item["name"] for item in series_defs]
 
+        primary_series = record["seriesSlugs"][0]
+        scene_candidates = [
+            scene for scene in published_scenes_by_series[primary_series]
+            if record["subcategory"] in scene["appliesTo"]
+        ]
+        if not scene_candidates:
+            raise ValueError(
+                f"No lifestyle scene for {record['id']} ({primary_series} / {record['subcategory']})"
+            )
+        usage_key = (primary_series, record["subcategory"])
+        scene = scene_candidates[scene_usage[usage_key] % len(scene_candidates)]
+        scene_usage[usage_key] += 1
+
         product = {
             "id": record["id"],
             "ref": " / ".join(record["supplierCodes"]),
@@ -249,6 +300,12 @@ def build_catalog(write_images: bool = True) -> dict:
             "variants": variants,
             "imageFit": "contain",
             "focalPoint": "50% 50%",
+            "sceneImage": scene["image"],
+            "sceneWidth": scene["width"],
+            "sceneHeight": scene["height"],
+            "sceneVariants": scene["variants"],
+            "sceneFocalPoint": scene["focalPoint"],
+            "sceneSourcePdfPage": scene["sourcePdfPage"],
             "position": max_position + offset,
             "model": " / ".join(record["supplierCodes"]),
             "specSourcePage": record["sourcePdfPage"],
@@ -331,15 +388,25 @@ def main() -> None:
     if args.check:
         if not OUTPUT_PATH.exists() or OUTPUT_PATH.read_text(encoding="utf-8") != output:
             raise SystemExit("assets/catalog-data.js is not up to date; run scripts/build-catalog.py")
-        missing = [
-            variant["src"]
+        referenced_variants = [
+            variant
             for product in catalog["products"]
-            for variant in product.get("variants", [])
-            if not (ROOT / variant["src"]).exists()
+            for group in (product.get("variants", []), product.get("sceneVariants", []))
+            for variant in group
+        ] + [
+            variant
+            for series in catalog.get("series", [])
+            for group in (
+                series.get("variants", []),
+                *[scene.get("variants", []) for scene in series.get("scenes", [])],
+            )
+            for variant in group
         ]
+        missing = [variant["src"] for variant in referenced_variants if not (ROOT / variant["src"]).exists()]
         if missing:
             raise SystemExit(f"Missing generated images: {missing[:5]}")
-        print(f"OK: {catalog['total']} products, {len(catalog['subcategories'])} subcategories, {len(catalog['series'])} 2027 series")
+        scene_count = sum(len(series.get("scenes", [])) for series in catalog.get("series", []))
+        print(f"OK: {catalog['total']} products, {len(catalog['subcategories'])} subcategories, {len(catalog['series'])} 2027 series, {scene_count} lifestyle scenes")
         return
 
     OUTPUT_PATH.write_text(output, encoding="utf-8")

@@ -50,9 +50,12 @@ system reduced-motion preference, and falls back to a stable layout on smaller s
 
 402 product cards across 6 collections and 24 categories. The 341 established catalogue
 photographs retain their composition-preserving 400, 800, 1600, and 2400px image ladders.
-The 61 additions cover eight named 2027 series and use colour-faithful product cutouts
-extracted directly from the PDF. New cutouts are exported at their useful 400 and 800px
-display sizes and use contained layouts so the furniture is not cropped.
+The 61 additions cover eight named 2027 series. Their catalogue cards and detail-page
+hero images use the matching colour-faithful lifestyle renderings extracted directly from
+the PDF; a contained product cutout remains available as an inset and alternate product
+view for precise identification. Scenes are mapped by product type and exported in 440,
+880, and 1196px responsive sizes without saturation or tone enhancement. Cutouts retain
+their uncropped 400 and 800px variants.
 
 The 2027 import records 66 pictured items as 61 canonical products after consolidating the
 shared `0003311` dining table and `0003331` side table. The PDF prints `0009501` for both a
