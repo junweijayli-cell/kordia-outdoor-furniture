@@ -1,0 +1,316 @@
+{
+  "received": "2026-10-24",
+  "colour": "sRGB; no enhancement or additional AI processing",
+  "images": [
+    {
+      "name": "wood-workshop",
+      "sourceFile": "drive-download-20261024T022254Z-1-001/21 Topaz Gigapixel 2x scale.jpg",
+      "sourceSha256": "2da67f78eaf6f233c4676f127d497004ab1cebd35da9a2e33d301af2e32470fd",
+      "sourceWidth": 3414,
+      "sourceHeight": 2560,
+      "cropAspect": 1.5,
+      "focusY": 0.57,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/wood-workshop-480.webp",
+          "w": 480,
+          "h": 320
+        },
+        {
+          "src": "assets/images/factory-intro/wood-workshop-960.webp",
+          "w": 960,
+          "h": 640
+        },
+        {
+          "src": "assets/images/factory-intro/wood-workshop-1600.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/images/factory-intro/wood-workshop-2400.webp",
+          "w": 2400,
+          "h": 1600
+        }
+      ]
+    },
+    {
+      "name": "wood-workshop-detail",
+      "sourceFile": "drive-download-20261024T022254Z-1-001/22 Topaz Gigapixel 2x scale.jpg",
+      "sourceSha256": "17e200acefa538d09a78c57f665d45fcaebed859c5f9816a9179129f18987622",
+      "sourceWidth": 2560,
+      "sourceHeight": 3414,
+      "cropAspect": 2.7,
+      "focusY": 0.65,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/wood-workshop-detail-480.webp",
+          "w": 480,
+          "h": 178
+        },
+        {
+          "src": "assets/images/factory-intro/wood-workshop-detail-960.webp",
+          "w": 960,
+          "h": 356
+        },
+        {
+          "src": "assets/images/factory-intro/wood-workshop-detail-1600.webp",
+          "w": 1600,
+          "h": 593
+        },
+        {
+          "src": "assets/images/factory-intro/wood-workshop-detail-2400.webp",
+          "w": 2400,
+          "h": 889
+        }
+      ]
+    },
+    {
+      "name": "teak-loungers",
+      "sourceFile": "drive-download-20261024T022254Z-1-001/29 Topaz Gigapixel 2x scale.jpg",
+      "sourceSha256": "afd93eca4319e034b7878ef94ce7c7e577d80bc2fefbac5ac35053df7c9a5f99",
+      "sourceWidth": 3414,
+      "sourceHeight": 2560,
+      "cropAspect": 1.5,
+      "focusY": 0.57,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/teak-loungers-480.webp",
+          "w": 480,
+          "h": 320
+        },
+        {
+          "src": "assets/images/factory-intro/teak-loungers-960.webp",
+          "w": 960,
+          "h": 640
+        },
+        {
+          "src": "assets/images/factory-intro/teak-loungers-1600.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/images/factory-intro/teak-loungers-2400.webp",
+          "w": 2400,
+          "h": 1600
+        }
+      ]
+    },
+    {
+      "name": "chair-frames",
+      "sourceFile": "drive-download-20261024T022254Z-1-001/28 Topaz Gigapixel 2x scale.jpg",
+      "sourceSha256": "76d248379c19fe440df6a6e661a42b1878bbe9a4765209473d77a3eab5b51020",
+      "sourceWidth": 3414,
+      "sourceHeight": 2560,
+      "cropAspect": 2.7,
+      "focusY": 0.57,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/chair-frames-480.webp",
+          "w": 480,
+          "h": 178
+        },
+        {
+          "src": "assets/images/factory-intro/chair-frames-960.webp",
+          "w": 960,
+          "h": 356
+        },
+        {
+          "src": "assets/images/factory-intro/chair-frames-1600.webp",
+          "w": 1600,
+          "h": 593
+        },
+        {
+          "src": "assets/images/factory-intro/chair-frames-2400.webp",
+          "w": 2400,
+          "h": 889
+        }
+      ]
+    },
+    {
+      "name": "frame-production",
+      "sourceFile": "210d174fbefacc7ece5e9526ebcf24e6.jpg",
+      "sourceSha256": "1d564ac2ffc563060443564404f13ad203c0e2234e8747b81c4c99e7869bdd31",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "cropAspect": 1.5,
+      "focusY": 0.53,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/frame-production-480.webp",
+          "w": 480,
+          "h": 320
+        },
+        {
+          "src": "assets/images/factory-intro/frame-production-960.webp",
+          "w": 960,
+          "h": 640
+        },
+        {
+          "src": "assets/images/factory-intro/frame-production-1600.webp",
+          "w": 1600,
+          "h": 1067
+        },
+        {
+          "src": "assets/images/factory-intro/frame-production-2400.webp",
+          "w": 2400,
+          "h": 1600
+        }
+      ]
+    },
+    {
+      "name": "seating-stock",
+      "sourceFile": "drive-download-20261024T022254Z-1-001/25 Topaz Gigapixel 2x scale.jpg",
+      "sourceSha256": "5c4f37562d6cd90855bf7a60cf848eb2421b8f134dd97884c40735d3e006b3fd",
+      "sourceWidth": 3414,
+      "sourceHeight": 2560,
+      "cropAspect": 2.7,
+      "focusY": 0.58,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/seating-stock-480.webp",
+          "w": 480,
+          "h": 178
+        },
+        {
+          "src": "assets/images/factory-intro/seating-stock-960.webp",
+          "w": 960,
+          "h": 356
+        },
+        {
+          "src": "assets/images/factory-intro/seating-stock-1600.webp",
+          "w": 1600,
+          "h": 593
+        },
+        {
+          "src": "assets/images/factory-intro/seating-stock-2400.webp",
+          "w": 2400,
+          "h": 889
+        }
+      ]
+    },
+    {
+      "name": "production-floor",
+      "sourceFile": "f19e3cf88a84f6ebaf84d8e643752b35.jpg",
+      "sourceSha256": "f90bbdcc78208a1dfecf23ffcaa593e02590fb88a5b148faeaec1dddd44ef18f",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "cropAspect": 1.3333333333333333,
+      "focusY": 0.53,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/production-floor-480.webp",
+          "w": 480,
+          "h": 360
+        },
+        {
+          "src": "assets/images/factory-intro/production-floor-960.webp",
+          "w": 960,
+          "h": 720
+        },
+        {
+          "src": "assets/images/factory-intro/production-floor-1600.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "assets/images/factory-intro/production-floor-2400.webp",
+          "w": 2400,
+          "h": 1800
+        }
+      ]
+    },
+    {
+      "name": "aluminium-stock",
+      "sourceFile": "59382e654dc808e6ca5645985affd2d3.jpg",
+      "sourceSha256": "c51a35203fc6f81cc1fd7516fdfbc4fbb1eb7fdeb318cdfe433dec280a342256",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "cropAspect": 1.3333333333333333,
+      "focusY": 0.57,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/aluminium-stock-480.webp",
+          "w": 480,
+          "h": 360
+        },
+        {
+          "src": "assets/images/factory-intro/aluminium-stock-960.webp",
+          "w": 960,
+          "h": 720
+        },
+        {
+          "src": "assets/images/factory-intro/aluminium-stock-1600.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "assets/images/factory-intro/aluminium-stock-2400.webp",
+          "w": 2400,
+          "h": 1800
+        }
+      ]
+    },
+    {
+      "name": "showroom",
+      "sourceFile": "53d981bad47926415120ecc303191a65.jpg",
+      "sourceSha256": "e2c6771fa67ddcaef1e00ad37bfa28beaaf1208f33745473378df79ddcc1be20",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "cropAspect": 1.3333333333333333,
+      "focusY": 0.57,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/showroom-480.webp",
+          "w": 480,
+          "h": 360
+        },
+        {
+          "src": "assets/images/factory-intro/showroom-960.webp",
+          "w": 960,
+          "h": 720
+        },
+        {
+          "src": "assets/images/factory-intro/showroom-1600.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "assets/images/factory-intro/showroom-2400.webp",
+          "w": 2400,
+          "h": 1800
+        }
+      ]
+    },
+    {
+      "name": "fabrication-equipment",
+      "sourceFile": "drive-download-20261024T022254Z-1-001/23 Topaz Gigapixel 2x scale.jpg",
+      "sourceSha256": "35e1a387ddffe9fb6b44852d65204d77091d0257d0f67a15d872b81ac5371734",
+      "sourceWidth": 3840,
+      "sourceHeight": 2560,
+      "cropAspect": 1.3333333333333333,
+      "focusY": 0.53,
+      "variants": [
+        {
+          "src": "assets/images/factory-intro/fabrication-equipment-480.webp",
+          "w": 480,
+          "h": 360
+        },
+        {
+          "src": "assets/images/factory-intro/fabrication-equipment-960.webp",
+          "w": 960,
+          "h": 720
+        },
+        {
+          "src": "assets/images/factory-intro/fabrication-equipment-1600.webp",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "src": "assets/images/factory-intro/fabrication-equipment-2400.webp",
+          "w": 2400,
+          "h": 1800
+        }
+      ]
+    }
+  ]
+}

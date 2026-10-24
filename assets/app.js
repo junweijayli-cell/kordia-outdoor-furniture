@@ -16,6 +16,44 @@
   /* ------------------------------------------------------------------ i18n */
   const T = {
     en: {
+      factoryStoryKicker: "The KORDIA factory",
+      factoryStoryLocation: "Foshan, China",
+      factoryStoryOneHeading: "16 years of craftsmanship in Foshan",
+      factoryStoryOneBody: "From frame production to solid-wood assembly, careful workmanship runs through every stage.",
+      factoryStoryTwoLabel: "02 / Overseas projects",
+      factoryStoryTwoHeading: "Made for projects around the world",
+      factoryStoryTwoBody: "Repeat production, export packing and project supply for hospitality, commercial and outdoor spaces.",
+      factoryStoryThreeLabel: "03 / Project customisation",
+      factoryStoryThreeHeading: "Project orders. Options made around your brief.",
+      factoryStoryThreeBody: "Discuss quantities, dimensions, colours and materials with our team. Customisation and pricing are confirmed against your project.",
+      factoryStoryOneLabel: "01 / Craftsmanship",
+      factoryWoodCaption: "Solid-wood workshop",
+      factoryWorkshopCaption: "Workbenches, assembly and hands-on craft",
+      factoryLoungersCaption: "Wooden loungers in production",
+      factoryFramesCaption: "Chair frames prepared for the next stage",
+      factoryProductionCaption: "Frame production and assembly",
+      factoryStockCaption: "Seating stock on the factory floor",
+      factoryGalleryKicker: "A closer look",
+      factoryGalleryHeading: "Inside production",
+      factoryGalleryBody: "A closer look at the production floor, materials and furniture that take shape here.",
+      factoryGalleryFloor: "Production floor",
+      factoryGalleryAluminium: "Aluminium stock",
+      factoryGalleryShowroom: "Showroom",
+      factoryGalleryEquipment: "Fabrication equipment",
+      factoryCtaHeading: "Your next project starts here.",
+      factoryCtaBody: "Share your project brief, quantities or a reference photo. Our team will help you work through the options.",
+      factoryDiscussProject: "Discuss your project",
+      factoryBrowseCollections: "Browse collections",
+      factoryAltWood: "Solid-wood workshop in Foshan with workbenches, timber and furniture assembly",
+      factoryAltWoodDetail: "Furniture workbenches and workers inside the solid-wood workshop",
+      factoryAltLoungers: "Rows of wooden loungers outside the furniture workshop",
+      factoryAltChairFrames: "Wooden chair frames arranged inside the workshop",
+      factoryAltProduction: "Furniture frames and workers on the factory production floor",
+      factoryAltStock: "Stacks of seating frames inside the factory",
+      factoryAltFloor: "Wide view along the furniture frame production and assembly floor",
+      factoryAltAluminium: "Aluminium profiles stored ready for furniture fabrication",
+      factoryAltShowroom: "KORDIA showroom displaying outdoor dining sets, seating and parasols",
+      factoryAltEquipment: "Fabrication machines and aluminium components on the production floor",
       skip: "Skip to content",
       introSub: "Outdoor Furniture · Foshan, China",
       navCollections: "Collections", navFactory: "Factory", navMaterials: "Materials",
@@ -217,6 +255,44 @@
       inquiryGreeting: "Hello Fianna, I'd like a quotation from the KORDIA website.",
     },
     zh: {
+      factoryStoryKicker: "KORDIA 制造工厂",
+      factoryStoryLocation: "中国 · 佛山",
+      factoryStoryOneHeading: "16年佛山本地工厂",
+      factoryStoryOneBody: "从框架加工到实木组装，认真做好每一道工序与连接细节。",
+      factoryStoryTwoLabel: "02 / 海外工程",
+      factoryStoryTwoHeading: "远销全球 · 工程配套",
+      factoryStoryTwoBody: "支持酒店、商业与户外空间项目，提供批量生产、出口包装与工程配套。",
+      factoryStoryThreeLabel: "03 / 项目定制",
+      factoryStoryThreeHeading: "工程集采 · 量大可谈",
+      factoryStoryThreeBody: "尺寸、颜色与材质可按项目需求沟通定制，批量订单可议，具体方案与报价按项目确认。",
+      factoryStoryOneLabel: "01 / 制造工艺",
+      factoryWoodCaption: "实木加工车间",
+      factoryWorkshopCaption: "工作台、组装与手工制作",
+      factoryLoungersCaption: "批量生产中的实木躺椅",
+      factoryFramesCaption: "准备进入下一道工序的椅架",
+      factoryProductionCaption: "框架生产与组装",
+      factoryStockCaption: "车间内的座椅备货",
+      factoryGalleryKicker: "走进车间",
+      factoryGalleryHeading: "制造现场",
+      factoryGalleryBody: "从生产车间、备料到展厅，看看家具在这里逐步成形的过程。",
+      factoryGalleryFloor: "生产车间",
+      factoryGalleryAluminium: "铝材备料",
+      factoryGalleryShowroom: "产品展厅",
+      factoryGalleryEquipment: "加工设备",
+      factoryCtaHeading: "下一个项目，从这里开始。",
+      factoryCtaBody: "发送项目需求、采购数量或参考图片，我们将与您一起沟通合适的方案。",
+      factoryDiscussProject: "沟通项目需求",
+      factoryBrowseCollections: "浏览产品系列",
+      factoryAltWood: "佛山实木车间内的工作台、木料与家具组装现场",
+      factoryAltWoodDetail: "实木车间内的家具工作台与工人",
+      factoryAltLoungers: "家具车间外成排摆放的实木躺椅",
+      factoryAltChairFrames: "车间内批量摆放的实木椅架",
+      factoryAltProduction: "工厂生产车间内的家具框架与工人",
+      factoryAltStock: "工厂内成排堆放的座椅框架",
+      factoryAltFloor: "家具框架生产与组装车间的宽幅实景",
+      factoryAltAluminium: "准备投入家具加工的铝型材备料",
+      factoryAltShowroom: "展示户外餐桌、座椅与遮阳伞的 KORDIA 产品展厅",
+      factoryAltEquipment: "生产车间内的加工设备与铝材部件",
       skip: "跳到主要内容",
       introSub: "户外家具 · 中国佛山",
       navCollections: "产品系列", navFactory: "工厂实力", navMaterials: "材质工艺",
@@ -561,14 +637,6 @@
   // Fill the value in and the tile returns on its own.
   const withValue = (row) => !String(row.v).includes("[__]");
 
-  const CAPABILITY = [
-    { v: "[__] m²",  en: "Production area",     zh: "生产面积" },
-    { v: "[__]",     en: "Production lines",    zh: "生产线" },
-    { v: "[__]",     en: "Staff",               zh: "员工人数" },
-    { v: "500+",     en: "Models in the range", zh: "在产款型" },
-    { v: "40+",      en: "Export markets",      zh: "出口市场" },
-    { v: "[__]",     en: "Certifications",      zh: "认证资质" },
-  ];
   const SHIPPING_FACTS = [
     { v: "[__]",   en: "MOQ per model",        zh: "单款起订量" },
     { v: "[__] d", en: "Production lead time", zh: "生产周期" },
@@ -1104,22 +1172,8 @@
 
   /* ------------------------------------------------------------------ static */
   function renderStaticScreens() {
-    byId("capability-grid").innerHTML = CAPABILITY.filter(withValue).map((c) =>
-      `<div><b>${esc(c.v)}</b><span>${esc(c[state.lang])}</span></div>`).join("");
     byId("shipping-grid").innerHTML = SHIPPING_FACTS.filter(withValue).map((c) =>
       `<div><b>${esc(c.v)}</b><span>${esc(c[state.lang])}</span></div>`).join("");
-    // Rendered as a numbered list rather than six image slots: only three
-    // factory photographs exist, and five striped placeholders next to one real
-    // photo reads as unfinished rather than as an honest gap.
-    byId("process-grid").innerHTML = PROCESS.map((s) => {
-      const [title, body] = s[state.lang];
-      return `<div class="reveal">
-        <div style="height:1px;background:var(--line);margin-bottom:16px"></div>
-        <div class="eyebrow" style="margin-bottom:8px">${s.n}</div>
-        <h3 style="font-family:var(--sans);font-size:1.25rem;font-weight:600;margin:0 0 8px">${esc(title)}</h3>
-        <p style="margin:0;font-size:15px">${esc(body)}</p>
-      </div>`;
-    }).join("");
     byId("shipping-steps").innerHTML = PROCESS.slice(3).map((s) => {
       const [title, body] = s[state.lang];
       return `<div><div class="eyebrow" style="margin-bottom:8px">${s.n}</div>

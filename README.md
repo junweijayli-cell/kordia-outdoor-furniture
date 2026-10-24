@@ -12,6 +12,17 @@ No build step and no dependencies are required. Open `index.html`, or serve the 
 python -m http.server 8000
 ```
 
+## Local factory-page review
+
+Open `factory-preview.html` directly, or visit `/factory-preview.html` on the local
+server. It opens the factory route and supports the same English/Chinese switch
+and navigation as the site. Keep it alongside `assets/` when reviewing locally.
+Regenerate the preview with `python scripts/build-factory-preview.py` after editing
+`index.html`. Rebuild the factory photography with
+`python scripts/build-factory-images.py`; add `--check` to validate its outputs.
+The factory redesign has been approved for publication. `factory-preview.html` is
+generated for local review and excluded from Git; production uses `index.html`.
+
 ## Layout
 
 ```

@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="assets/panel-motion.css?v=20260911-navy">
 <link rel="stylesheet" href="assets/space-cards.css?v=20260906-spaces">
 <link rel="stylesheet" href="assets/facilities.css?v=20260911-navy">
+<link rel="stylesheet" href="assets/factory-intro.css?v=20261024-factory">
 </head>
 <body>
 <noscript><style>#intro{display:none!important}#screen-home[hidden]{display:block!important}.kr-hero{height:auto;min-height:0}.kr-hero-stage{position:relative;top:0}.kr-curve{display:none}</style><p style="padding:20px 5%;margin:0;background:var(--sand)">Enable JavaScript to browse models and build a selection. You can also <a href="https://wa.me/86136030102587" target="_blank" rel="noopener">request the catalogue on WhatsApp</a>.</p></noscript>
@@ -560,63 +561,121 @@
 
 <!-- ============================ FACTORY ============================ -->
 <section class="screen" id="screen-factory" hidden>
-  <section class="section-navy kr-factory-intro">
-    <div class="shell split-5-7">
-      <div>
-        <div class="kicker" style="margin-bottom:24px" data-i18n="chancheng">Chancheng, Foshan</div>
-        <h1 class="h-page" style="color:var(--light);margin-bottom:26px" data-i18n="factoryTitle">A furniture factory, not a trading office</h1>
-        <p style="margin:0 0 20px;color:rgba(237,240,248,.8);max-width:58ch;text-wrap:pretty" data-i18n="factoryBody1">KORDIA manufactures in Chancheng District, Foshan — the centre of China's outdoor furniture industry. Production covers rope weaving, aluminium tube fabrication, cast-aluminium casting, powder coating, cushion sewing and final assembly under one roof, which is why a custom colourway is quoted in 48 hours instead of 4 weeks.</p>
-        <p style="margin:0;color:rgba(237,240,248,.6);max-width:58ch" data-i18n-html="factoryBody2">We supply importers, hospitality groups and specifiers across Europe, the Middle East, North America and Australia.</p>
-      </div>
-      <figure class="kr-facility-detail">
-        <img
-           src="assets/images/demo/factory-interior-concept-960.webp"
-           srcset="assets/images/demo/factory-interior-concept-600.webp 600w, assets/images/demo/factory-interior-concept-960.webp 960w, assets/images/demo/factory-interior-concept-1536.webp 1536w"
-           sizes="(min-width: 1181px) calc((min(1440px, 100vw - 64px) - 80px) / 2), calc(100vw - 48px)"
-           width="1536" height="1024" loading="lazy" decoding="async"
-           data-i18n-alt="altFactoryConcept" alt="AI visualisation of an outdoor furniture assembly and weaving workshop">
-        <figcaption data-en="Factory overview · design visualisation" data-zh="工厂全景 · 设计效果示意">Factory overview · design visualisation</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="section section-cream">
-    <div class="shell">
-      <h2 class="h-sub" style="margin-bottom:48px" data-i18n="capability">Capability</h2>
-      <div class="cap-grid" id="capability-grid"></div>
-    </div>
-  </section>
-
-  <section class="section section-white">
-    <div class="shell">
-      <h2 class="h-sub" style="margin-bottom:48px" data-i18n="underOneRoof">Under one roof</h2>
-      <div class="photo-pair reveal">
-        <figure>
-          <img src="assets/images/factory/factory-teak-880.webp"
-               srcset="assets/images/factory/factory-teak-440.webp 440w, assets/images/factory/factory-teak-880.webp 880w, assets/images/factory/factory-teak-1400.webp 1400w"
-               sizes="(min-width: 861px) calc((min(1440px, 100vw - 64px) - 24px) / 2), calc(100vw - 48px)"
-               width="880" height="660" loading="lazy" decoding="async"
-               data-i18n-alt="altFactoryTeak" alt="Solid teak chair frames on the KORDIA assembly floor">
-          <figcaption class="eyebrow" data-i18n="capTeakWorkshop">Teak frame assembly · Chancheng, Foshan</figcaption>
+  <section class="factory-story" aria-labelledby="factory-story-1">
+    <div class="factory-shell">
+      <div class="factory-label"><span data-i18n="factoryStoryKicker">The KORDIA factory</span><span data-i18n="factoryStoryLocation">Foshan, China</span></div>
+      <h1 data-i18n="factoryStoryOneHeading" class="factory-heading" id="factory-story-1">16 years of craftsmanship in Foshan</h1>
+      <p data-i18n="factoryStoryOneBody" class="factory-description">From frame production to solid-wood assembly, careful workmanship runs through every stage.</p>
+      <div class="factory-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <figure class="factory-figure">
+          <img class="factory-photo" src="assets/images/factory-intro/wood-workshop-1600.webp"
+               srcset="assets/images/factory-intro/wood-workshop-480.webp 480w, assets/images/factory-intro/wood-workshop-960.webp 960w, assets/images/factory-intro/wood-workshop-1600.webp 1600w, assets/images/factory-intro/wood-workshop-2400.webp 2400w" sizes="(min-width: 1244px) 1180px, (min-width: 861px) calc(100vw - 64px), (min-width: 561px) calc(100vw - 48px), calc(100vw - 36px)"
+               width="1600" height="1067" loading="eager" decoding="async" fetchpriority="high"
+               data-i18n-alt="factoryAltWood" alt="Solid-wood workshop in Foshan with workbenches, timber and furniture assembly">
+          <figcaption class="factory-caption"><span data-i18n="factoryWoodCaption">Solid-wood workshop</span><span data-i18n="factoryStoryLocation">Foshan, China</span></figcaption>
         </figure>
-        <figure>
-          <img src="assets/images/factory/factory-line-880.webp"
-               srcset="assets/images/factory/factory-line-440.webp 440w, assets/images/factory/factory-line-880.webp 880w, assets/images/factory/factory-line-1400.webp 1400w"
-               sizes="(min-width: 861px) calc((min(1440px, 100vw - 64px) - 24px) / 2), calc(100vw - 48px)"
-               width="880" height="660" loading="lazy" decoding="async"
-               data-i18n-alt="altFactoryLine" alt="Aluminium tube cutting, bending and pressing line">
-          <figcaption class="eyebrow" data-i18n="capAluLine">Aluminium tube fabrication · cutting, bending, pressing</figcaption>
+      <figure class="factory-figure factory-figure--support">
+          <img class="factory-photo" src="assets/images/factory-intro/wood-workshop-detail-1600.webp"
+               srcset="assets/images/factory-intro/wood-workshop-detail-480.webp 480w, assets/images/factory-intro/wood-workshop-detail-960.webp 960w, assets/images/factory-intro/wood-workshop-detail-1600.webp 1600w, assets/images/factory-intro/wood-workshop-detail-2400.webp 2400w" sizes="(min-width: 1244px) 1180px, (min-width: 861px) calc(100vw - 64px), (min-width: 561px) calc(100vw - 48px), calc(100vw - 36px)"
+               width="1600" height="593" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltWoodDetail" alt="Furniture workbenches and workers inside the solid-wood workshop">
+          <figcaption class="factory-caption"><span data-i18n="factoryWorkshopCaption">Workbenches, assembly and hands-on craft</span><span data-i18n="factoryStoryLocation">Foshan, China</span></figcaption>
         </figure>
-      </div>
-      <div class="thirds" id="process-grid"></div>
     </div>
   </section>
 
-  <section class="section section-sand" style="padding:110px 0">
-    <div style="max-width:900px;margin:0 auto;padding:0 var(--pad);text-align:center">
-      <h2 class="h-sub" style="margin-bottom:20px" data-i18n="oemTitle">OEM &amp; private label</h2>
-      <p style="margin:0 0 36px;text-wrap:pretty" data-i18n="point3Body">Custom colourways, exclusive dimensions, neutral or branded packaging, and logo application on planters and structures. Tooling for exclusive models on request.</p>
-      <button class="btn btn-primary" data-go="inquiry" type="button" data-i18n="requestQuote">Request a quote</button>
+  <section class="factory-story" aria-labelledby="factory-story-2">
+    <div class="factory-shell">
+      <div class="factory-label"><span data-i18n="factoryStoryTwoLabel">02 / Overseas projects</span><span data-i18n="factoryStoryLocation">Foshan, China</span></div>
+      <h2 data-i18n="factoryStoryTwoHeading" class="factory-heading" id="factory-story-2">Made for projects around the world</h2>
+      <p data-i18n="factoryStoryTwoBody" class="factory-description">Repeat production, export packing and project supply for hospitality, commercial and outdoor spaces.</p>
+      <div class="factory-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <figure class="factory-figure">
+          <img class="factory-photo" src="assets/images/factory-intro/teak-loungers-1600.webp"
+               srcset="assets/images/factory-intro/teak-loungers-480.webp 480w, assets/images/factory-intro/teak-loungers-960.webp 960w, assets/images/factory-intro/teak-loungers-1600.webp 1600w, assets/images/factory-intro/teak-loungers-2400.webp 2400w" sizes="(min-width: 1244px) 1180px, (min-width: 861px) calc(100vw - 64px), (min-width: 561px) calc(100vw - 48px), calc(100vw - 36px)"
+               width="1600" height="1067" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltLoungers" alt="Rows of wooden loungers outside the furniture workshop">
+          <figcaption class="factory-caption"><span data-i18n="factoryLoungersCaption">Wooden loungers in production</span><span data-i18n="factoryStoryLocation">Foshan, China</span></figcaption>
+        </figure>
+      <figure class="factory-figure factory-figure--support">
+          <img class="factory-photo" src="assets/images/factory-intro/chair-frames-1600.webp"
+               srcset="assets/images/factory-intro/chair-frames-480.webp 480w, assets/images/factory-intro/chair-frames-960.webp 960w, assets/images/factory-intro/chair-frames-1600.webp 1600w, assets/images/factory-intro/chair-frames-2400.webp 2400w" sizes="(min-width: 1244px) 1180px, (min-width: 861px) calc(100vw - 64px), (min-width: 561px) calc(100vw - 48px), calc(100vw - 36px)"
+               width="1600" height="593" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltChairFrames" alt="Wooden chair frames arranged inside the workshop">
+          <figcaption class="factory-caption"><span data-i18n="factoryFramesCaption">Chair frames prepared for the next stage</span><span data-i18n="factoryStoryLocation">Foshan, China</span></figcaption>
+        </figure>
+    </div>
+  </section>
+
+  <section class="factory-story" aria-labelledby="factory-story-3">
+    <div class="factory-shell">
+      <div class="factory-label"><span data-i18n="factoryStoryThreeLabel">03 / Project customisation</span><span data-i18n="factoryStoryLocation">Foshan, China</span></div>
+      <h2 data-i18n="factoryStoryThreeHeading" class="factory-heading" id="factory-story-3">Project orders. Options made around your brief.</h2>
+      <p data-i18n="factoryStoryThreeBody" class="factory-description">Discuss quantities, dimensions, colours and materials with our team. Customisation and pricing are confirmed against your project.</p>
+      <div class="factory-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <figure class="factory-figure">
+          <img class="factory-photo" src="assets/images/factory-intro/frame-production-1600.webp"
+               srcset="assets/images/factory-intro/frame-production-480.webp 480w, assets/images/factory-intro/frame-production-960.webp 960w, assets/images/factory-intro/frame-production-1600.webp 1600w, assets/images/factory-intro/frame-production-2400.webp 2400w" sizes="(min-width: 1244px) 1180px, (min-width: 861px) calc(100vw - 64px), (min-width: 561px) calc(100vw - 48px), calc(100vw - 36px)"
+               width="1600" height="1067" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltProduction" alt="Furniture frames and workers on the factory production floor">
+          <figcaption class="factory-caption"><span data-i18n="factoryProductionCaption">Frame production and assembly</span><span data-i18n="factoryStoryLocation">Foshan, China</span></figcaption>
+        </figure>
+      <figure class="factory-figure factory-figure--support">
+          <img class="factory-photo" src="assets/images/factory-intro/seating-stock-1600.webp"
+               srcset="assets/images/factory-intro/seating-stock-480.webp 480w, assets/images/factory-intro/seating-stock-960.webp 960w, assets/images/factory-intro/seating-stock-1600.webp 1600w, assets/images/factory-intro/seating-stock-2400.webp 2400w" sizes="(min-width: 1244px) 1180px, (min-width: 861px) calc(100vw - 64px), (min-width: 561px) calc(100vw - 48px), calc(100vw - 36px)"
+               width="1600" height="593" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltStock" alt="Stacks of seating frames inside the factory">
+          <figcaption class="factory-caption"><span data-i18n="factoryStockCaption">Seating stock on the factory floor</span><span data-i18n="factoryStoryLocation">Foshan, China</span></figcaption>
+        </figure>
+    </div>
+  </section>
+
+  <section class="factory-gallery" aria-labelledby="factory-gallery-heading">
+    <div class="factory-shell">
+      <div class="factory-label"><span data-i18n="factoryGalleryKicker">A closer look</span><span data-i18n="factoryStoryLocation">Foshan, China</span></div>
+      <h2 data-i18n="factoryGalleryHeading" class="factory-heading" id="factory-gallery-heading">Inside production</h2>
+      <p data-i18n="factoryGalleryBody" class="factory-description">A closer look at the production floor, materials and furniture that take shape here.</p>
+      <div class="factory-gallery-grid">
+        <figure class="factory-figure">
+          <img class="factory-photo" src="assets/images/factory-intro/production-floor-960.webp"
+               srcset="assets/images/factory-intro/production-floor-480.webp 480w, assets/images/factory-intro/production-floor-960.webp 960w, assets/images/factory-intro/production-floor-1600.webp 1600w, assets/images/factory-intro/production-floor-2400.webp 2400w" sizes="(min-width: 1244px) 576px, (min-width: 861px) calc((100vw - 92px) / 2), (min-width: 561px) calc((100vw - 76px) / 2), calc(100vw - 36px)"
+               width="960" height="720" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltFloor" alt="Wide view along the furniture frame production and assembly floor">
+          <figcaption class="factory-caption"><span data-i18n="factoryGalleryFloor">Production floor</span></figcaption>
+        </figure>
+<figure class="factory-figure">
+          <img class="factory-photo" src="assets/images/factory-intro/aluminium-stock-960.webp"
+               srcset="assets/images/factory-intro/aluminium-stock-480.webp 480w, assets/images/factory-intro/aluminium-stock-960.webp 960w, assets/images/factory-intro/aluminium-stock-1600.webp 1600w, assets/images/factory-intro/aluminium-stock-2400.webp 2400w" sizes="(min-width: 1244px) 576px, (min-width: 861px) calc((100vw - 92px) / 2), (min-width: 561px) calc((100vw - 76px) / 2), calc(100vw - 36px)"
+               width="960" height="720" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltAluminium" alt="Aluminium profiles stored ready for furniture fabrication">
+          <figcaption class="factory-caption"><span data-i18n="factoryGalleryAluminium">Aluminium stock</span></figcaption>
+        </figure>
+<figure class="factory-figure">
+          <img class="factory-photo" src="assets/images/factory-intro/showroom-960.webp"
+               srcset="assets/images/factory-intro/showroom-480.webp 480w, assets/images/factory-intro/showroom-960.webp 960w, assets/images/factory-intro/showroom-1600.webp 1600w, assets/images/factory-intro/showroom-2400.webp 2400w" sizes="(min-width: 1244px) 576px, (min-width: 861px) calc((100vw - 92px) / 2), (min-width: 561px) calc((100vw - 76px) / 2), calc(100vw - 36px)"
+               width="960" height="720" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltShowroom" alt="KORDIA showroom displaying outdoor dining sets, seating and parasols">
+          <figcaption class="factory-caption"><span data-i18n="factoryGalleryShowroom">Showroom</span></figcaption>
+        </figure>
+<figure class="factory-figure">
+          <img class="factory-photo" src="assets/images/factory-intro/fabrication-equipment-960.webp"
+               srcset="assets/images/factory-intro/fabrication-equipment-480.webp 480w, assets/images/factory-intro/fabrication-equipment-960.webp 960w, assets/images/factory-intro/fabrication-equipment-1600.webp 1600w, assets/images/factory-intro/fabrication-equipment-2400.webp 2400w" sizes="(min-width: 1244px) 576px, (min-width: 861px) calc((100vw - 92px) / 2), (min-width: 561px) calc((100vw - 76px) / 2), calc(100vw - 36px)"
+               width="960" height="720" loading="lazy" decoding="async"
+               data-i18n-alt="factoryAltEquipment" alt="Fabrication machines and aluminium components on the production floor">
+          <figcaption class="factory-caption"><span data-i18n="factoryGalleryEquipment">Fabrication equipment</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="factory-cta" aria-labelledby="factory-cta-heading">
+    <div class="factory-shell">
+      <h2 data-i18n="factoryCtaHeading" class="factory-heading" id="factory-cta-heading">Your next project starts here.</h2>
+      <p data-i18n="factoryCtaBody" class="factory-description">Share your project brief, quantities or a reference photo. Our team will help you work through the options.</p>
+      <div class="factory-actions">
+        <button data-i18n="factoryDiscussProject" class="btn btn-primary" type="button" data-go="inquiry">Discuss your project</button>
+        <button data-i18n="factoryBrowseCollections" class="btn btn-outline" type="button" data-go="collections">Browse collections</button>
+      </div>
     </div>
   </section>
 </section>
@@ -794,7 +853,7 @@
 <button class="kr-motion-toggle" type="button" aria-pressed="false" hidden><span aria-hidden="true">Ⅱ</span><span class="kr-motion-label">Pause motion</span></button>
 
 <script src="assets/catalog-data.js?v=20261024-originals"></script>
-<script src="assets/app.js?v=20261024-originals"></script>
+<script src="assets/app.js?v=20261024-factory"></script>
 <script src="assets/garden-review.js?v=20260911-navy"></script>
 <script src="assets/panel-motion.js?v=20260911-navy"></script>
 </body>
