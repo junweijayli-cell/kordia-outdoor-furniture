@@ -18,6 +18,7 @@ OUTPUT = ROOT / 'assets/images/factory-intro'
 WIDTHS = (480, 960, 1600, 2400)
 # Output name, source, aspect ratio, vertical focal point.
 JOBS = [
+    ('factory-overview', 'f19e3cf88a84f6ebaf84d8e643752b35.jpg', 3 / 2, .50),
     ('wood-workshop', f'{UPSCALED}/21 Topaz Gigapixel 2x scale.jpg', 3 / 2, .57),
     ('wood-workshop-detail', f'{UPSCALED}/22 Topaz Gigapixel 2x scale.jpg', 2.7, .65),
     ('teak-loungers', f'{UPSCALED}/29 Topaz Gigapixel 2x scale.jpg', 3 / 2, .57),

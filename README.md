@@ -109,8 +109,8 @@ Placeholders are marked in the UI rather than invented, and need real values fro
 
 - Factory figures shown as `[__]` — area, lines, staff, certifications, MOQ, lead times
 - Copy marked `[confirm …]` / `[verify]` — alloy and rope spec, ports and Incoterms, export history
-- The factory overview is labelled as a design visualisation; replace it with verified
-  production photography when a suitable wide factory image is available
+- The homepage factory overview uses the client-supplied production-floor photograph,
+  with the complete 3:2 composition and responsive WebP variants.
 - Product names are derived from category + catalog reference. Factory WNM-8xxx model
   numbers are included; unavailable specifications remain explicitly flagged for review.
 
