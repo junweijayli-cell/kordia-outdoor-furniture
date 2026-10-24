@@ -15,7 +15,6 @@ import json
 from collections import Counter
 from pathlib import Path
 
-import fitz
 from PIL import Image, ImageCms, ImageOps
 
 
@@ -91,6 +90,8 @@ def save_variants(image: Image.Image, base: str, widths: tuple[int, ...]) -> lis
 
 
 def extract_image(document: fitz.Document, page_number: int, xref: int) -> tuple[Image.Image, int, int]:
+    import fitz
+
     page_images = {item[0]: item for item in document[page_number - 1].get_images(full=True)}
     if xref not in page_images:
         raise ValueError(f"xref {xref} is not present on PDF page {page_number}")
@@ -123,6 +124,8 @@ def merge_unique(values: list[list[str]]) -> list[str]:
 
 
 def build_catalog(write_images: bool = True) -> dict:
+    import fitz
+
     catalog = read_json(BASE_PATH)
     imported = read_json(IMPORT_PATH)
     source = imported["source"]
@@ -370,6 +373,36 @@ def build_catalog(write_images: bool = True) -> dict:
         raise ValueError(f"Expected 402 total products, found {catalog['total']}")
     if len(catalog["subcategories"]) != 24:
         raise ValueError(f"Expected 24 subcategories, found {len(catalog['subcategories'])}")
+    return apply_original_images(catalog)
+
+
+def apply_original_images(catalog: dict) -> dict:
+    """Apply reviewed 2026 photo replacements; product identity/specs stay intact."""
+    manifest_path = ROOT / 'catalog' / 'original-images.json'
+    if not manifest_path.exists():
+        return catalog
+    manifest = read_json(manifest_path)
+    products = {product['id']: product for product in catalog['products']}
+    replacements = manifest['products']
+    expected_ids = {product['id'] for product in read_json(BASE_PATH)['products']}
+    if {record['id'] for record in replacements} != expected_ids or len(replacements) != len(expected_ids):
+        raise ValueError('Original image manifest must cover each 2026 product exactly once')
+    if len({record['sourceFile'] for record in replacements}) != len(replacements):
+        raise ValueError('Original photographs must have a one-to-one product mapping')
+    for record in replacements:
+        product = products[record['id']]
+        if product['model'] != record['catalogModel']:
+            raise ValueError(f"Catalogue model changed for {record['id']}")
+        variants = record['variants']
+        largest = variants[-1]
+        product.update(
+            image=next((v['src'] for v in variants if v['w'] >= 800), largest['src']),
+            width=largest['w'], height=largest['h'],
+            sourceWidth=record['sourceWidth'], sourceHeight=record['sourceHeight'],
+            variants=variants,
+            imageStatus='CLIENT ORIGINAL - visually matched; sRGB only; no crop, enhancement or upscaling',
+            imageSourceFile=record['sourceFile'], imageSourceSha256=record['sha256'],
+        )
     return catalog
 
 
@@ -378,12 +411,23 @@ def serialize(catalog: dict) -> str:
     return f"window.KORDIA_CATALOG = {payload};\n"
 
 
+def read_published_catalog() -> dict:
+    text = OUTPUT_PATH.read_text(encoding='utf-8').strip()
+    prefix = 'window.KORDIA_CATALOG = '
+    if not text.startswith(prefix) or not text.endswith(';'):
+        raise ValueError('Published catalogue has an unexpected format')
+    return json.loads(text[len(prefix):-1])
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="Validate inputs and generated output without writing")
+    parser.add_argument('--refresh-originals', action='store_true',
+                        help='Apply the reviewed 2026 photo manifest to the published catalogue, preserving the 2027 import; no archived PDF required')
     args = parser.parse_args()
 
-    catalog = build_catalog(write_images=not args.check)
+    catalog = (apply_original_images(read_published_catalog()) if args.refresh_originals
+               else build_catalog(write_images=not args.check))
     output = serialize(catalog)
     if args.check:
         if not OUTPUT_PATH.exists() or OUTPUT_PATH.read_text(encoding="utf-8") != output:

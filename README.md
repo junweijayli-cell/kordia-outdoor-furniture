@@ -32,6 +32,23 @@ and the internally archived source PDF at `../Correspondence/20261003/KORDIA-202
 Re-run the builder rather than editing generated output by hand. Use
 `python scripts/build-catalog.py --check` during verification.
 
+The reviewed client originals received on 24 October 2026 are mapped in
+`catalog/original-images.json`, with source SHA-256 checksums and native dimensions.
+To rebuild them from the client's `维妮美图片` folder:
+
+```bash
+python scripts/build-original-images.py /path/to/维妮美图片
+python scripts/build-catalog.py --refresh-originals
+python scripts/build-original-images.py /path/to/维妮美图片 --check
+python scripts/build-catalog.py --refresh-originals --check
+```
+
+`--refresh-originals` preserves the published 2027 import without requiring its
+archived PDF. A full catalogue rebuild also applies the original-photo manifest.
+Photo matching uses the existing image composition: 42 supplier filenames differ
+from the site's existing model codes. These discrepancies are recorded in the
+manifest; model codes and specifications have been preserved for supplier review.
+
 ## How it works
 
 Screens are hash-routed (`#/home`, `#/c/<collection>`, `#/s/<category>`, `#/p/<id>`,
@@ -48,8 +65,13 @@ system reduced-motion preference, and falls back to a stable layout on smaller s
 
 ## Images
 
-402 product cards across 6 collections and 24 categories. The 341 established catalogue
-photographs retain their composition-preserving 400, 800, 1600, and 2400px image ladders.
+402 product cards across 6 collections and 24 categories. All 341 established catalogue
+photographs now use the client-supplied originals, exported as quality-92 WebP at
+400px, 800px and native width where those sizes fit within the source. Portrait and
+smaller originals retain their full composition and native dimensions. There is no
+upscaling, colour enhancement, sharpening or cropping. Content-hashed filenames
+ensure browsers fetch the replacement photos; legacy exports remain available
+for rollback. Collection covers and product detail views use the same replacements.
 The 61 additions cover eight named 2027 series. Their catalogue cards and detail-page
 hero images use the matching colour-faithful lifestyle renderings extracted directly from
 the PDF; a contained product cutout remains available as an inset and alternate product

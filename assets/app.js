@@ -10,19 +10,6 @@
     return;
   }
 
-  // These two collection covers read too green when placed side by side.
-  // Serve separately tuned variants rebuilt from the untouched RGB sources;
-  // geometry and luminance stay unchanged while saturation is reduced.
-  ["034-01", "071-01"].forEach((ref) => {
-    const product = catalog.products.find((item) => item.ref === ref);
-    if (!product) return;
-    product.image = `assets/images/catalog/catalog-${ref}-muted-800.webp`;
-    product.variants = [400, 800, 1600, 2400].map((w) => ({
-      w, h: Math.round((w * 695) / 1069),
-      src: `assets/images/catalog/catalog-${ref}-muted-${w}.webp`,
-    }));
-  });
-
   const WA = "86136030102587";
   const PAGE_SIZE = 24;
 
