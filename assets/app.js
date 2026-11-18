@@ -10,7 +10,7 @@
     return;
   }
 
-  const WA = "86136030102587";
+  const WA = "8613630102587";
   const PAGE_SIZE = 24;
 
   /* ------------------------------------------------------------------ i18n */
@@ -239,7 +239,7 @@
 
       company_: "Company", forBuyers: "For buyers", browseAll: "Browse all models",
       footerAddress: "Chancheng, Foshan<br>Guangdong, China",
-      footerWechat: "WeChat · +86 136030102587",
+      footerWechat: "WeChat · +86 136 3010 2587",
 
       yourSelection: "Your selection", modelsSelected: "{n} models", modelsSelected_one: "1 model",
       attachedCount_one: "1 model attached",
@@ -478,7 +478,7 @@
 
       company_: "公司", forBuyers: "采购专区", browseAll: "浏览全部产品",
       footerAddress: "中国广东省<br>佛山市禅城区",
-      footerWechat: "微信 · +86 136030102587",
+      footerWechat: "微信 · +86 136 3010 2587",
 
       yourSelection: "已选产品", modelsSelected: "{n} 款",
       drawerEmpty: "您还没有选择产品。浏览时加入感兴趣的款式，可合并为一次询价发送。",

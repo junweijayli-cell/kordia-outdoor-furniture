@@ -67,7 +67,7 @@ Screens are hash-routed (`#/home`, `#/c/<collection>`, `#/s/<category>`, `#/p/<i
 back/forward behave normally and any view can be linked to directly.
 
 There is no checkout. Every call to action composes a pre-filled WhatsApp message to
-Fianna (+86 136030102587) in whichever language is active. The selection drawer and the
+Fianna (+86 136 3010 2587) in whichever language is active. The selection drawer and the
 four-step RFQ wizard both persist to `localStorage`.
 
 The homepage combines a layered garden opening, a navy factory overview, a scroll-linked
